@@ -7,6 +7,11 @@
 	<classpathentry kind="lib" path="lib/xml/org.apache.servicemix.bundles.xsdlib-2013.6.1_1.jar"/>
 	<classpathentry kind="lib" path="lib/xml/pull-parser-2.1.10.jar"/>
 	<classpathentry kind="lib" path="lib/xml/relaxngDatatype-1.0.jar"/>
+	<classpathentry kind="lib" path="lib/uilib/07b18708-83ff-332d-ad47-d54f8bb98a9a.jar"/>
+	<classpathentry kind="lib" path="lib/uilib/10140aac-7e1a-316b-9c7d-4df487e5b0b4.jar"/>
+	<classpathentry kind="lib" path="lib/uilib/2100abd6-8eb2-3b62-a216-e2a9646b8b84.jar"/>
+	<classpathentry kind="lib" path="lib/uilib/f08bc30a-f3a4-338e-9f62-2640162dd089.jar"/>
+	<classpathentry kind="lib" path="lib/uilib/substance.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

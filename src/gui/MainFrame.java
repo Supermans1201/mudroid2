@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,8 +10,11 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -22,6 +26,20 @@ import javax.swing.JToolBar;
 import javax.swing.Spring;
 import javax.swing.SpringLayout;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+
+import org.jvnet.substance.SubstanceLookAndFeel;
+import org.jvnet.substance.border.StandardBorderPainter;
+import org.jvnet.substance.button.StandardButtonShaper;
+import org.jvnet.substance.painter.StandardGradientPainter;
+import org.jvnet.substance.skin.CremeSkin;
+import org.jvnet.substance.skin.SubstanceAutumnLookAndFeel;
+import org.jvnet.substance.skin.SubstanceBusinessBlackSteelLookAndFeel;
+import org.jvnet.substance.theme.SubstanceBottleGreenTheme;
+import org.jvnet.substance.title.MatteHeaderPainter;
+import org.jvnet.substance.watermark.SubstanceBubblesWatermark;
+import org.jvnet.substance.watermark.SubstanceStripeWatermark;
 
 import dealxml.DealXmlSax;
 import serialzation.ReadConfigFromXml;
@@ -42,9 +60,8 @@ public class MainFrame extends JFrame implements ActionListener,
 	private JTabbedPane functionJPanel = new JTabbedPane();
 	private JLabel functionJLabel = new JLabel();
 	private JToolBar toolBar = new JToolBar();
-	private JButton[] toolBarButton = new JButton[] {
-			new JButton("toolButton 1"), new JButton("toolButton 2"),
-			new JButton("toolButton 3"), new JButton("toolButton 4"), };
+	private JButton[] toolBarButton = new JButton[] { new JButton(""),
+			new JButton(""), new JButton(""), new JButton(""), };
 	private JMenuBar jmenuBar = new JMenuBar();
 	private JMenu[] jmenuArray = { new JMenu("文件"), new JMenu("功能"),
 			new JMenu("帮助") };
@@ -56,6 +73,7 @@ public class MainFrame extends JFrame implements ActionListener,
 
 	private MainFrame() {
 		this.projectName = Project.getInstance().getSelectProject();
+
 		init();
 	}
 
@@ -75,6 +93,34 @@ public class MainFrame extends JFrame implements ActionListener,
 				System.exit(0);
 			}
 		});
+
+		ImageIcon icon = new ImageIcon(Project.getInstance().getConfigDir()
+				+ "/res/mudroid.png");
+		this.setIconImage(icon.getImage());
+		this.setTitle("MuDroid : " + Project.getInstance().getSelectProject());
+		int iconwidth = 20;
+		int iconheight = 20;
+		ImageIcon icon0 = new ImageIcon(Project.getInstance().getConfigDir()
+				+ "/res/run.png");
+		icon0.setImage(icon0.getImage().getScaledInstance(iconwidth,
+				iconheight, Image.SCALE_DEFAULT));
+		toolBarButton[0].setIcon(icon0);
+		ImageIcon icon1 = new ImageIcon(Project.getInstance().getConfigDir()
+				+ "/res/find.png");
+		icon1.setImage(icon1.getImage().getScaledInstance(iconwidth,
+				iconheight, Image.SCALE_DEFAULT));
+		toolBarButton[1].setIcon(icon1);
+		ImageIcon icon2 = new ImageIcon(Project.getInstance().getConfigDir()
+				+ "/res/save.png");
+		icon2.setImage(icon2.getImage().getScaledInstance(iconwidth,
+				iconheight, Image.SCALE_DEFAULT));
+		toolBarButton[2].setIcon(icon2);
+		ImageIcon icon3 = new ImageIcon(Project.getInstance().getConfigDir()
+				+ "/res/refresh.png");
+		icon3.setImage(icon3.getImage().getScaledInstance(iconwidth,
+				iconheight, Image.SCALE_DEFAULT));
+		toolBarButton[3].setIcon(icon3);
+
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		int screenWidth = (int) screenSize.getWidth();
 		int screenHeight = (int) screenSize.getHeight();
@@ -120,8 +166,7 @@ public class MainFrame extends JFrame implements ActionListener,
 				+ functionJLabel.getHeight());
 		mainJPanel.add(messageJLabel);
 
-		messageJLabel.setText("imformation: "
-				+ Project.getInstance().getSelectProject());
+		messageJLabel.setText(" " + Project.getInstance().getSelectProject());
 		springlayout.putConstraint(SpringLayout.SOUTH, messageJLabel, 0,
 				SpringLayout.SOUTH, mainJPanel);
 
@@ -177,7 +222,45 @@ public class MainFrame extends JFrame implements ActionListener,
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		MainFrame.getInstance().setVisible(true);
+		JFrame.setDefaultLookAndFeelDecorated(true);
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					// SubstanceLookAndFeel.setSkin(new
+					// BusinessBlackSteelSkin());
+					// 设置外观
+					UIManager.setLookAndFeel(new SubstanceLookAndFeel());
+
+					JFrame.setDefaultLookAndFeelDecorated(true);
+
+					JDialog.setDefaultLookAndFeelDecorated(true);
+
+					// 设置主题
+
+					SubstanceLookAndFeel.setSkin(new CremeSkin());
+
+					// 设置按钮外观
+
+					SubstanceLookAndFeel
+
+					.setCurrentButtonShaper(new StandardButtonShaper()); // 设置水印
+
+					SubstanceLookAndFeel
+
+					.setCurrentWatermark(new SubstanceBubblesWatermark());
+
+					// 设置边框
+
+					SubstanceLookAndFeel
+
+					.setCurrentBorderPainter(new StandardBorderPainter());
+					MainFrame.getInstance().setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+
 	}
 
 	@Override
