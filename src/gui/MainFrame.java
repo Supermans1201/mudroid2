@@ -31,15 +31,16 @@ import javax.swing.UIManager;
 
 import org.jvnet.substance.SubstanceLookAndFeel;
 import org.jvnet.substance.border.StandardBorderPainter;
+import org.jvnet.substance.button.ClassicButtonShaper;
 import org.jvnet.substance.button.StandardButtonShaper;
 import org.jvnet.substance.painter.StandardGradientPainter;
 import org.jvnet.substance.skin.CremeSkin;
-import org.jvnet.substance.skin.SubstanceAutumnLookAndFeel;
 import org.jvnet.substance.skin.SubstanceBusinessBlackSteelLookAndFeel;
-import org.jvnet.substance.theme.SubstanceBottleGreenTheme;
-import org.jvnet.substance.title.MatteHeaderPainter;
+import org.jvnet.substance.theme.SubstanceEbonyTheme;
+import org.jvnet.substance.title.FlatTitlePainter;
+import org.jvnet.substance.watermark.SubstanceBinaryWatermark;
 import org.jvnet.substance.watermark.SubstanceBubblesWatermark;
-import org.jvnet.substance.watermark.SubstanceStripeWatermark;
+import org.jvnet.substance.watermark.SubstanceImageWatermark;
 
 import dealxml.DealXmlSax;
 import serialzation.ReadConfigFromXml;
@@ -229,31 +230,21 @@ public class MainFrame extends JFrame implements ActionListener,
 					// SubstanceLookAndFeel.setSkin(new
 					// BusinessBlackSteelSkin());
 					// 设置外观
-					UIManager.setLookAndFeel(new SubstanceLookAndFeel());
-
+					//设置外观
+					UIManager.setLookAndFeel(new SubstanceBusinessBlackSteelLookAndFeel());
 					JFrame.setDefaultLookAndFeelDecorated(true);
-
-					JDialog.setDefaultLookAndFeelDecorated(true);
-
-					// 设置主题
-
-					SubstanceLookAndFeel.setSkin(new CremeSkin());
-
-					// 设置按钮外观
-
-					SubstanceLookAndFeel
-
-					.setCurrentButtonShaper(new StandardButtonShaper()); // 设置水印
-
-					SubstanceLookAndFeel
-
-					.setCurrentWatermark(new SubstanceBubblesWatermark());
-
-					// 设置边框
-
-					SubstanceLookAndFeel
-
-					.setCurrentBorderPainter(new StandardBorderPainter());
+					//设置主题 
+					SubstanceLookAndFeel.setCurrentTheme(new SubstanceEbonyTheme());
+					//设置按钮外观
+					SubstanceLookAndFeel.setCurrentButtonShaper(new ClassicButtonShaper());
+					//设置水印
+					SubstanceLookAndFeel.setCurrentWatermark(new SubstanceImageWatermark(Project.getInstance().getConfigDir()+"/res/background.jpg"));
+					//设置边框
+					SubstanceLookAndFeel.setCurrentBorderPainter(new StandardBorderPainter());
+					//设置渐变渲染
+					SubstanceLookAndFeel.setCurrentGradientPainter(new StandardGradientPainter());
+					//设置标题
+					SubstanceLookAndFeel.setCurrentTitlePainter(new FlatTitlePainter());
 					MainFrame.getInstance().setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
