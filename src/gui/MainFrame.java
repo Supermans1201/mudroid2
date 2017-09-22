@@ -14,7 +14,6 @@ import java.beans.PropertyChangeListener;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -31,15 +30,13 @@ import javax.swing.UIManager;
 
 import org.jvnet.substance.SubstanceLookAndFeel;
 import org.jvnet.substance.border.StandardBorderPainter;
-import org.jvnet.substance.button.ClassicButtonShaper;
 import org.jvnet.substance.button.StandardButtonShaper;
+import org.jvnet.substance.fonts.DefaultMacFontPolicy;
 import org.jvnet.substance.painter.StandardGradientPainter;
-import org.jvnet.substance.skin.CremeSkin;
-import org.jvnet.substance.skin.SubstanceBusinessBlackSteelLookAndFeel;
-import org.jvnet.substance.theme.SubstanceEbonyTheme;
+import org.jvnet.substance.skin.SubstanceBusinessBlueSteelLookAndFeel;
+import org.jvnet.substance.skin.SubstanceSaharaLookAndFeel;
+import org.jvnet.substance.theme.SubstanceLightAquaTheme;
 import org.jvnet.substance.title.FlatTitlePainter;
-import org.jvnet.substance.watermark.SubstanceBinaryWatermark;
-import org.jvnet.substance.watermark.SubstanceBubblesWatermark;
 import org.jvnet.substance.watermark.SubstanceImageWatermark;
 
 import dealxml.DealXmlSax;
@@ -227,24 +224,31 @@ public class MainFrame extends JFrame implements ActionListener,
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					// SubstanceLookAndFeel.setSkin(new
-					// BusinessBlackSteelSkin());
-					// 设置外观
-					//设置外观
-					UIManager.setLookAndFeel(new SubstanceBusinessBlackSteelLookAndFeel());
+					UIManager
+							.setLookAndFeel(new SubstanceBusinessBlueSteelLookAndFeel());
 					JFrame.setDefaultLookAndFeelDecorated(true);
-					//设置主题 
-					SubstanceLookAndFeel.setCurrentTheme(new SubstanceEbonyTheme());
-					//设置按钮外观
-					SubstanceLookAndFeel.setCurrentButtonShaper(new ClassicButtonShaper());
-					//设置水印
-					SubstanceLookAndFeel.setCurrentWatermark(new SubstanceImageWatermark(Project.getInstance().getConfigDir()+"/res/background.jpg"));
-					//设置边框
-					SubstanceLookAndFeel.setCurrentBorderPainter(new StandardBorderPainter());
-					//设置渐变渲染
-					SubstanceLookAndFeel.setCurrentGradientPainter(new StandardGradientPainter());
-					//设置标题
-					SubstanceLookAndFeel.setCurrentTitlePainter(new FlatTitlePainter());
+					// 设置主题
+					SubstanceLookAndFeel
+							.setCurrentTheme(new SubstanceLightAquaTheme());
+					// 设置按钮外观
+					SubstanceLookAndFeel
+							.setCurrentButtonShaper(new StandardButtonShaper());
+					SubstanceSaharaLookAndFeel
+							.setFontPolicy(new DefaultMacFontPolicy());
+					// 设置水印
+					SubstanceLookAndFeel
+							.setCurrentWatermark(new SubstanceImageWatermark(
+									Project.getInstance().getConfigDir()
+											+ "/res/background.jpg"));
+					// 设置边框
+					SubstanceLookAndFeel
+							.setCurrentBorderPainter(new StandardBorderPainter());
+					// 设置渐变渲染
+					SubstanceLookAndFeel
+							.setCurrentGradientPainter(new StandardGradientPainter());
+					// 设置标题
+					SubstanceLookAndFeel
+							.setCurrentTitlePainter(new FlatTitlePainter());
 					MainFrame.getInstance().setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
