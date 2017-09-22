@@ -40,7 +40,9 @@ import org.jvnet.substance.title.FlatTitlePainter;
 import org.jvnet.substance.watermark.SubstanceImageWatermark;
 
 import dealxml.DealXmlSax;
+import serialzation.ConfigToXml;
 import serialzation.ReadConfigFromXml;
+import serialzation.ToXml;
 import singleton.Project;
 
 public class EstablishFrame extends JFrame implements ActionListener,
@@ -68,9 +70,8 @@ public class EstablishFrame extends JFrame implements ActionListener,
 	private JScrollPane sp = new JScrollPane(projectList);
 	private JPanel functionPane = new JPanel();
 	private JLabel function = new JLabel();
-	String[] str1 = new String[] {
-
-	};
+	String[] str1 = new String[] {};
+	List<String> pl;
 
 	private JButton[] jbArray;
 
@@ -78,7 +79,12 @@ public class EstablishFrame extends JFrame implements ActionListener,
 
 		init();
 	}
+	public void reload() {
+		this.setTitle("MuDroid : ∞≤◊ø±‡“Î≤‚ ‘œµÕ≥" );
+		LoadingFrame.getInstance().setVisible(false);
+		this.requestFocus();
 
+	}
 	@SuppressWarnings("unchecked")
 	private void init() {
 		// TODO Auto-generated method stub
@@ -119,13 +125,11 @@ public class EstablishFrame extends JFrame implements ActionListener,
 		sp.setBounds(0, 30, projectPane.getWidth(),
 				projectPane.getHeight() - 30);
 
-		List<String> pl = Project.getInstance().getProjectlist();
+		pl = Project.getInstance().getProjectlist();
 		if(pl==null)
 		{
 			return;
 		}
-
-		
 		str1 = (String[]) pl.toArray(new String[pl.size()]);//
 		String[] str2 = new String[str1.length];
 		str2 = dealStr1(str1);
@@ -142,12 +146,27 @@ public class EstablishFrame extends JFrame implements ActionListener,
 				if (e.getClickCount() == 2) {
 
 					EstablishFrame.getInstance().setVisible(false);
+					
+					Project.getInstance().setSelectProject(str1[((JList) e.getSource()).getSelectedIndex()]);
+					Project.getInstance().setReadProject(true);
+
+					ToXml tx = new ConfigToXml();
+					try {
+						tx.run(new String[] { Project.getInstance().getConfigDir() });
+					} catch (Exception e2) {
+						// TODO Auto-generated catch block
+						e2.printStackTrace();
+					}
+					
 					MainFrame.getInstance().setProjectName(
 							str1[((JList) e.getSource()).getSelectedIndex()]);
-					MainFrame.getInstance().setVisible(true);
+					System.out.println("opening...."+str1[((JList) e.getSource()).getSelectedIndex()]);
+					
+					MainFrame.getInstance().setVisible(false);
+					MainFrame.getInstance().reload();
 					MainFrame.getInstance().validate();
 					MainFrame.getInstance().repaint();
-
+					MainFrame.getInstance().setVisible(true);
 					// When double click JList
 				}
 			}
@@ -172,8 +191,6 @@ public class EstablishFrame extends JFrame implements ActionListener,
 			jbArray[i].setFont(new Font("", 1, 17));
 		}
 
-		// jbArray[0].setBackground();
-
 		this.add(jp);
 
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -181,7 +198,6 @@ public class EstablishFrame extends JFrame implements ActionListener,
 		int screenHeight = (int) screenSize.getHeight();
 		startLocationX = (screenWidth - width) / 2;
 		startLocationY = (screenHeight - height) / 2;
-
 		this.setResizable(false);
 		this.setBounds(startLocationX, startLocationY, width, height);
 		// this.setVisible(true);
@@ -201,7 +217,6 @@ public class EstablishFrame extends JFrame implements ActionListener,
 						+ "</font><br/><font color=gray>" + str1[i]
 						+ "</font></html>";
 			}
-			//
 		}
 		return str2;
 	}
@@ -260,40 +275,47 @@ public class EstablishFrame extends JFrame implements ActionListener,
 		// TODO Auto-generated method stub
 		if (e.getSource() == jbArray[0]) {
 			JFileChooser fileChooser = new JFileChooser();
+			 fileChooser.setBounds(startLocationX, startLocationY, width*2,
+					 height*2);
+			SwingUtilities.updateComponentTreeUI(fileChooser);
+			
 			fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-			// fileChooser.setBounds(startLocationX, startLocationY, width,
-			// height);
-			fileChooser.showDialog(null, null);
-			String str = fileChooser.getSelectedFile().getPath();
+			
+			int result=fileChooser.showDialog(null, null);
+			if (result == JFileChooser.APPROVE_OPTION) {
+				
+				String str = fileChooser.getSelectedFile().getPath();
 
-			str = str.replace("\\", "/");
-			// Project.getInstance().getProjectlist().add(str);
+				str = str.replace("\\", "/");
+				Project.getInstance().getProjectlist().add(str);
+				Project.getInstance().setSelectProject(str);
+				// Project.getInstance().readProjectlist();
+				// System.out.println(str);
+				str1 = str1Adds(str1, str);
+				System.out.println("s");
+				for (int i = 0; i < str1.length; i++) {
+					System.out.println(str1[i]);
+				}
+				System.out.println("e");
 
-			// Project.getInstance().readProjectlist();
+				String[] str2 = new String[str1.length];
+				str2 = dealStr1(str1);
+				projectList.setListData(str2);
+				projectList.validate();
+				projectList.repaint();
+				projectList.updateUI();
 
-			// System.out.println(str);
-			str1 = str1Adds(str1, str);
-			System.out.println("s");
-			for (int i = 0; i < str1.length; i++) {
-				System.out.println(str1[i]);
+				ToXml tx = new ConfigToXml();
+				try {
+					tx.run(new String[] { Project.getInstance().getConfigDir() });
+				} catch (Exception e2) {
+					// TODO Auto-generated catch block
+					e2.printStackTrace();
+				}
+			
 			}
-			System.out.println("e");
-
-			String[] str2 = new String[str1.length];
-			str2 = dealStr1(str1);
-			projectList.setListData(str2);
-			projectList.validate();
-			projectList.repaint();
-			projectList.updateUI();
-			// StateToXml stx=new StateToXml();
-			// String[] args=new String[]{"F:/muandroid3"};
-			// try {
-			// stx.run(args);
-			// } catch (Exception e1) {
-			// // TODO Auto-generated catch block
-			// e1.printStackTrace();
-			// }
-			//
+			
+		
 		}
 	}
 
@@ -307,12 +329,10 @@ public class EstablishFrame extends JFrame implements ActionListener,
 		return str2;
 	}
 
-	@SuppressWarnings("rawtypes")
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println(str1[((JList) e.getSource()).getSelectedIndex()]);
-
+	//	System.out.println(str1[((JList) e.getSource()).getSelectedIndex()]);
 	}
 
 	public static EstablishFrame getInstance() {

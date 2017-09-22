@@ -83,6 +83,20 @@ public class MainFrame extends JFrame implements ActionListener,
 		return this.projectName;
 	}
 
+	public void reload() {
+		this.projectName = Project.getInstance().getSelectProject();
+		this.setTitle("MuDroid : " + Project.getInstance().getSelectProject());
+		// ParpareJPanel pjp=new ParpareJPanel(this.projectName);
+		// MutantJPanel mjp=new MutantJPanel(this.projectName);
+		// RunJPanel rjp=new RunJPanel(this.projectName);
+		// functionJPanel.addTab("Parpare", pjp);
+		// functionJPanel.addTab("Mutant", mjp);
+		// functionJPanel.addTab("Run", rjp);
+		// functionJPanel.addTab("Analysis", new JLabel("this show tab 4"));
+		LoadingFrame.getInstance().setVisible(false);
+		this.requestFocus();
+	}
+
 	private void init() {
 		// TODO Auto-generated method stub
 
@@ -279,6 +293,8 @@ public class MainFrame extends JFrame implements ActionListener,
 			System.out.println(e.getSource());
 			{
 				this.setVisible(false);
+				EstablishFrame.getInstance().setVisible(true);
+				EstablishFrame.getInstance().reload();
 			}
 		}
 		if (e.getSource() == jmenuItemforJmenu2[0]) {
@@ -306,7 +322,6 @@ public class MainFrame extends JFrame implements ActionListener,
 		if (toolBar.getOrientation() == SwingConstants.HORIZONTAL) {
 			ishorizontal = true;
 		}
-
 		toolBarIsHorizontal = ishorizontal;
 		drawToolBarAndFunction(ishorizontal);
 	}

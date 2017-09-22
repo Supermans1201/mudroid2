@@ -5,9 +5,27 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+
+import org.jvnet.substance.SubstanceLookAndFeel;
+import org.jvnet.substance.border.StandardBorderPainter;
+import org.jvnet.substance.button.StandardButtonShaper;
+import org.jvnet.substance.fonts.DefaultMacFontPolicy;
+import org.jvnet.substance.painter.StandardGradientPainter;
+import org.jvnet.substance.skin.SubstanceBusinessBlueSteelLookAndFeel;
+import org.jvnet.substance.skin.SubstanceSaharaLookAndFeel;
+import org.jvnet.substance.theme.SubstanceLightAquaTheme;
+import org.jvnet.substance.title.FlatTitlePainter;
+import org.jvnet.substance.watermark.SubstanceImageWatermark;
+
+import serialzation.ReadConfigFromXml;
+import singleton.Project;
+import dealxml.DealXmlSax;
 
 public class LoadingFrame extends JFrame {
 
@@ -15,6 +33,7 @@ public class LoadingFrame extends JFrame {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private static LoadingFrame instance;
 	private JPanel jp = new JPanel();
 	private JLabel showName = new JLabel();
 	private JLabel showLogo = new JLabel();
@@ -28,12 +47,14 @@ public class LoadingFrame extends JFrame {
 
 		init();
 		readLastSave();
-		openNextFrame();
 
 	}
 
 	private void init() {
 		// TODO Auto-generated method stub
+		ImageIcon icon = new ImageIcon(Project.getInstance().getConfigDir()
+				+ "/res/mudroid.png");
+		this.setIconImage(icon.getImage());
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		int screenWidth = (int) screenSize.getWidth();
 		int screenHeight = (int) screenSize.getHeight();
@@ -70,36 +91,72 @@ public class LoadingFrame extends JFrame {
 
 	private void readLastSave() {
 
-		// // ReadStatefromXml rsfx=new ReadStatefromXml();
-		// // String[] args=new String[]{"F:/muandroid3/.state/state.xml"};
-		// try {
-		// rsfx.run(args);
-		// } catch (Exception e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// };
-		// noProject=!Project.getInstance().getReadProject();
-	}
+		DealXmlSax dxs = new ReadConfigFromXml();
+		try {
+			dxs.run(new String[] { Project.getInstance().getConfigPath() });
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		noProject=!Project.getInstance().getReadProject();
+		JFrame.setDefaultLookAndFeelDecorated(true);
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					UIManager
+							.setLookAndFeel(new SubstanceBusinessBlueSteelLookAndFeel());
+					JFrame.setDefaultLookAndFeelDecorated(true);
+					// 设置主题
+					SubstanceLookAndFeel
+							.setCurrentTheme(new SubstanceLightAquaTheme());
+					// 设置按钮外观
+					SubstanceLookAndFeel
+							.setCurrentButtonShaper(new StandardButtonShaper());
+					SubstanceSaharaLookAndFeel
+							.setFontPolicy(new DefaultMacFontPolicy());
+					// 设置水印
+					SubstanceLookAndFeel
+							.setCurrentWatermark(new SubstanceImageWatermark(
+									Project.getInstance().getConfigDir()
+											+ "/res/background.jpg"));
+					// 设置边框
+					SubstanceLookAndFeel
+							.setCurrentBorderPainter(new StandardBorderPainter());
+					// 设置渐变渲染
+					SubstanceLookAndFeel
+							.setCurrentGradientPainter(new StandardGradientPainter());
+					// 设置标题
+					SubstanceLookAndFeel
+							.setCurrentTitlePainter(new FlatTitlePainter());
 
-	private void openNextFrame() {
-		// TODO Auto-generated method stub
-		// WelcomeFrame.getInstance();
-		// MainFrame.getInstance();
-		// if(noProject)
-		// {
-		// WelcomeFrame.getInstance().setVisible(true);;
-		//
-		// }
-		// else
-		// {
-		// MainFrame.getInstance().setVisible(true);;
-		// }
-		// this.setVisible(false);
-
+					if(noProject)
+					{
+						EstablishFrame.getInstance().setVisible(true);
+						EstablishFrame.getInstance().reload();
+					}
+					else
+					{
+						MainFrame.getInstance().setVisible(true);
+						MainFrame.getInstance().reload();
+					}
+					
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 	}
 
 	public static void main(String[] args) {
-		new LoadingFrame();
+		LoadingFrame.getInstance().setVisible(true);
+	}
+	public static LoadingFrame getInstance() {
+		if (instance == null) {
+
+			instance = new LoadingFrame();
+		}
+		return instance;
 	}
 
 }
