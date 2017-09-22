@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Toolkit;
@@ -11,6 +12,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import javax.swing.BorderFactory;
@@ -269,7 +272,7 @@ public class EstablishFrame extends JFrame implements ActionListener,
 		});
 	}
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "deprecation" })
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -314,8 +317,28 @@ public class EstablishFrame extends JFrame implements ActionListener,
 				}
 			
 			}
-			
-		
+		}
+		if (e.getSource() == jbArray[1])
+		{
+			jbArray[1].disable();
+		}
+		if (e.getSource() == jbArray[2])
+		{
+			try {
+				Desktop.getDesktop().open(new File(Project.getInstance().getConfigPath()));
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}  
+		}
+		if (e.getSource() == jbArray[3])
+		{
+			try {
+				  Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler http://lm1201.github.io");
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} 
 		}
 	}
 

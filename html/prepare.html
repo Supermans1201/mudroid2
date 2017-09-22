@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Mudroid| Mudroid使用说明</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <link rel="alternate icon" type="image/png" href="assets/i/favicon.png">
+  <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+  <style>
+    .get {
+      background: #1E5B94;
+      color: #fff;
+      text-align: center;
+
+    }
+
+    .get-title {
+      font-size: 200%;
+      border: 2px solid #fff;
+      padding: 20px;
+      display: inline-block;
+    }
+
+    .get-btn {
+      background: #fff;
+    }
+
+    .detail {
+      background: #fff;
+    }
+
+    .detail-h2 {
+      text-align: center;
+      font-size: 150%;
+      margin: 40px 0;
+    }
+
+    .detail-h3 {
+      color: #1f8dd6;
+    }
+
+    .detail-p {
+      color: #7f8c8d;
+    }
+
+    .detail-mb {
+      margin-bottom: 30px;
+    }
+
+    .hope {
+      background: #0bb59b;
+      padding: 50px 0;
+    }
+
+    .hope-img {
+      text-align: center;
+    }
+
+    .hope-hr {
+      border-color: #149C88;
+    }
+
+    .hope-title {
+      font-size: 140%;
+    }
+
+    .about {
+      background: #fff;
+      padding: 40px 0;
+      color: #7f8c8d;
+    }
+
+    .about-color {
+      color: #34495e;
+    }
+
+    .about-title {
+      font-size: 180%;
+      padding: 30px 0 50px 0;
+      text-align: center;
+    }
+    img {
+      box-sizing: border-box;
+      max-width: 100%;
+      height: auto;
+      vertical-align: middle;
+      border: 0;
+    }
+    .footer p {
+      color: #7f8c8d;
+      margin: 0;
+      padding: 15px 0;
+      text-align: center;
+      background: #2d3e50;
+    }
+  </style>
+</head>
+<body>
+<header class="am-topbar am-topbar-fixed-top">
+  <div class="am-container">
+    <h1 class="am-topbar-brand">
+      <a href="#"><span class="am-icon-thumbs-up"></span> Mudroid</a>
+    </h1>
+
+    <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-secondary am-show-sm-only"
+            data-am-collapse="{target: '#collapse-head'}"><span class="am-sr-only">导航切换</span> <span
+        class="am-icon-bars"></span></button>
+
+    <div class="am-collapse am-topbar-collapse" id="collapse-head">
+      <ul class="am-nav am-nav-pills am-topbar-nav">
+        <li ><a href="landing.html">介绍</a></li>
+        <li class="am-active"><a href="prepare.html">1.测试的准备</a></li>
+        <li><a href="mutant.html">2.生成变异体</a></li>
+        <li><a href="run.html">3.执行变异测试</a></li>
+        <li><a href="result.html">4.结果分析</a></li>
+        
+      </ul>
+<div class="am-topbar-right">
+        <a href="http://lm.space-time.site/"><button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm"><span class="am-icon-send-o"></span> Github Pages</button></a>
+      </div>
+      <!--<div class="am-topbar-right">-->
+        <!--<button class="am-btn am-btn-secondary am-topbar-btn am-btn-sm"><span class="am-icon-send-o"></span> 下一步</button>-->
+      <!--</div>-->
+
+    </div>
+  </div>
+</header>
+
+<div class="get">
+  <div class="am-g">
+    <div class="am-u-lg-12">
+
+        <img src="prepare.PNG" data-rel="prepare.PNG" alt="测试的准备"/>
+
+    </div>
+  </div>
+</div>
+
+<div class="detail">
+  <div class="am-g am-container">
+    <div class="am-u-lg-12">
+      <h2 class="detail-h2">只需简单四步就能对Android应用程序进行变异测试!</h2>
+
+      <div class="am-g">
+        <div class="am-u-lg-3 am-u-md-6 am-u-sm-12 detail-mb">
+
+          <h3 class="detail-h3">
+            <i class="am-icon-mobile am-icon-sm"></i>
+            变异测试准备
+          </h3>
+
+          <p class="detail-p">
+          <li>了解Mudroid工作流</li>
+          <li>准备Android应用</li>
+          <li>准备Android测试用例</li>
+          <li>运行测试用例</li>
+          </p>
+        </div>
+        <div class="am-u-lg-3 am-u-md-6 am-u-sm-12 detail-mb">
+          <h3 class="detail-h3">
+            <i class="am-icon-cogs am-icon-sm"></i>
+            生成变异体
+          </h3>
+
+          <p class="detail-p">
+          <li>根据需求确定变异算子</li>
+          <li>选择需要变异的程序文件</li>
+          <li>选择变异算子</li>
+          <li>生成变异体程序文件</li>
+          </p>
+        </div>
+        <div class="am-u-lg-3 am-u-md-6 am-u-sm-12 detail-mb">
+          <h3 class="detail-h3">
+            <i class="am-icon-check-square-o am-icon-sm"></i>
+            执行变异测试
+          </h3>
+
+          <p class="detail-p">
+          <li>确定变异体的选择策略</li>
+          <li>浏览生成的变异程序文件</li>
+          <li>选择变异程序文件</li>
+          <li>执行编译测试</li>
+          </p>
+        </div>
+        <div class="am-u-lg-3 am-u-md-6 am-u-sm-12 detail-mb">
+          <h3 class="detail-h3">
+            <i class="am-icon-send-o am-icon-sm"></i>
+            变异测试结果查看
+          </h3>
+
+          <p class="detail-p">
+            <li>查看测试日志</li>
+            <li>查看测试报告</li>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<footer class="footer">
+  <p><a href="http://lm1201.github.io" target="_blank">Mudroid更多信息</a> and
+    <a href="http://lm.space-time.site/Mudroid%EF%BC%9A%E9%9D%A2%E5%90%91Android%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%8F%98%E5%BC%82%E6%B5%8B%E8%AF%95%E7%B3%BB%E7%BB%9F.pdf" target="_blank">PTF</a>. by LM13241318304@gmail.com.</p>
+</footer>
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+</body>
+</html>

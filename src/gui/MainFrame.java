@@ -1,6 +1,7 @@
 package gui;
 
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -10,6 +11,8 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.io.File;
+import java.io.IOException;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -281,12 +284,28 @@ public class MainFrame extends JFrame implements ActionListener,
 		}
 		if (e.getSource() == toolBarButton[1]) {
 			messageJLabel.setText("打开项目目录");
+			try {
+				Desktop.getDesktop().open(new File(Project.getInstance().getSelectProject()));
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}  
 		}
 		if (e.getSource() == toolBarButton[2]) {
 			messageJLabel.setText("重新加载数据");
+			DealXmlSax dxs = new ReadConfigFromXml();
+			try {
+				dxs.run(new String[] { Project.getInstance().getConfigPath() });
+			} catch (Exception e2) {
+				// TODO Auto-generated catch block
+				e2.printStackTrace();
+			}
 		}
 		if (e.getSource() == toolBarButton[3]) {
 			messageJLabel.setText("刷新当前面板");
+			this.reload();
+			this.validate();
+			this.repaint();
 		}
 
 		if (e.getSource() == jmenuItemforJmenu1[0]) {
