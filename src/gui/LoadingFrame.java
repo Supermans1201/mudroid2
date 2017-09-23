@@ -115,7 +115,7 @@ public class LoadingFrame extends JFrame {
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					UIManager
+			 		UIManager
 							.setLookAndFeel(new SubstanceBusinessBlueSteelLookAndFeel());
 					JFrame.setDefaultLookAndFeelDecorated(true);
 					// …Ë÷√÷˜Ã‚
@@ -141,7 +141,6 @@ public class LoadingFrame extends JFrame {
 					SubstanceLookAndFeel
 							.setCurrentTitlePainter(new FlatTitlePainter());
 
-					
 					readLastSave();
 				} catch (Exception e) {
 					e.printStackTrace();

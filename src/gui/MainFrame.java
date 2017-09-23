@@ -78,10 +78,10 @@ public class MainFrame extends JFrame implements ActionListener,
 		this.setTitle("MuDroid : " + Project.getInstance().getSelectProject());
 		functionJPanel.removeAll();
 		 InfoJPanel pjp=new InfoJPanel(this.projectName);
-		// MutantJPanel mjp=new MutantJPanel(this.projectName);
+		 ChooseFileAndOpPanel mjp=new ChooseFileAndOpPanel(this.projectName);
 		// RunJPanel rjp=new RunJPanel(this.projectName);
 		 functionJPanel.addTab("介绍", pjp);
-		// functionJPanel.addTab("Mutant", mjp);
+		 functionJPanel.addTab("选择变异文件和变异体", mjp);
 		// functionJPanel.addTab("Run", rjp);
 		// functionJPanel.addTab("Analysis", new JLabel("this show tab 4"));
 		LoadingFrame.getInstance().setVisible(false);

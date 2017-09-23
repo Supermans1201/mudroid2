@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Date:2017-09-23 14:37:23 -->
+<!-- Created by Supermans1201 -->
+
+<!-- rootPath:F:/workspace/testgetdir -->
+<testgetdir path="F:\workspace\testgetdir" name="testgetdir" depth="0">
+			<File path="F:\workspace\testgetdir\src\dealxml\DealXml.java" name="DealXml.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\dealxml\DealXmlSax.java" name="DealXmlSax.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\gui\EstablishFrame.java" name="EstablishFrame.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\gui\FileTableModel.java" name="FileTableModel.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\gui\InfoJPanel.java" name="InfoJPanel.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\gui\LoadingFrame.java" name="LoadingFrame.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\gui\MainFrame.java" name="MainFrame.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\gui\MutantJPanel.java" name="MutantJPanel.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\gui\MutantOPTableModel.java" name="MutantOPTableModel.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\serialzation\ConfigToXml.java" name="ConfigToXml.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\serialzation\ProjectDirToXml.java" name="ProjectDirToXml.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\serialzation\ProjectDirToXmlWithFilter.java" name="ProjectDirToXmlWithFilter.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\serialzation\ReadConfigFromXml.java" name="ReadConfigFromXml.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\serialzation\TestConfigToXml.java" name="TestConfigToXml.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\serialzation\TestProjectDirToXml.java" name="TestProjectDirToXml.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\serialzation\TestProjectDirToXmlWithFilter.java" name="TestProjectDirToXmlWithFilter.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\serialzation\TestReadConfigFromXml.java" name="TestReadConfigFromXml.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\serialzation\ToXml.java" name="ToXml.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\singleton\Op.java" name="Op.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\singleton\Project.java" name="Project.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\testgetdir\getdir.java" name="getdir.java" depth="3"/>
+			<File path="F:\workspace\testgetdir\src\util\getIntern.java" name="getIntern.java" depth="3"/>
+</testgetdir>

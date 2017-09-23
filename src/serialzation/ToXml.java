@@ -68,7 +68,5 @@ public abstract class ToXml
 	 {
 	        System.out.println(text);
 	 }
-	public static void main(String[] args) {
 	
-	} 
 }

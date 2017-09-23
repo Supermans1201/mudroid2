@@ -13,6 +13,99 @@ public class Project {
 	String selectProject;
 	List<String> projectlist = null;
 
+	String javaSrcDir = "/app/src/main/java";
+	String xmlSrcDir = "/app/src/main/res/layout";
+	String manifestSrcDir = "/app/src/main";
+
+	String javaMutDir = "/app/Mut/main/java";
+	String xmlMutDir = "/app/Mut/main/res/layout";
+	String manifestMutDir = "/app/Mut/main";
+
+	public static String FilterName = "Filter";
+
+	String javaSrcFilterLoc;
+	String xmlSrcFilterLoc;
+	String javaMutFilterLoc;
+	String xmlMutFilterLoc;
+	String jarFilterLoc;
+	String classFilterLoc;
+
+	public String getFilterDir() {
+		return this.selectProject+"/."+FilterName;
+	}
+	
+	public void setJavaSrcFilterLoc(String location) {
+		this.javaSrcFilterLoc = location;
+	}
+
+	public void setXmlSrcFilterLoc(String location) {
+		this.xmlSrcFilterLoc = location;
+	}
+
+	public void setJavaMutFilterLoc(String location) {
+		this.javaMutFilterLoc = location;
+	}
+
+	public void setXmlMutFilterLoc(String location) {
+		this.xmlMutFilterLoc = location;
+	}
+
+	public void setJarFilterLoc(String location) {
+		this.jarFilterLoc = location;
+	}
+
+	public void setClassFilterLoc(String location) {
+		this.classFilterLoc = location;
+	}
+
+	public String getJavaSrcFilterLoc() {
+		return this.javaSrcFilterLoc;
+	}
+
+	public String getXmlSrcFilterLoc() {
+		return this.xmlSrcFilterLoc;
+	}
+
+	public String getJavaMutFilterLoc() {
+		return javaMutFilterLoc;
+	}
+
+	public String getXmlMutFilterLoc() {
+		return this.xmlMutFilterLoc;
+	}
+
+	public String getJarFilterLoc() {
+		return this.jarFilterLoc;
+	}
+
+	public String getClassFilterLoc() {
+		return this.classFilterLoc;
+	}
+
+	public String getJavaSrcPath() {
+		return Project.getInstance().getSelectProject() + javaSrcDir;
+	}
+
+	public String getXmlSrcPath() {
+		return Project.getInstance().getSelectProject() + xmlSrcDir;
+	}
+
+	public String getmanifestSrcPath() {
+		return Project.getInstance().getSelectProject() + manifestSrcDir;
+	}
+
+	public String getJavaMutPath() {
+		return Project.getInstance().getSelectProject() + javaMutDir;
+	}
+
+	public String getXmlMutPath() {
+		return Project.getInstance().getSelectProject() + xmlMutDir;
+	}
+
+	public String getmanifestMutPath() {
+		return Project.getInstance().getSelectProject() + manifestMutDir;
+	}
+
 	public String getConfigPath() {
 		File directory = new File("");
 		return directory.getAbsolutePath().replace("\\", "/") + "/config.xml";
