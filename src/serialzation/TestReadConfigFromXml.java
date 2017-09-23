@@ -3,7 +3,6 @@ package serialzation;
 import org.junit.Test;
 
 import singleton.Project;
-import dealxml.DealXmlSax;
 
 public class TestReadConfigFromXml {
 

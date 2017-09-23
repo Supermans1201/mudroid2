@@ -15,7 +15,6 @@ import org.dom4j.io.OutputFormat;
 
 import singleton.FileList;
 import singleton.Op;
-import dealxml.DealXmlSax;
 
 
 public class getSummaryMutantfromXml extends DealXmlSax{

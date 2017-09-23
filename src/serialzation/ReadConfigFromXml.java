@@ -10,7 +10,6 @@ import org.dom4j.VisitorSupport;
 import org.dom4j.io.OutputFormat;
 
 import singleton.Project;
-import dealxml.DealXmlSax;
 
 public class ReadConfigFromXml extends DealXmlSax {
 

@@ -23,10 +23,10 @@ import org.jvnet.substance.theme.SubstanceLightAquaTheme;
 import org.jvnet.substance.title.FlatTitlePainter;
 import org.jvnet.substance.watermark.SubstanceImageWatermark;
 
-import chrriis.dj.nativeswing.swtimpl.NativeInterface;
+import serialzation.DealXmlSax;
 import serialzation.ReadConfigFromXml;
 import singleton.Project;
-import dealxml.DealXmlSax;
+import chrriis.dj.nativeswing.swtimpl.NativeInterface;
 
 public class LoadingFrame extends JFrame {
 

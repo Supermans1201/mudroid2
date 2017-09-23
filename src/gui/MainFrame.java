@@ -28,7 +28,8 @@ import javax.swing.JToolBar;
 import javax.swing.Spring;
 import javax.swing.SpringLayout;
 import javax.swing.SwingConstants;
-import dealxml.DealXmlSax;
+
+import serialzation.DealXmlSax;
 import serialzation.ReadConfigFromXml;
 import singleton.Project;
 

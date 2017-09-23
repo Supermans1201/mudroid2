@@ -12,6 +12,10 @@
 	<classpathentry kind="lib" path="lib/uilib/2100abd6-8eb2-3b62-a216-e2a9646b8b84.jar"/>
 	<classpathentry kind="lib" path="lib/uilib/f08bc30a-f3a4-338e-9f62-2640162dd089.jar"/>
 	<classpathentry kind="lib" path="lib/uilib/substance.jar"/>
+	<classpathentry kind="lib" path="lib/javalib/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/javalib/junit-4.8.2.jar"/>
+	<classpathentry kind="lib" path="lib/javalib/openjava.jar"/>
+	<classpathentry kind="lib" path="lib/javalib/tools.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

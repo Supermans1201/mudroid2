@@ -119,7 +119,7 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 		// filePanel.add(xmlFilePanel);
 		xmlFilePanel
 				.setLayout(new BoxLayout(xmlFilePanel, BoxLayout.PAGE_AXIS));
-		FileTableModel fTableModel0 = new FileTableModel(
+		FILETableModel fTableModel0 = new FILETableModel(
 				getNewTragetFiles("manifest"), "manifest");
 		manifestFileTable = new JTable(fTableModel0);
 		initFileColumnSizes(manifestFileTable, fTableModel0);
@@ -127,7 +127,7 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 		manifestFileSP.setPreferredSize(new Dimension(500, 70));
 		xmlFilePanel.add(manifestFileSP);
 
-		FileTableModel fTableModel2 = new FileTableModel(
+		FILETableModel fTableModel2 = new FILETableModel(
 				getNewTragetFiles("xml"), "xml");
 		if(fTableModel2!=null)
 		{xmlFileTable = new JTable(fTableModel2);}
@@ -150,7 +150,7 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 		javaFilePanel.setLayout(new BoxLayout(javaFilePanel,
 				BoxLayout.PAGE_AXIS));
 
-		FileTableModel fTableModel = new FileTableModel(
+		FILETableModel fTableModel = new FILETableModel(
 				getNewTragetFiles("java"), "java");
 		if(fTableModel!=null)
 		{javaFileTable = new JTable(fTableModel);}
@@ -378,11 +378,11 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 		// TODO Auto-generated method stub
 		if (e.getSource() == xmlAllBt) {
 			// System.out.println("xmlAll");
-			FileTableModel table = (FileTableModel) xmlFileTable.getModel();
+			FILETableModel table = (FILETableModel) xmlFileTable.getModel();
 			table.setAllSelectValue(true);
 			xmlFileTable.setModel(table);
 			xmlFileTable.repaint();
-			FileTableModel table2 = (FileTableModel) manifestFileTable
+			FILETableModel table2 = (FILETableModel) manifestFileTable
 					.getModel();
 			table2.setAllSelectValue(true);
 			manifestFileTable.setModel(table2);
@@ -390,11 +390,11 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 		}
 		if (e.getSource() == xmlNoneBt) {
 			// System.out.println("xmlNone");
-			FileTableModel table = (FileTableModel) xmlFileTable.getModel();
+			FILETableModel table = (FILETableModel) xmlFileTable.getModel();
 			table.setAllSelectValue(false);
 			xmlFileTable.setModel(table);
 			xmlFileTable.repaint();
-			FileTableModel table2 = (FileTableModel) manifestFileTable
+			FILETableModel table2 = (FILETableModel) manifestFileTable
 					.getModel();
 			table2.setAllSelectValue(false);
 			manifestFileTable.setModel(table2);
@@ -402,14 +402,14 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 		}
 		if (e.getSource() == javaAllBt) {
 			// System.out.println("javaAll");
-			FileTableModel table = (FileTableModel) javaFileTable.getModel();
+			FILETableModel table = (FILETableModel) javaFileTable.getModel();
 			table.setAllSelectValue(true);
 			javaFileTable.setModel(table);
 			javaFileTable.repaint();
 		}
 		if (e.getSource() == javaNoneBt) {
 			// System.out.println("javaNone");
-			FileTableModel table = (FileTableModel) javaFileTable.getModel();
+			FILETableModel table = (FILETableModel) javaFileTable.getModel();
 			table.setAllSelectValue(false);
 			javaFileTable.setModel(table);
 			javaFileTable.repaint();
@@ -570,7 +570,7 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 			System.out.println("  ");
 			Op.getInstance().readXmlOp();
 
-			 FileTableModel fTableModel = (FileTableModel) javaFileTable
+			 FILETableModel fTableModel = (FILETableModel) javaFileTable
 					 .getModel();
 			 if(!(fTableModel.getSelectedFiles()==null))
 			 {
@@ -584,7 +584,7 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 			
 			 
 				 
-			 FileTableModel fTableModel2 = (FileTableModel) xmlFileTable
+			 FILETableModel fTableModel2 = (FILETableModel) xmlFileTable
 			 .getModel();
 			 if(!(fTableModel2.getSelectedFiles()==null))
 			 {
@@ -595,7 +595,7 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 					 System.out.println(Project.getInstance().getXmlSrcPath()+"/"+ xmlfile_list[i]);
 				 }
 			 }
-			 FileTableModel fTableModel3 = (FileTableModel) manifestFileTable
+			 FILETableModel fTableModel3 = (FILETableModel) manifestFileTable
 					 .getModel();
 			 if(!(fTableModel3.getSelectedFiles()==null))
 			 {

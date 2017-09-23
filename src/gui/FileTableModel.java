@@ -4,7 +4,7 @@ import java.util.Vector;
 
 import javax.swing.table.AbstractTableModel;
 
-class FileTableModel extends AbstractTableModel {
+class FILETableModel extends AbstractTableModel {
 	/**
 	 * 
 	 */
@@ -18,7 +18,7 @@ class FileTableModel extends AbstractTableModel {
 	Object[][] data;
 
 	@SuppressWarnings("rawtypes")
-	public FileTableModel(Vector value, String headerName) {
+	public FILETableModel(Vector value, String headerName) {
 		this.headerName = headerName;
 		columnHeader = new String[] { "", headerName };
 		data = new Object[value.size()][2];
