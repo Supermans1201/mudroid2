@@ -4,12 +4,9 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.PrintStream;
 import java.util.List;
 
+import javamutation.DealJavaOJMutant;
 import javamutation.DealJavaOJMutantAndroid;
 import javamutation.DealJavaOJMutantClass;
 import javamutation.DealJavaOJMutantException;
@@ -57,6 +54,7 @@ public class ProgressJFrame extends JFrame implements ActionListener {
 
 	String[] args=new String[]{""};
 	
+	DealJavaOJMutant dj;
 	boolean b = true;
 	private static ProgressJFrame instance;
 
@@ -109,18 +107,14 @@ public class ProgressJFrame extends JFrame implements ActionListener {
 									&& Op.getInstance().getClassOp().size() > 0) {
 
 								javaopjl.setText(" The opType is  :  Class Op");
+								
+								dj=new DealJavaOJMutantClass(); 
 								try {
-									PrintStream ps = new PrintStream(
-											new FileOutputStream(
-													new File(
-															"F:/muandroid3/AndroidApp-master/app/cmlog.txt")));
-									System.setOut(ps);
-								} catch (FileNotFoundException e) {
+									dj.run(args );
+								} catch (Exception e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
-
-								DealJavaOJMutantClass.main(args);
 								jpb.setValue((i + 1) * 100
 										/ javafile_list.size() + 1
 										* (25 / (javafile_list.size())));
@@ -130,17 +124,13 @@ public class ProgressJFrame extends JFrame implements ActionListener {
 											.size() > 0) {
 								javaopjl.setText(" The opType is  : tradtional Op");
 
+								dj=new DealJavaOJMutantTradtional(); 
 								try {
-									PrintStream ps = new PrintStream(
-											new FileOutputStream(
-													new File(
-															"F:/muandroid3/AndroidApp-master/app/tmlog.txt")));
-									System.setOut(ps);
-								} catch (FileNotFoundException e) {
+									dj.run(args );
+								} catch (Exception e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
-								DealJavaOJMutantTradtional.main(args);
 								jpb.setValue((i + 1) * 100
 										/ javafile_list.size() + 2
 										* (25 / (javafile_list.size())));
@@ -148,18 +138,15 @@ public class ProgressJFrame extends JFrame implements ActionListener {
 							}
 							if (Op.getInstance().getExceptionOp() != null
 									&& Op.getInstance().getExceptionOp().size() > 0) {
+								javaopjl.setText(" The opType is  :  Exception Op");
+								
+								dj=new DealJavaOJMutantException(); 
 								try {
-									PrintStream ps = new PrintStream(
-											new FileOutputStream(
-													new File(
-															"F:/muandroid3/AndroidApp-master/app/emlog.txt")));
-									System.setOut(ps);
-								} catch (FileNotFoundException e) {
+									dj.run(args );
+								} catch (Exception e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
-								javaopjl.setText(" The opType is  :  Exception Op");
-								DealJavaOJMutantException.main(args);
 								jpb.setValue((i + 1) * 100
 										/ javafile_list.size() + 3
 										* (25 / (javafile_list.size())));
@@ -168,17 +155,14 @@ public class ProgressJFrame extends JFrame implements ActionListener {
 							if (Op.getInstance().getAndroidOp() != null
 									&& Op.getInstance().getAndroidOp().size() > 0) {
 								javaopjl.setText(" The opType is  :  Android Op");
+								
+								dj=new DealJavaOJMutantAndroid(); 
 								try {
-									PrintStream ps = new PrintStream(
-											new FileOutputStream(
-													new File(
-															"F:/muandroid3/AndroidApp-master/app/amlog.txt")));
-									System.setOut(ps);
-								} catch (FileNotFoundException e) {
+									dj.run(args );
+								} catch (Exception e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}
-								DealJavaOJMutantAndroid.main(args);
 								jpb.setValue((i + 1) * 100
 										/ javafile_list.size() + 4
 										* (25 / (javafile_list.size())));
@@ -196,18 +180,7 @@ public class ProgressJFrame extends JFrame implements ActionListener {
 							jpb2.setValue((i + 1) * 100 / xmlfile_list.size());
 							if (Op.getInstance().getXmlOp() != null
 									&& Op.getInstance().getXmlOp().size() > 0) {
-								try {
-									PrintStream ps = new PrintStream(
-											new FileOutputStream(
-													new File(
-															"F:/muandroid3/AndroidApp-master/app/xm2log.txt")));
-									System.setOut(ps);
-								} catch (FileNotFoundException e) {
-									// TODO Auto-generated catch block
-									e.printStackTrace();
-								}
-								// args[0]=xmlList.get(i);
-								System.out.println("arg[0]:" + args[0]);
+								
 								DealXmlSaxMutant.main(args);
 							}
 							System.out.println(xmlfile_list.get(i));

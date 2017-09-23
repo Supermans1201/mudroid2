@@ -79,7 +79,7 @@ public class LoadingFrame extends JFrame {
 		showVersion.setBounds(300, 260, 600, 20);
 
 		this.add(jp);
-		// this.setAlwaysOnTop(true);
+		this.setAlwaysOnTop(true);
 		this.setUndecorated(true);
 		this.setResizable(false);
 		this.setBounds(startLocationX, startLocationY, width, height);

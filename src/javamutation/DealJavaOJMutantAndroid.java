@@ -12,7 +12,7 @@ import openjava.ptree.ClassDeclarationList;
 public class DealJavaOJMutantAndroid extends DealJavaOJMutant {
 	boolean existIHD = false;
 
-	DealJavaOJMutantAndroid() {
+	public DealJavaOJMutantAndroid() {
 		mutantType = "androidOp";
 		mutantOp = androidOp;
 	}

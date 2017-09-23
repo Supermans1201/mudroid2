@@ -68,13 +68,15 @@ public class EstablishFrame extends JFrame implements ActionListener,
 
 		init();
 	}
+
 	public void reload() {
-		this.setTitle("MuDroid : ∞≤◊ø±‡“Î≤‚ ‘œµÕ≥" );
+		this.setTitle("MuDroid : ∞≤◊ø±‡“Î≤‚ ‘œµÕ≥");
 		LoadingFrame.getInstance().setVisible(false);
-		
+
 		this.requestFocus();
 
 	}
+
 	@SuppressWarnings("unchecked")
 	private void init() {
 		// TODO Auto-generated method stub
@@ -82,13 +84,13 @@ public class EstablishFrame extends JFrame implements ActionListener,
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				MainFrame.getInstance().removeAll();
+				System.gc();
 				System.exit(0);
 			}
 		});
 		ImageIcon icon = new ImageIcon(Project.getInstance().getConfigDir()
 				+ "/res/mudroid.png");
 		this.setIconImage(icon.getImage());
-
 
 		jbArray = new JButton[] { new JButton("Start a Android project"),
 				new JButton("Start a Eclispe project"),
@@ -117,8 +119,7 @@ public class EstablishFrame extends JFrame implements ActionListener,
 				projectPane.getHeight() - 30);
 
 		pl = Project.getInstance().getProjectlist();
-		if(pl==null)
-		{
+		if (pl == null) {
 			return;
 		}
 		str1 = (String[]) pl.toArray(new String[pl.size()]);//
@@ -140,34 +141,25 @@ public class EstablishFrame extends JFrame implements ActionListener,
 					LoadingFrame.getInstance().setVisible(true);
 					LoadingFrame.getInstance().requestFocus();
 					LoadingFrame.getInstance().setAlwaysOnTop(true);
-					
-					Project.getInstance().setSelectProject(str1[((JList) e.getSource()).getSelectedIndex()]);
+
+					Project.getInstance().setSelectProject(
+							str1[((JList) e.getSource()).getSelectedIndex()]);
 					Project.getInstance().setReadProject(true);
 
 					ToXml tx = new ConfigToXml();
 					try {
-						tx.run(new String[] { Project.getInstance().getConfigDir() });
+						tx.run(new String[] { Project.getInstance()
+								.getConfigDir() });
 					} catch (Exception e2) {
 						// TODO Auto-generated catch block
 						e2.printStackTrace();
 					}
-					
-					System.out.println("opening...."+str1[((JList) e.getSource()).getSelectedIndex()]);
-					
-					//MainFrame.getInstance().setVisible(false);
-					
+					System.out.println("opening...."
+							+ str1[((JList) e.getSource()).getSelectedIndex()]);
+
+					MainFrame.getInstance().setVisible(false);
 					MainFrame.getInstance().reload();
 					
-					MainFrame.getInstance().validate();
-					
-					MainFrame.getInstance().repaint();
-					
-//					
-//				
-					MainFrame.getInstance().setVisible(true);
-					MainFrame.getInstance().requestFocus();
-					MainFrame.getInstance().setAlwaysOnTop(true);
-//					
 					MainFrame.getInstance().reload2();
 					// When double click JList
 				}
@@ -229,15 +221,15 @@ public class EstablishFrame extends JFrame implements ActionListener,
 		// TODO Auto-generated method stub
 		if (e.getSource() == jbArray[0]) {
 			JFileChooser fileChooser = new JFileChooser();
-			 fileChooser.setBounds(startLocationX, startLocationY, width*2,
-					 height*2);
+			fileChooser.setBounds(startLocationX, startLocationY, width * 2,
+					height * 2);
 			SwingUtilities.updateComponentTreeUI(fileChooser);
-			
+
 			fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-			
-			int result=fileChooser.showDialog(null, null);
+
+			int result = fileChooser.showDialog(null, null);
 			if (result == JFileChooser.APPROVE_OPTION) {
-				
+
 				String str = fileChooser.getSelectedFile().getPath();
 
 				str = str.replace("\\", "/");
@@ -266,30 +258,29 @@ public class EstablishFrame extends JFrame implements ActionListener,
 					// TODO Auto-generated catch block
 					e2.printStackTrace();
 				}
-			
+
 			}
 		}
-		if (e.getSource() == jbArray[1])
-		{
+		if (e.getSource() == jbArray[1]) {
 			jbArray[1].disable();
 		}
-		if (e.getSource() == jbArray[2])
-		{
+		if (e.getSource() == jbArray[2]) {
 			try {
-				Desktop.getDesktop().open(new File(Project.getInstance().getConfigPath()));
+				Desktop.getDesktop().open(
+						new File(Project.getInstance().getConfigPath()));
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
-			}  
+			}
 		}
-		if (e.getSource() == jbArray[3])
-		{
+		if (e.getSource() == jbArray[3]) {
 			try {
-				  Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler http://lm1201.github.io");
+				Runtime.getRuntime()
+						.exec("rundll32 url.dll,FileProtocolHandler http://lm1201.github.io");
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
-			} 
+			}
 		}
 	}
 
@@ -306,7 +297,7 @@ public class EstablishFrame extends JFrame implements ActionListener,
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
 		// TODO Auto-generated method stub
-	//	System.out.println(str1[((JList) e.getSource()).getSelectedIndex()]);
+		// System.out.println(str1[((JList) e.getSource()).getSelectedIndex()]);
 	}
 
 	public static EstablishFrame getInstance() {

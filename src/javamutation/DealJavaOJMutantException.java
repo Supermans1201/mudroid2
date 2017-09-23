@@ -14,7 +14,7 @@ import openjava.ptree.ParseTreeException;
 
 public class DealJavaOJMutantException extends DealJavaOJMutant{
 
-	DealJavaOJMutantException()
+	public DealJavaOJMutantException()
 	{
 		mutantType="exceptionOp";
 		mutantOp=exceptionOp;

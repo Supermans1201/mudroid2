@@ -39,7 +39,7 @@ import openjava.ptree.ParseTreeException;
 public class DealJavaOJMutantClass extends DealJavaOJMutant {
 	boolean existIHD = false;
 
-	DealJavaOJMutantClass() {
+	public DealJavaOJMutantClass() {
 		mutantType = "classOp";
 		mutantOp = classOp;
 	}

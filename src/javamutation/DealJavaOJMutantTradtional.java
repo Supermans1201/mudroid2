@@ -32,7 +32,7 @@ import openjava.ptree.ParseTreeException;
 
 public class DealJavaOJMutantTradtional extends DealJavaOJMutant{
 	
-	DealJavaOJMutantTradtional()
+	public DealJavaOJMutantTradtional()
 	{
 		mutantType="traditionalOp";
 		mutantOp=traditionalOp;

@@ -1,7 +1,6 @@
 package util;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Method;
@@ -18,7 +17,6 @@ import java.util.jar.JarFile;
 import serialzation.ToXml;
 import singleton.FileList;
 import singleton.InheritanceRelation;
-import singleton.Project;
 import mujava.util.InheritanceINFO;
 
 public class RecordInheritanceRelationToXml extends ToXml {
@@ -140,9 +138,7 @@ public class RecordInheritanceRelationToXml extends ToXml {
 		File f = new File(path);
 		if (f.isDirectory()) {
 			File[] files = f.listFiles();
-			boolean a = false;
 			for (File fileIndex : files) {
-				a = true;
 				// System.out.println((lastcount+0)+":"+count);//引入count与lastcount的关键调试步骤
 				if (lastcount + 1 == count) {
 					;
@@ -164,7 +160,7 @@ public class RecordInheritanceRelationToXml extends ToXml {
 							+ fileIndex.getName() + "\" " + "depth=\"" + count
 							+ "\">");
 					boolean b = false;// b为false表示不存在子目录
-					for (File subfile : fileIndex.listFiles()) {
+					for (@SuppressWarnings("unused") File subfile : fileIndex.listFiles()) {
 						b = true;
 					}
 					if (!b) {
@@ -276,8 +272,6 @@ public class RecordInheritanceRelationToXml extends ToXml {
 		for (int i = 0; i < classes.length; i++) {
 			bad[i] = false;
 			try {
-				String classpath = System.getProperty("java.class.path");
-
 				// System.out.println(this.class_Debug);
 				// System.err.println(classes[i]);
 				classes[i] = classes[i].replace('\\', '.');
@@ -362,7 +356,7 @@ public class RecordInheritanceRelationToXml extends ToXml {
 				JarFile jarFile = new JarFile(temp);
 				Enumeration<JarEntry> entrys = jarFile.entries();
 				int length = 0;
-				System.out.println("\ni start:" + length);
+				//System.out.println("\ni start:" + length);
 				while (entrys.hasMoreElements()) {
 					JarEntry jarEntry = entrys.nextElement();
 					String temp2 = jarEntry.getName();
@@ -372,7 +366,7 @@ public class RecordInheritanceRelationToXml extends ToXml {
 						// System.err.println("qqq"+temp2);
 					}
 				}
-				System.out.println("\ni end:" + length);
+				//System.out.println("\ni end:" + length);
 				classes = new String[length];
 
 				entrys = jarFile.entries();
@@ -382,20 +376,16 @@ public class RecordInheritanceRelationToXml extends ToXml {
 					String temp2 = jarEntry.getName();
 					// System.out.println(""+temp2.indexOf(".class"));
 					if (temp2.indexOf(".class") > 0) {
-
 						length--;
-
 						classes[length] = temp2.substring(0,
 								temp2.indexOf(".class"));
 						classes[length] = classes[length].replace('\\', '.');
 						classes[length] = classes[length].replace('/', '.');
 						// classes[length]=classes[length].substring(classes[length].indexOf("."));
-
 					}
-
 				}
 				result = addClassNames(result, classes);
-
+				jarFile.close();
 			}
 		}
 

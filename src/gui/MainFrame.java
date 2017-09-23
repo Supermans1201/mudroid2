@@ -86,11 +86,16 @@ public class MainFrame extends JFrame implements ActionListener,
 		// functionJPanel.addTab("Run", rjp);
 		// functionJPanel.addTab("Analysis", new JLabel("this show tab 4"));
 		
-		this.requestFocus();
+		this.validate();
+		this.repaint();
 	}
 	public void reload2()
 	{
+		
 		LoadingFrame.getInstance().setVisible(false);
+		this.setVisible(true);
+		this.requestFocus();
+		this.setAlwaysOnTop(true);
 	}
 
 	private void init() {
