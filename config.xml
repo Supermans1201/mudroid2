@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Date:2017-09-23 20:29:18 -->
+<!-- Date:2017-09-23 20:43:41 -->
 <!-- Created by Supermans1201 -->
 
 <!-- rootPath:F:/workspace/testgetdir -->
 <config path="F:\workspace\testgetdir">
-	<selectProject name="F:/Users/Super/Documents/Neo4j"/>
+	<selectProject name="F:/EspressoExamples-master/EspressoExamples-master"/>
 	<projectlist readproject="true">
 		<project name="F:/EspressoExamples-master/EspressoExamples-master"/>
 		<project name="F:/mudroid3/Android_APP"/>

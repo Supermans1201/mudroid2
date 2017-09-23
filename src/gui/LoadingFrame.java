@@ -44,9 +44,7 @@ public class LoadingFrame extends JFrame {
 	private final int height = 371;
 
 	public LoadingFrame() {
-
 		init();
-
 	}
 
 	private void init() {

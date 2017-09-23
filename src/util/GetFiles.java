@@ -55,10 +55,10 @@ public class GetFiles {
 			String location = tx.run(new String[] {
 					Project.getInstance().getJavaSrcPath(), Project.FilterName,
 					"java" });
-			System.out.println("loc1:" + location);
+			
 			location = fileMove(location, Project.getInstance().getFilterDir()
 					+ "/src");
-
+			System.out.println("loc1:" + location);
 			Project.getInstance().setJavaSrcFilterLoc(location);
 			FileList.getInstance().setJavaList(
 					((ProjectDirToXmlWithFilter) tx).getList());
@@ -70,10 +70,10 @@ public class GetFiles {
 			String location = tx.run(new String[] {
 					Project.getInstance().getXmlSrcPath(), Project.FilterName,
 					"xml" });
-			System.out.println("loc2:" + location);
+			
 			location = fileMove(location, Project.getInstance().getFilterDir()
 					+ "/src");
-
+			System.out.println("loc2:" + location);
 			Project.getInstance().setXmlSrcFilterLoc(location);
 			FileList.getInstance().setXmlList(
 					((ProjectDirToXmlWithFilter) tx).getList());
@@ -92,9 +92,9 @@ public class GetFiles {
 			String location = tx.run(new String[] {
 					Project.getInstance().getSelectProject(),
 					Project.FilterName, "jar" });
-			System.out.println("loc5:" + location);
+			
 			location = fileMove(location, Project.getInstance().getFilterDir());
-
+			System.out.println("loc5:" + location);
 			Project.getInstance().setJarFilterLoc(location);
 			FileList.getInstance().setJarList(
 					((ProjectDirToXmlWithFilter) tx).getList());
@@ -106,9 +106,9 @@ public class GetFiles {
 			String location = tx.run(new String[] {
 					Project.getInstance().getSelectProject(),
 					Project.FilterName, "class" });
-			System.out.println("loc6:" + location);
+			
 			location = fileMove(location, Project.getInstance().getFilterDir());
-
+			System.out.println("loc6:" + location);
 			Project.getInstance().setClassFilterLoc(location);
 			FileList.getInstance().setClassList(
 					((ProjectDirToXmlWithFilter) tx).getList());

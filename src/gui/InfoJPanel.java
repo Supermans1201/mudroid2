@@ -4,17 +4,10 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
-
 import singleton.Project;
-import chrriis.dj.nativeswing.swtimpl.NativeInterface;
 import chrriis.dj.nativeswing.swtimpl.components.JWebBrowser;
 
 public class InfoJPanel extends JPanel implements ActionListener {
@@ -49,28 +42,6 @@ public class InfoJPanel extends JPanel implements ActionListener {
 	InfoJPanel(String projectName) {
 		this.projectName = projectName;
 		init();
-	}
-
-	public static void main(String[] args) {
-		NativeInterface.open();
-		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				JFrame jf = new JFrame();
-				InfoJPanel fjp = new InfoJPanel();
-				jf.add(fjp);
-				fjp.setBorder(BorderFactory.createLineBorder(Color.GRAY));
-				jf.setBounds(100, 100, 1300, 600);
-				jf.setVisible(true);
-				jf.addWindowListener(new WindowAdapter() {
-					@Override
-					public void windowClosing(WindowEvent e) {
-						// TODO Auto-generated method stub
-						System.exit(0);
-					}
-				});
-			}
-		});
-		NativeInterface.runEventPump();
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {

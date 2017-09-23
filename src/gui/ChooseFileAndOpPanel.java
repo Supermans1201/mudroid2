@@ -4,8 +4,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.io.File;
 import java.util.Arrays;
 import java.util.List;
@@ -15,13 +13,11 @@ import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
-import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableColumn;
@@ -30,12 +26,6 @@ import singleton.FileList;
 import singleton.Op;
 import singleton.Project;
 import util.GetFiles;
-
-//import MuDroid.Compile.ReadFile;
-//import MuDroid.Singleton.Op;
-//import MuDroid.Util.testRecordInheritanceRelationToXml;
-//import mujava.util.DirFileFilter;
-//import mujava.util.ExtensionFilter;
 
 public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 	/**
@@ -286,7 +276,6 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 		xmPanel.add(xmbtPanel);
 		JPanel runPanel = new JPanel();
 
-		runPanel.setBorder(BorderFactory.createLineBorder(Color.CYAN));
 		OpPanel.add(runPanel);
 		runPanel.setLayout(new BoxLayout(runPanel, BoxLayout.PAGE_AXIS));
 		JPanel usagePanel = new JPanel();
@@ -297,8 +286,6 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 		temp.setForeground(Color.gray);
 		tempP.add(temp);
 		tempP.setPreferredSize(new Dimension(70, 70));
-		tempP.setBorder(new EtchedBorder());
-
 		JPanel usgeContentP = new JPanel();
 		usgeContentP
 				.setLayout(new BoxLayout(usgeContentP, BoxLayout.PAGE_AXIS));
@@ -308,7 +295,6 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 		usgeContentP.add(jlArray[3]);
 		usagePanel.add(tempP);
 		usagePanel.add(usgeContentP);
-		// usagePanel.setBorder(new EtchedBorder());
 		usagePanel.setPreferredSize(new Dimension(115, 200));
 
 		JPanel getMutantPanel = new JPanel();
@@ -329,12 +315,7 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 		runPanel.add(anPanel);
 		runPanel.add(getMutantPanel);
 		runPanel.add(Box.createRigidArea(new Dimension(0, 70)));
-
-		filePanel.setBorder(BorderFactory.createLineBorder(Color.BLUE));
-		OpPanel.setBorder(BorderFactory.createLineBorder(Color.RED));
-
 		this.setBorder(BorderFactory.createLineBorder(Color.black));
-
 		addButtonListener();
 		allBt.doClick();
 
@@ -363,27 +344,7 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 		noneBt.addActionListener(this);
 		getMutant.addActionListener(this);
 	}
-
-	public static void main(String[] args) {
-		Project.getInstance().setSelectProject("F:/mudroid3/Android_APP");
-		GetFiles.getSrcFiles();
-
-		JFrame jf = new JFrame();
-		ChooseFileAndOpPanel fjp = new ChooseFileAndOpPanel();
-		jf.add(fjp);
-		fjp.setBorder(BorderFactory.createLineBorder(Color.GRAY));
-		jf.setBounds(100, 100, 1300, 600);
-		jf.setVisible(true);
-		jf.addWindowListener(new WindowAdapter() {
-			@Override
-			public void windowClosing(WindowEvent e) {
-				// TODO Auto-generated method stub
-				System.exit(0);
-			}
-
-		});
-	}
-
+	
 	protected void initColumnSizes(JTable table, AbstractTableModel model) {
 		initTripleColumnWidth(table, model, 30, 90, 80);
 	}
