@@ -26,6 +26,7 @@ import singleton.FileList;
 import singleton.Op;
 import singleton.Project;
 import util.GetFiles;
+import util.RecordInheritanceRelationToXml;
 
 public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 	/**
@@ -92,7 +93,6 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 					"<html><font size=3>[3] Push \"generate mutants\" button</font></html>"),
 			new JLabel(
 					"<html><font size=3>[4] Wait with endurance. ^^;</font></html>"), };
-	String filestring = "F:/muandroid3/AndroidApp-master";
 
 	String projectName = "";
 
@@ -104,8 +104,19 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 	ChooseFileAndOpPanel() {
 		init();
 	}
+
 	void init() {
 		GetFiles.getSrcFiles();
+		GetFiles.getJarClassFiles();
+
+		RecordInheritanceRelationToXml rir = new RecordInheritanceRelationToXml();
+		try {
+			rir.run(new String[] { Project.getInstance().getSelectProject() });
+		} catch (Exception e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+
 		this.setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
 		this.add(filePanel);
 		filePanel.setLayout(new BoxLayout(filePanel, BoxLayout.PAGE_AXIS));
@@ -129,10 +140,10 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 
 		FILETableModel fTableModel2 = new FILETableModel(
 				getNewTragetFiles("xml"), "xml");
-		if(fTableModel2!=null)
-		{xmlFileTable = new JTable(fTableModel2);}
-		
-		
+		if (fTableModel2 != null) {
+			xmlFileTable = new JTable(fTableModel2);
+		}
+
 		initFileColumnSizes(xmlFileTable, fTableModel2);
 		xmlFileSP.getViewport().add(xmlFileTable, null);
 		xmlFileSP.setPreferredSize(new Dimension(500, 500));
@@ -152,9 +163,10 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 
 		FILETableModel fTableModel = new FILETableModel(
 				getNewTragetFiles("java"), "java");
-		if(fTableModel!=null)
-		{javaFileTable = new JTable(fTableModel);}
-		
+		if (fTableModel != null) {
+			javaFileTable = new JTable(fTableModel);
+		}
+
 		initFileColumnSizes(javaFileTable, fTableModel);
 		javaFileSP.getViewport().add(javaFileTable, null);
 		javaFileSP.setPreferredSize(new Dimension(500, 600));
@@ -344,7 +356,7 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 		noneBt.addActionListener(this);
 		getMutant.addActionListener(this);
 	}
-	
+
 	protected void initColumnSizes(JTable table, AbstractTableModel model) {
 		initTripleColumnWidth(table, model, 30, 90, 80);
 	}
@@ -570,59 +582,52 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 			System.out.println("  ");
 			Op.getInstance().readXmlOp();
 
-			 FILETableModel fTableModel = (FILETableModel) javaFileTable
-					 .getModel();
-			 if(!(fTableModel.getSelectedFiles()==null))
-			 {
-				 String[] javafile_list = fTableModel.getSelectedFiles();
-				 for(int i=0;i<javafile_list.length;i++)
-				 {
-					 FileList.getInstance().getJavaSList().add(Project.getInstance().getJavaSrcPath()+"/"+javafile_list[i]);
-					 System.out.println(Project.getInstance().getJavaSrcPath()+"/"+javafile_list[i]);
-				 }
-			 }
-			
-			 
-				 
-			 FILETableModel fTableModel2 = (FILETableModel) xmlFileTable
-			 .getModel();
-			 if(!(fTableModel2.getSelectedFiles()==null))
-			 {
-				 String[] xmlfile_list = fTableModel2.getSelectedFiles();
-				 for(int i=0;i< xmlfile_list.length;i++)
-				 {
-					 FileList.getInstance().getXmlSList().add(Project.getInstance().getXmlSrcPath()+"/"+xmlfile_list[i]);
-					 System.out.println(Project.getInstance().getXmlSrcPath()+"/"+ xmlfile_list[i]);
-				 }
-			 }
-			 FILETableModel fTableModel3 = (FILETableModel) manifestFileTable
-					 .getModel();
-			 if(!(fTableModel3.getSelectedFiles()==null))
-			 {
-				 String[] manifestfile_list = fTableModel3.getSelectedFiles();
-				 for(int i=0;i< manifestfile_list.length;i++)
-				 {
-					 FileList.getInstance().getXmlSList().add(Project.getInstance().getmanifestSrcPath()+"/"+manifestfile_list[i]);
-					 System.out.println(Project.getInstance().getmanifestSrcPath()+"/"+ manifestfile_list[i]);
-				 }
-			 }
-			 
-			
+			FILETableModel fTableModel = (FILETableModel) javaFileTable
+					.getModel();
+			if (!(fTableModel.getSelectedFiles() == null)) {
+				String[] javafile_list = fTableModel.getSelectedFiles();
+				for (int i = 0; i < javafile_list.length; i++) {
+					FileList.getInstance()
+							.getJavaSList()
+							.add(Project.getInstance().getJavaSrcPath() + "/"
+									+ javafile_list[i]);
+					System.out.println(Project.getInstance().getJavaSrcPath()
+							+ "/" + javafile_list[i]);
+				}
+			}
 
-			// try {
-			// muandroid.prepare.testRecordInheritanceRelationToXml.main(args);
-			// muandroid.prepare.testReadProjectDirToXmlWithFilter.main(args);
-			// } catch (Exception e1) {
-			// // TODO Auto-generated catch block
-			// e1.printStackTrace();
-			// }
+			FILETableModel fTableModel2 = (FILETableModel) xmlFileTable
+					.getModel();
+			if (!(fTableModel2.getSelectedFiles() == null)) {
+				String[] xmlfile_list = fTableModel2.getSelectedFiles();
+				for (int i = 0; i < xmlfile_list.length; i++) {
+					FileList.getInstance()
+							.getXmlSList()
+							.add(Project.getInstance().getXmlSrcPath() + "/"
+									+ xmlfile_list[i]);
+					System.out.println(Project.getInstance().getXmlSrcPath()
+							+ "/" + xmlfile_list[i]);
+				}
+			}
+			FILETableModel fTableModel3 = (FILETableModel) manifestFileTable
+					.getModel();
+			if (!(fTableModel3.getSelectedFiles() == null)) {
+				String[] manifestfile_list = fTableModel3.getSelectedFiles();
+				for (int i = 0; i < manifestfile_list.length; i++) {
+					FileList.getInstance()
+							.getXmlSList()
+							.add(Project.getInstance().getmanifestSrcPath()
+									+ "/" + manifestfile_list[i]);
+					System.out.println(Project.getInstance()
+							.getmanifestSrcPath() + "/" + manifestfile_list[i]);
+				}
+			}
 
-			// ProgressJFrame pjf=ProgressJFrame.getInstance();;
-			// pjf.setSome(javafile_list, xmlfile_list, manifestfile_list, args,
-			// java_SRC_PATH, xml_SRC_PATH, manifest_SRC_PATH);;
-			// pjf.setVisible(true);
-			// pjf.stop();
-			// pjf.strat();
+			ProgressJFrame pjf = ProgressJFrame.getInstance();
+			;
+			pjf.setVisible(true);
+			pjf.stop();
+			pjf.strat();
 		}
 	}
 
@@ -642,7 +647,8 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 	private static String getManifestArgForDir(String dir, String str,
 			Vector targetFiles) {
 		String result = str;
-		if(new File(Project.getInstance().getmanifestSrcPath()+"/AndroidManifest.xml").exists())
+		if (new File(Project.getInstance().getmanifestSrcPath()
+				+ "/AndroidManifest.xml").exists())
 			targetFiles.add("AndroidManifest.xml");
 		else
 			targetFiles.add("null");
@@ -663,7 +669,7 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 			temp = temp.replace('\\', '/');
 			targetFiles.add(temp);
 		}
-		if(fl.size()==0)
+		if (fl.size() == 0)
 			targetFiles.add("null");
 		return result;
 
@@ -682,7 +688,7 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 			temp = temp.replace('\\', '/');
 			targetFiles.add(temp);
 		}
-		if(fl.size()==0)
+		if (fl.size() == 0)
 			targetFiles.add("null");
 		return result;
 	}

@@ -10,8 +10,6 @@ public class InheritanceRelation {
 
 	private InheritanceRelation() {
 	}
-
-	List<String> jarList = new ArrayList<String>();
 	InheritanceINFO[] classInfo = null;
 
 	public void setInheritanceInfo(InheritanceINFO[] classInfo) {
@@ -69,25 +67,11 @@ public class InheritanceRelation {
 		return null;
 	}
 
-	public void setJarsList(List<String> jarList) {
-		this.jarList = jarList;
-	}
-
-	public List<String> getJarsList() {
-		return this.jarList;
-	}
-
 	public static InheritanceRelation getInstance() {
 		if (instance == null) {
 			instance = new InheritanceRelation();
 		}
 		return instance;
-	}
-
-	public void readJarsList() {
-		// TODO Auto-generated method stub
-		for (int i = 0; i < jarList.size(); i++)
-			System.out.println(jarList.get(i));
 	}
 
 	public void readInheritanceInfo() {

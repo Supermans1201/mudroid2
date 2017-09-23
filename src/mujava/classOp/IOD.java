@@ -16,6 +16,7 @@
 package mujava.classOp;
 
 import java.io.*;
+
 import openjava.mop.*;
 import openjava.ptree.*;
 import mujava.op.util.DeclAnalyzer;
@@ -145,7 +146,8 @@ public class IOD extends DeclAnalyzer
       super( oj_param0, oj_param1, oj_param2 );
    }
 
-   public IOD( java.lang.Class oj_param0, openjava.mop.MetaInfo oj_param1 )
+   @SuppressWarnings("rawtypes")
+	public IOD(java.lang.Class oj_param0, openjava.mop.MetaInfo oj_param1 )
    {
       super( oj_param0, oj_param1 );
    }

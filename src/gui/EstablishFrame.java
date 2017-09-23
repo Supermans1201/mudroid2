@@ -71,6 +71,7 @@ public class EstablishFrame extends JFrame implements ActionListener,
 	public void reload() {
 		this.setTitle("MuDroid : ∞≤◊ø±‡“Î≤‚ ‘œµÕ≥" );
 		LoadingFrame.getInstance().setVisible(false);
+		
 		this.requestFocus();
 
 	}
@@ -80,6 +81,7 @@ public class EstablishFrame extends JFrame implements ActionListener,
 
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
+				MainFrame.getInstance().removeAll();
 				System.exit(0);
 			}
 		});
@@ -135,6 +137,9 @@ public class EstablishFrame extends JFrame implements ActionListener,
 				if (e.getClickCount() == 2) {
 
 					EstablishFrame.getInstance().setVisible(false);
+					LoadingFrame.getInstance().setVisible(true);
+					LoadingFrame.getInstance().requestFocus();
+					LoadingFrame.getInstance().setAlwaysOnTop(true);
 					
 					Project.getInstance().setSelectProject(str1[((JList) e.getSource()).getSelectedIndex()]);
 					Project.getInstance().setReadProject(true);
@@ -147,15 +152,23 @@ public class EstablishFrame extends JFrame implements ActionListener,
 						e2.printStackTrace();
 					}
 					
-					MainFrame.getInstance().setProjectName(
-							str1[((JList) e.getSource()).getSelectedIndex()]);
 					System.out.println("opening...."+str1[((JList) e.getSource()).getSelectedIndex()]);
 					
-					MainFrame.getInstance().setVisible(false);
+					//MainFrame.getInstance().setVisible(false);
+					
 					MainFrame.getInstance().reload();
+					
 					MainFrame.getInstance().validate();
+					
 					MainFrame.getInstance().repaint();
+					
+//					
+//				
 					MainFrame.getInstance().setVisible(true);
+					MainFrame.getInstance().requestFocus();
+					MainFrame.getInstance().setAlwaysOnTop(true);
+//					
+					MainFrame.getInstance().reload2();
 					// When double click JList
 				}
 			}

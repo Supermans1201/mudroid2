@@ -99,15 +99,18 @@ public class LoadingFrame extends JFrame {
 		if (noProject) {
 			EstablishFrame.getInstance().setVisible(true);
 			EstablishFrame.getInstance().reload();
+			
 		} else {
 			MainFrame.getInstance().setVisible(true);
 			MainFrame.getInstance().reload();
+			MainFrame.getInstance().reload2();
 		}
 
 	}
 
 	public static void main(String[] args) {
 		LoadingFrame.getInstance().setVisible(true);
+		
 		NativeInterface.open();
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		SwingUtilities.invokeLater(new Runnable() {

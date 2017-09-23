@@ -85,8 +85,12 @@ public class MainFrame extends JFrame implements ActionListener,
 		 functionJPanel.addTab("选择变异文件和变异体", mjp);
 		// functionJPanel.addTab("Run", rjp);
 		// functionJPanel.addTab("Analysis", new JLabel("this show tab 4"));
-		LoadingFrame.getInstance().setVisible(false);
+		
 		this.requestFocus();
+	}
+	public void reload2()
+	{
+		LoadingFrame.getInstance().setVisible(false);
 	}
 
 	private void init() {
@@ -252,6 +256,8 @@ public class MainFrame extends JFrame implements ActionListener,
 				this.setVisible(false);
 				EstablishFrame.getInstance().setVisible(true);
 				EstablishFrame.getInstance().reload();
+				EstablishFrame.getInstance().requestFocus();
+				EstablishFrame.getInstance().setAlwaysOnTop(true);
 			}
 		}
 		if (e.getSource() == jmenuItemforJmenu2[0]) {

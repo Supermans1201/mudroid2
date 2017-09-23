@@ -16,6 +16,7 @@
 	<classpathentry kind="lib" path="lib/javalib/junit-4.8.2.jar"/>
 	<classpathentry kind="lib" path="lib/javalib/openjava.jar"/>
 	<classpathentry kind="lib" path="lib/javalib/tools.jar"/>
+	<classpathentry kind="lib" path="lib/javalib/javaparselib/android.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
