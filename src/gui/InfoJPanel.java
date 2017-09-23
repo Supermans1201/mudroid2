@@ -17,7 +17,7 @@ import singleton.Project;
 import chrriis.dj.nativeswing.swtimpl.NativeInterface;
 import chrriis.dj.nativeswing.swtimpl.components.JWebBrowser;
 
-public class ParpareJPanel extends JPanel implements ActionListener {
+public class InfoJPanel extends JPanel implements ActionListener {
 	/**
 	 * 
 	 */
@@ -41,12 +41,12 @@ public class ParpareJPanel extends JPanel implements ActionListener {
 		this.setBorder(BorderFactory.createLineBorder(Color.black));
 	}
 
-	ParpareJPanel() {
+	InfoJPanel() {
 		this.projectName = Project.getInstance().getSelectProject();
 		init();
 	}
 
-	ParpareJPanel(String projectName) {
+	InfoJPanel(String projectName) {
 		this.projectName = projectName;
 		init();
 	}
@@ -56,7 +56,7 @@ public class ParpareJPanel extends JPanel implements ActionListener {
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				JFrame jf = new JFrame();
-				ParpareJPanel fjp = new ParpareJPanel();
+				InfoJPanel fjp = new InfoJPanel();
 				jf.add(fjp);
 				fjp.setBorder(BorderFactory.createLineBorder(Color.GRAY));
 				jf.setBounds(100, 100, 1300, 600);

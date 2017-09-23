@@ -23,6 +23,7 @@ import org.jvnet.substance.theme.SubstanceLightAquaTheme;
 import org.jvnet.substance.title.FlatTitlePainter;
 import org.jvnet.substance.watermark.SubstanceImageWatermark;
 
+import chrriis.dj.nativeswing.swtimpl.NativeInterface;
 import serialzation.ReadConfigFromXml;
 import singleton.Project;
 import dealxml.DealXmlSax;
@@ -41,12 +42,10 @@ public class LoadingFrame extends JFrame {
 	private JLabel showVersion = new JLabel();
 	private final int width = 600;
 	private final int height = 371;
-	private boolean noProject = true;
 
 	public LoadingFrame() {
 
 		init();
-		readLastSave();
 
 	}
 
@@ -89,7 +88,7 @@ public class LoadingFrame extends JFrame {
 		this.setVisible(true);
 	}
 
-	private void readLastSave() {
+	private static void readLastSave() {
 
 		DealXmlSax dxs = new ReadConfigFromXml();
 		try {
@@ -98,7 +97,20 @@ public class LoadingFrame extends JFrame {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		noProject=!Project.getInstance().getReadProject();
+		boolean noProject = !Project.getInstance().getReadProject();
+		if (noProject) {
+			EstablishFrame.getInstance().setVisible(true);
+			EstablishFrame.getInstance().reload();
+		} else {
+			MainFrame.getInstance().setVisible(true);
+			MainFrame.getInstance().reload();
+		}
+
+	}
+
+	public static void main(String[] args) {
+		LoadingFrame.getInstance().setVisible(true);
+		NativeInterface.open();
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
@@ -129,28 +141,17 @@ public class LoadingFrame extends JFrame {
 					SubstanceLookAndFeel
 							.setCurrentTitlePainter(new FlatTitlePainter());
 
-					if(noProject)
-					{
-						EstablishFrame.getInstance().setVisible(true);
-						EstablishFrame.getInstance().reload();
-					}
-					else
-					{
-						MainFrame.getInstance().setVisible(true);
-						MainFrame.getInstance().reload();
-					}
 					
-					
+					readLastSave();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
+
+		NativeInterface.runEventPump();
 	}
 
-	public static void main(String[] args) {
-		LoadingFrame.getInstance().setVisible(true);
-	}
 	public static LoadingFrame getInstance() {
 		if (instance == null) {
 

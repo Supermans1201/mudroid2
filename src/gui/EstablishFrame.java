@@ -27,24 +27,10 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import org.jvnet.substance.SubstanceLookAndFeel;
-import org.jvnet.substance.border.StandardBorderPainter;
-import org.jvnet.substance.button.StandardButtonShaper;
-import org.jvnet.substance.fonts.DefaultMacFontPolicy;
-import org.jvnet.substance.painter.StandardGradientPainter;
-import org.jvnet.substance.skin.SubstanceBusinessBlueSteelLookAndFeel;
-import org.jvnet.substance.skin.SubstanceSaharaLookAndFeel;
-import org.jvnet.substance.theme.SubstanceLightAquaTheme;
-import org.jvnet.substance.title.FlatTitlePainter;
-import org.jvnet.substance.watermark.SubstanceImageWatermark;
-
-import dealxml.DealXmlSax;
 import serialzation.ConfigToXml;
-import serialzation.ReadConfigFromXml;
 import serialzation.ToXml;
 import singleton.Project;
 
@@ -222,54 +208,6 @@ public class EstablishFrame extends JFrame implements ActionListener,
 			}
 		}
 		return str2;
-	}
-
-	public static void main(String[] args) {
-		DealXmlSax dxs = new ReadConfigFromXml();
-		try {
-			dxs.run(new String[] { Project.getInstance().getConfigPath() });
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		JFrame.setDefaultLookAndFeelDecorated(true);
-		SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					// SubstanceLookAndFeel.setSkin(new
-					// BusinessBlackSteelSkin());
-					// 设置外观
-					// 设置外观
-					UIManager
-							.setLookAndFeel(new SubstanceBusinessBlueSteelLookAndFeel());
-					JFrame.setDefaultLookAndFeelDecorated(true);
-					// 设置主题
-					SubstanceLookAndFeel
-							.setCurrentTheme(new SubstanceLightAquaTheme());
-					// 设置按钮外观
-					SubstanceLookAndFeel
-							.setCurrentButtonShaper(new StandardButtonShaper());
-					SubstanceSaharaLookAndFeel.setFontPolicy(new DefaultMacFontPolicy()); 
-					// 设置水印
-					SubstanceLookAndFeel
-							.setCurrentWatermark(new SubstanceImageWatermark(
-									Project.getInstance().getConfigDir()
-											+ "/res/background.jpg"));
-					// 设置边框
-					SubstanceLookAndFeel
-							.setCurrentBorderPainter(new StandardBorderPainter());
-					// 设置渐变渲染
-					SubstanceLookAndFeel
-							.setCurrentGradientPainter(new StandardGradientPainter());
-					// 设置标题
-					SubstanceLookAndFeel
-							.setCurrentTitlePainter(new FlatTitlePainter());
-					EstablishFrame.getInstance().setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
 	}
 
 	@SuppressWarnings({ "unchecked", "deprecation" })
