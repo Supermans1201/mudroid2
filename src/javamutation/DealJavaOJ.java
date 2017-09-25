@@ -71,6 +71,8 @@ public class DealJavaOJ extends DealJava{
 		writer = createPrintWriter();
 		file=new File(args[0]);
 		CompilationUnit compilationUnit = parse(args[0]);
+		if(compilationUnit==null)
+			return;
 		initParseTree();
 		//System.out.println(compilationUnit);
 		runOP(args[0]);
@@ -95,8 +97,9 @@ public class DealJavaOJ extends DealJava{
 			compilationUnit = parser.CompilationUnit(OJSystem.env );
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.err.println("111"+javaFile);
-			e.printStackTrace();
+			System.err.println("parse exception"+javaFile);
+			return null;
+			//e.printStackTrace();
 			
 		}
 		//getPrintWriter().println(getPublicClassName(compilationUnit,javaFile));
@@ -167,7 +170,13 @@ public class DealJavaOJ extends DealJava{
 	   {
 	      OJClass result;
 	      System.out.println("*()*"+cdecl.getName());
-	      String qname = env.toQualifiedName( cdecl.getName() );
+	      String qname ;
+	      if(env.toQualifiedName( cdecl.getName())==null)
+	      { qname=cdecl.getName().replace("/", ".");}
+	      else
+	      {
+	    	  qname=env.toQualifiedName( cdecl.getName());
+	      }
 	      System.out.println("*()*"+qname);
 	      Class<?> meta = OJSystem.getMetabind( qname );
 	      try 

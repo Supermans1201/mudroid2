@@ -95,7 +95,6 @@ public class MainFrame extends JFrame implements ActionListener,
 		LoadingFrame.getInstance().setVisible(false);
 		this.setVisible(true);
 		this.requestFocus();
-		this.setAlwaysOnTop(true);
 	}
 
 	private void init() {
@@ -261,8 +260,7 @@ public class MainFrame extends JFrame implements ActionListener,
 				this.setVisible(false);
 				EstablishFrame.getInstance().setVisible(true);
 				EstablishFrame.getInstance().reload();
-				EstablishFrame.getInstance().requestFocus();
-				EstablishFrame.getInstance().setAlwaysOnTop(true);
+				
 			}
 		}
 		if (e.getSource() == jmenuItemforJmenu2[0]) {

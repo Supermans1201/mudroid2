@@ -99,7 +99,7 @@ public class LoadingFrame extends JFrame {
 		if (noProject) {
 			EstablishFrame.getInstance().setVisible(true);
 			EstablishFrame.getInstance().reload();
-			
+
 		} else {
 			MainFrame.getInstance().setVisible(true);
 			MainFrame.getInstance().reload();
@@ -110,13 +110,13 @@ public class LoadingFrame extends JFrame {
 
 	public static void main(String[] args) {
 		LoadingFrame.getInstance().setVisible(true);
-		
+
 		NativeInterface.open();
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				try {
-			 		UIManager
+					UIManager
 							.setLookAndFeel(new SubstanceBusinessBlueSteelLookAndFeel());
 					JFrame.setDefaultLookAndFeelDecorated(true);
 					// 设置主题
@@ -141,7 +141,6 @@ public class LoadingFrame extends JFrame {
 					// 设置标题
 					SubstanceLookAndFeel
 							.setCurrentTitlePainter(new FlatTitlePainter());
-
 					readLastSave();
 				} catch (Exception e) {
 					e.printStackTrace();

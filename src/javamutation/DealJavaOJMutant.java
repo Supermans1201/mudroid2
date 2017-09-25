@@ -26,6 +26,8 @@ public class DealJavaOJMutant extends DealJavaOJ {
 
 	public void run(String[] args) throws Exception {
 		super.run(args);
+		if(this.compilationUnit==null)
+			return;
 		arrangeOriginal(args[0]);
 		setMutantPathAndClassName(args[0]);
 		getPrintWriter().flush();

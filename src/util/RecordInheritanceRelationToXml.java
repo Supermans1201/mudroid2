@@ -356,7 +356,7 @@ public class RecordInheritanceRelationToXml extends ToXml {
 				JarFile jarFile = new JarFile(temp);
 				Enumeration<JarEntry> entrys = jarFile.entries();
 				int length = 0;
-				//System.out.println("\ni start:" + length);
+				System.out.println("\ni start:" + length);
 				while (entrys.hasMoreElements()) {
 					JarEntry jarEntry = entrys.nextElement();
 					String temp2 = jarEntry.getName();
@@ -366,7 +366,7 @@ public class RecordInheritanceRelationToXml extends ToXml {
 						// System.err.println("qqq"+temp2);
 					}
 				}
-				//System.out.println("\ni end:" + length);
+				System.out.println("\ni end:" + length);
 				classes = new String[length];
 
 				entrys = jarFile.entries();
