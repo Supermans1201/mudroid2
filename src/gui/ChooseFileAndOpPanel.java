@@ -26,7 +26,7 @@ import singleton.FileList;
 import singleton.Op;
 import singleton.Project;
 import util.GetFiles;
-import util.RecordInheritanceRelationToXml;
+import util.GetInheritanceRelation;
 
 public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 	/**
@@ -109,7 +109,7 @@ public class ChooseFileAndOpPanel extends JPanel implements ActionListener {
 		GetFiles.getSrcFiles();
 		GetFiles.getJarClassFiles();
 
-		RecordInheritanceRelationToXml rir = new RecordInheritanceRelationToXml();
+		GetInheritanceRelation rir = new GetInheritanceRelation();
 		try {
 			rir.run(new String[] { Project.getInstance().getSelectProject() });
 		} catch (Exception e2) {

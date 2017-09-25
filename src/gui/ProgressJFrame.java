@@ -13,6 +13,7 @@ import javamutation.DealJavaOJMutantException;
 import javamutation.DealJavaOJMutantTradtional;
 
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -22,6 +23,7 @@ import javax.swing.border.TitledBorder;
 
 import singleton.FileList;
 import singleton.Op;
+import singleton.Project;
 import xmlmutation.DealXmlSaxMutant;
 
 public class ProgressJFrame extends JFrame implements ActionListener {
@@ -67,6 +69,9 @@ public class ProgressJFrame extends JFrame implements ActionListener {
 
 	private void init() {
 		// TODO Auto-generated method stub
+		ImageIcon icon = new ImageIcon(Project.getInstance().getConfigDir()
+				+ "/res/mudroid.png");
+		this.setIconImage(icon.getImage());
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		int screenWidth = (int) screenSize.getWidth();
 		int screenHeight = (int) screenSize.getHeight();
@@ -166,7 +171,6 @@ public class ProgressJFrame extends JFrame implements ActionListener {
 								jpb.setValue((i + 1) * 100
 										/ javafile_list.size() + 4
 										* (25 / (javafile_list.size())));
-
 							}
 
 						}
@@ -185,14 +189,6 @@ public class ProgressJFrame extends JFrame implements ActionListener {
 							}
 							System.out.println(xmlfile_list.get(i));
 						}
-
-					// try {
-					// testReadProjectDirToXmlWithFilterOfMutant.main(null);
-					// } catch (Exception e) {
-					// // TODO Auto-generated catch block
-					// e.printStackTrace();
-					// }
-
 					b = true;
 				} else {
 				}
@@ -202,16 +198,6 @@ public class ProgressJFrame extends JFrame implements ActionListener {
 
 		t = new Thread(r);
 		t.start();
-		// if(b)
-		// t.start();
-		// else
-		// {
-		//
-		// t.stop();
-		// System.out.println(">>>>>>>>>>>>>>>>>>>>>");
-		// }
-
-		// bt2.doClick();
 	}
 
 	public void stop() {
@@ -250,12 +236,6 @@ public class ProgressJFrame extends JFrame implements ActionListener {
 		btrightJP.add(bt2);
 		bt2.addActionListener(this);
 		bt2.setPreferredSize(new Dimension(120, 30));
-
-	}
-
-	public static void main(String[] args) {
-		ProgressJFrame.getInstance().setVisible(true);
-		;
 	}
 
 	public static ProgressJFrame getInstance() {

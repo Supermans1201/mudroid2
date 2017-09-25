@@ -17,9 +17,16 @@ public class Project {
 	String xmlSrcDir = "/app/src/main/res/layout";
 	String manifestSrcDir = "/app/src/main";
 
-	String javaMutDir = "/app/Mut/main/java";
-	String xmlMutDir = "/app/Mut/main/res/layout";
-	String manifestMutDir = "/app/Mut/main";
+	String javaMutDir = "/app/mutant/main/java";
+	String xmlMutDir = "/app/mutant/main/res/layout";
+	String manifestMutDir = "/app/mutant/main";
+	
+	String mutDir="/app/mutant";
+	
+	public String getMutDir()
+	{
+		return Project.getInstance().getSelectProject()+mutDir;
+	}
 
 	public static String FilterName = "Filter";
 

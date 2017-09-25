@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import singleton.Project;
 import util.GetFiles;
-import util.RecordInheritanceRelationToXml;
+import util.GetInheritanceRelation;
 
 public class TestDealJavaOJMutantClass {
 
@@ -14,7 +14,7 @@ public class TestDealJavaOJMutantClass {
 		Project.getInstance().setSelectProject("F:/coolweather-master/Android_APP");
 		GetFiles.getJarClassFiles();
 	
-		RecordInheritanceRelationToXml rir=new RecordInheritanceRelationToXml();
+		GetInheritanceRelation rir=new GetInheritanceRelation();
 		try {
 			rir.run(new String[]{Project.getInstance().getSelectProject()});
 		} catch (Exception e) {

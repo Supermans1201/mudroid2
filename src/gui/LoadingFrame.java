@@ -158,5 +158,4 @@ public class LoadingFrame extends JFrame {
 		}
 		return instance;
 	}
-
 }

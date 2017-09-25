@@ -196,17 +196,7 @@ public class GetFiles {
 		System.out.println(Project.getInstance().getClassFilterLoc());
 	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Project.getInstance().setSelectProject("F:/mudroid3/Android_APP");
-		getFiiles();
-		// printFilesList();
-		 printFiltetloc();
-		
-
-	}
-
-	private static void getFiiles() {
+	public static void getFiiles() {
 		// TODO Auto-generated method stub
 		getSrcFiles();
 		getMutFiles();
