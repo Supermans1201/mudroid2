@@ -11,11 +11,12 @@ public class FileList {
 
 	List<String> javaSList = new ArrayList<String>();
 	List<String> xmlSList = new ArrayList<String>();
-	List<String> javaMSList = new ArrayList<String>();
-	List<String> xmlMSList = new ArrayList<String>();
+
+	List<String> MFlist = new ArrayList<String>();
 
 	List<String> javaList = new ArrayList<String>();
 	List<String> xmlList = new ArrayList<String>();
+
 	List<String> javaMList = new ArrayList<String>();
 	List<String> xmlMList = new ArrayList<String>();
 
@@ -74,45 +75,32 @@ public class FileList {
 		return this.xmlSList;
 	}
 
-	public void setJavaMSList(List<String> javaMSList) {
-		this.javaMSList = javaMSList;
+	public void setMFlist(List<String> MFlist) {
+		this.MFlist = MFlist;
 	}
 
-	public void readJavaMSList() {
-		for (int i = 0; i < javaMSList.size(); i++)
-			System.out.println(javaMSList.get(i));
+	public void readMFlist() {
+		for (int i = 0; i < MFlist.size(); i++)
+			System.out.println(MFlist.get(i));
 	}
 
-	public void readXmlMSList() {
-		for (int i = 0; i < xmlMSList.size(); i++)
-			System.out.println(xmlMSList.get(i));
+	public List<String> getMFlist() {
+		return this.MFlist;
 	}
 
-	public void setXmlMSList(List<String> xmlMSList) {
-		this.xmlMSList = xmlMSList;
-	}
-
-	public List<String> getJavaMSList() {
-		return this.javaMSList;
-	}
-
-	public void removeJavaMSList() {
-		this.javaMSList.removeAll(javaMSList);
+	public void removeMFlist() {
+		this.MFlist.removeAll(MFlist);
 	}
 
 	public void removeJavaSList() {
 		this.javaList.removeAll(javaSList);
 	}
 
-	public void removeXmlMSList() {
-		this.xmlMList.removeAll(xmlMSList);
-	}
-
 	public void removeXmlSList() {
 		this.xmlList.removeAll(xmlSList);
 	}
 
-	public List<String> getXmlMSList() {
+	public List<String> getXmlMFlist() {
 		return this.xmlMList;
 	}
 
@@ -184,10 +172,44 @@ public class FileList {
 		return this.xmlMList;
 	}
 
+	List<String> javaMSList = new ArrayList<String>();
+	List<String> xmlMSList = new ArrayList<String>();
+
+	public void setJavaMSList(List<String> javaMSList) {
+		this.javaMSList = javaMSList;
+	}
+
+	public void readJavaMSList() {
+		for (int i = 0; i < javaMSList.size(); i++)
+			System.out.println(javaMSList.get(i));
+	}
+
+	public void readXmlMSList() {
+		for (int i = 0; i < xmlMSList.size(); i++)
+			System.out.println(xmlMSList.get(i));
+	}
+
+	public void setXmlMSList(List<String> xmlMSList) {
+		this.xmlMSList = xmlMSList;
+	}
+
+	public List<String> getJavaMSList() {
+		return this.javaMSList;
+	}
+
+	public void removeJavaMSList() {
+		this.javaMSList.removeAll(javaMSList);
+	}
+
+	public List<String> getXmlMSList() {
+		return this.xmlMList;
+	}
+
 	public static FileList getInstance() {
 		if (instance == null) {
 			instance = new FileList();
 		}
 		return instance;
 	}
+
 }
