@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Date:2017-09-25 16:02:54 -->
+<!-- Date:2017-09-25 22:07:01 -->
 <!-- Created by Supermans1201 -->
 
 <!-- rootPath:F:/workspace/testgetdir -->
 <config path="F:\workspace\testgetdir">
-	<selectProject name="F:/EspressoExamples-master/EspressoExamples-master"/>
+	<selectProject name="F:/mudroid3/Android_APP"/>
 	<projectlist readproject="true">
 		<project name="F:/EspressoExamples-master/EspressoExamples-master"/>
 		<project name="F:/mudroid3/Android_APP"/>

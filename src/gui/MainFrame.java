@@ -40,8 +40,8 @@ public class MainFrame extends JFrame implements ActionListener,
 	 */
 	private static final long serialVersionUID = 1L;
 	private static MainFrame instance;
-	private final int width = 1200;
-	private final int height = 690;
+	private final int width = 1350;
+	private final int height = 900;
 	private SpringLayout springlayout = new SpringLayout();
 	private JPanel mainJPanel = new JPanel();
 	private JLabel messageJLabel = new JLabel();
@@ -84,7 +84,7 @@ public class MainFrame extends JFrame implements ActionListener,
 		 functionJPanel.addTab("MuDroid介绍", pjp);
 		 functionJPanel.addTab("选择变异文件和变异算子", mjp);
 		 functionJPanel.addTab("选择变异体", rjp);
-		// functionJPanel.addTab("Analysis", new JLabel("this show tab 4"));
+		 functionJPanel.addTab("变异测试结果", new JLabel("变异测试结果"));
 		
 		this.validate();
 		this.repaint();

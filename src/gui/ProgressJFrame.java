@@ -21,6 +21,7 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.border.TitledBorder;
 
+import serialzation.DealXmlSax;
 import singleton.FileList;
 import singleton.Op;
 import singleton.Project;
@@ -54,8 +55,8 @@ public class ProgressJFrame extends JFrame implements ActionListener {
 	List<String> javafile_list;
 	List<String> xmlfile_list;
 
-	String[] args=new String[]{""};
-	
+	String[] args = new String[] { "" };
+
 	DealJavaOJMutant dj;
 	boolean b = true;
 	private static ProgressJFrame instance;
@@ -65,7 +66,6 @@ public class ProgressJFrame extends JFrame implements ActionListener {
 		this.javafile_list = FileList.getInstance().getJavaSList();
 		this.xmlfile_list = FileList.getInstance().getXmlSList();
 	}
-
 
 	private void init() {
 		// TODO Auto-generated method stub
@@ -96,8 +96,8 @@ public class ProgressJFrame extends JFrame implements ActionListener {
 					jpb2.setValue(0);
 					if (javafile_list != null)
 						for (int i = 0; i < javafile_list.size(); i++) {
-//							System.out.println("javafile£º"
-//									+ javafile_list.get(i));
+							// System.out.println("javafile£º"
+							// + javafile_list.get(i));
 							args[0] = javafile_list.get(i);
 
 							javajl.setText(" The file is dealing is  :  "
@@ -112,10 +112,10 @@ public class ProgressJFrame extends JFrame implements ActionListener {
 									&& Op.getInstance().getClassOp().size() > 0) {
 
 								javaopjl.setText(" The opType is  :  Class Op");
-								
-								dj=new DealJavaOJMutantClass(); 
+
+								dj = new DealJavaOJMutantClass();
 								try {
-									dj.run(args );
+									dj.run(args);
 								} catch (Exception e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
@@ -129,9 +129,9 @@ public class ProgressJFrame extends JFrame implements ActionListener {
 											.size() > 0) {
 								javaopjl.setText(" The opType is  : tradtional Op");
 
-								dj=new DealJavaOJMutantTradtional(); 
+								dj = new DealJavaOJMutantTradtional();
 								try {
-									dj.run(args );
+									dj.run(args);
 								} catch (Exception e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
@@ -144,10 +144,10 @@ public class ProgressJFrame extends JFrame implements ActionListener {
 							if (Op.getInstance().getExceptionOp() != null
 									&& Op.getInstance().getExceptionOp().size() > 0) {
 								javaopjl.setText(" The opType is  :  Exception Op");
-								
-								dj=new DealJavaOJMutantException(); 
+
+								dj = new DealJavaOJMutantException();
 								try {
-									dj.run(args );
+									dj.run(args);
 								} catch (Exception e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
@@ -160,10 +160,10 @@ public class ProgressJFrame extends JFrame implements ActionListener {
 							if (Op.getInstance().getAndroidOp() != null
 									&& Op.getInstance().getAndroidOp().size() > 0) {
 								javaopjl.setText(" The opType is  :  Android Op");
-								
-								dj=new DealJavaOJMutantAndroid(); 
+
+								dj = new DealJavaOJMutantAndroid();
 								try {
-									dj.run(args );
+									dj.run(args);
 								} catch (Exception e) {
 									// TODO Auto-generated catch block
 									e.printStackTrace();
@@ -184,8 +184,14 @@ public class ProgressJFrame extends JFrame implements ActionListener {
 							jpb2.setValue((i + 1) * 100 / xmlfile_list.size());
 							if (Op.getInstance().getXmlOp() != null
 									&& Op.getInstance().getXmlOp().size() > 0) {
-								
-								DealXmlSaxMutant.main(args);
+								DealXmlSax dxs = new DealXmlSaxMutant();
+								try {
+									dxs.run(args);
+								} catch (Exception e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+
 							}
 							System.out.println(xmlfile_list.get(i));
 						}

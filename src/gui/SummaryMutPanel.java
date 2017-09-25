@@ -4,8 +4,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -16,7 +14,6 @@ import java.util.TreeMap;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -27,7 +24,6 @@ import javax.swing.text.SimpleAttributeSet;
 
 import serialzation.SummaryMutantfromXml;
 import singleton.Project;
-import util.GetFiles;
 
 public class SummaryMutPanel extends JPanel implements ActionListener {
 	/**
@@ -341,24 +337,6 @@ public class SummaryMutPanel extends JPanel implements ActionListener {
 		temp.setValueAt(allSum, opTable.getRowCount() - 1,
 				opTable.getColumnCount() - 1);
 
-	}
-
-	public static void main(String[] args) {
-		Project.getInstance().setSelectProject("F:/EspressoExamples-master/EspressoExamples-master");
-		GetFiles.getMutFiles();
-		JFrame jf = new JFrame();
-		SummaryMutPanel fjp = new SummaryMutPanel(0);
-		jf.add(fjp);
-		fjp.setBorder(BorderFactory.createLineBorder(Color.GRAY));
-		jf.setBounds(100, 100, 1300, 600);
-		jf.setVisible(true);
-		jf.addWindowListener(new WindowAdapter() {
-			@Override
-			public void windowClosing(WindowEvent e) {
-				// TODO Auto-generated method stub
-				System.exit(0);
-			}
-		});
 	}
 
 	@Override

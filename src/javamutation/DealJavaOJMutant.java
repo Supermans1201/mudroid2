@@ -19,11 +19,6 @@ public class DealJavaOJMutant extends DealJavaOJ {
 	public String className = null;
 	public int num = 0;
 
-	public static void main(String[] args) {
-		run(new DealJavaOJMutant(),
-				new String[] { "F:/coolweather-master/Android_APP/app/src/main/java/hk/ust/cse/hunkim/questionroom/timemanager/timemanager.java" });
-	}
-
 	public void run(String[] args) throws Exception {
 		super.run(args);
 		if(this.compilationUnit==null)
@@ -70,7 +65,7 @@ public class DealJavaOJMutant extends DealJavaOJ {
 		String s1 = args.substring(0, args.indexOf("src")) + mutantName;// 添加build/output
 		String s2 = args.substring(args.indexOf("src") + 3);// 去掉src
 
-		String s3 = s2.substring(0, s2.length() - 5) + "/" + originalName;// /main/java/com/example/administrator/dataconnect/X99/original
+		String s3 = s2.substring(0, s2.length() - 5) + "/" + originalName;
 		String s4 = s2.substring(s2.lastIndexOf("/"));// /X99.java
 
 		args = s1 + s3 + s4;
@@ -95,7 +90,7 @@ public class DealJavaOJMutant extends DealJavaOJ {
 		args = args.replace('\\', '/');
 		String s1 = args.substring(0, args.indexOf("src")) + mutantName;// 添加build/output
 		String s2 = args.substring(args.indexOf("src") + 3);// 去掉src
-		String s3 = s2.substring(0, s2.length() - 5) + "/" + mutantType;// /main/java/com/example/administrator/dataconnect/X99/original
+		String s3 = s2.substring(0, s2.length() - 5) + "/" + mutantType;//
 		System.out.println(s1 + s3);
 		mutantPath = s1 + s3;
 		System.out.println("setCLASSNAME+++++++++++++++++" + mutantPath);

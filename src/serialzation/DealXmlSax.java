@@ -13,10 +13,6 @@ public class DealXmlSax extends DealXml {
 	String op[];
 	String[] xmlOp = null;
 
-	public static void main(String[] args) {
-		run(new DealXmlSax(),
-				new String[] { "F:/muAndroid/jnilearning/.projectToXMLs/projectToXMLs.xml" });
-	}
 
 	public void run(String[] args) throws Exception {
 		if (args.length < 1) {

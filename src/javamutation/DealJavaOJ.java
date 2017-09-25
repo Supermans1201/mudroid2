@@ -38,12 +38,7 @@ public class DealJavaOJ extends DealJava{
 	{
 		this.jarList=jarList;
 	}
-	public static void main(String[] args)
-	{
-		
-		run(new DealJavaOJ(), new String[]{"F:/muAndroid/activity-lifecycle/src/com/example/android/lifecycle/ActivityA.java"});
-	}
-
+	
 	public DealJavaOJ() 
 	{
 	}

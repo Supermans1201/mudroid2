@@ -6,8 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Vector;
@@ -18,7 +16,6 @@ import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
@@ -30,7 +27,6 @@ import javax.swing.table.TableColumn;
 
 import serialzation.SummaryMutantfromXml;
 import singleton.Project;
-import util.GetFiles;
 
 public class ChooseMutantXmlPanel extends JPanel implements ActionListener,
 		ItemListener {
@@ -108,12 +104,12 @@ public class ChooseMutantXmlPanel extends JPanel implements ActionListener,
 		initFileColumnSizes(jF, fTableModel);
 		JScrollPane jFsp = new JScrollPane(jF);
 		listPanel.add(jFsp);
-		jFsp.setPreferredSize(new Dimension(200, 300));
-		jFsp.setMaximumSize(new Dimension(200, 1200));
-		jFsp.setMinimumSize(new Dimension(200, 600));
+		jFsp.setPreferredSize(new Dimension(300, 300));
+		jFsp.setMaximumSize(new Dimension(300, 1200));
+		jFsp.setMinimumSize(new Dimension(300, 600));
 
-		opListPanel.setPreferredSize(new Dimension(80, 1200));
-		opListPanel.setMinimumSize(new Dimension(80, 600));
+		opListPanel.setPreferredSize(new Dimension(110, 1200));
+		opListPanel.setMinimumSize(new Dimension(110, 600));
 		opListPanel.setLayout(new BoxLayout(opListPanel, BoxLayout.PAGE_AXIS));
 
 		FILETableModel cmopTableModel = new FILETableModel(getNewTragetcmOps(),
@@ -178,8 +174,8 @@ public class ChooseMutantXmlPanel extends JPanel implements ActionListener,
 		strategyPanel.setMinimumSize(new Dimension(220, 600));
 		JPanel chooseFilePanel = new JPanel();
 		chooseFilePanel.setBorder(new TitledBorder("choose File"));
-		chooseFilePanel.setPreferredSize(new Dimension(220, 70));
-		chooseFilePanel.setMaximumSize(new Dimension(220, 70));
+		chooseFilePanel.setPreferredSize(new Dimension(220, 110));
+		chooseFilePanel.setMaximumSize(new Dimension(220, 110));
 		ButtonGroup fbg = new ButtonGroup();
 
 		fbg.add(fAll);
@@ -236,8 +232,8 @@ public class ChooseMutantXmlPanel extends JPanel implements ActionListener,
 		JPanel chooseOpPanel = new JPanel();
 		chooseOpPanel.setBorder(new TitledBorder("choose mutant Op"));
 		strategyPanel.add(chooseOpPanel);
-		chooseOpPanel.setPreferredSize(new Dimension(220, 70));
-		chooseOpPanel.setMaximumSize(new Dimension(220, 70));
+		chooseOpPanel.setPreferredSize(new Dimension(220, 170));
+		chooseOpPanel.setMaximumSize(new Dimension(220, 170));
 		ButtonGroup opbg = new ButtonGroup();
 
 		opbg.add(opAll);
@@ -453,27 +449,6 @@ public class ChooseMutantXmlPanel extends JPanel implements ActionListener,
 				break;
 			}
 		}
-	}
-
-	public static void main(String[] args) {
-
-		Project.getInstance().setSelectProject(
-				"F:/EspressoExamples-master/EspressoExamples-master");
-		GetFiles.getMutFiles();
-
-		JFrame jf = new JFrame();
-		ChooseMutantXmlPanel fjp = new ChooseMutantXmlPanel();
-		jf.add(fjp);
-		fjp.setBorder(BorderFactory.createLineBorder(Color.GRAY));
-		jf.setBounds(100, 100, 1300, 600);
-		jf.setVisible(true);
-		jf.addWindowListener(new WindowAdapter() {
-			@Override
-			public void windowClosing(WindowEvent e) {
-				// TODO Auto-generated method stub
-				System.exit(0);
-			}
-		});
 	}
 
 	@Override

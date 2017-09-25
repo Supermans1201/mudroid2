@@ -21,14 +21,6 @@ public class DealXmlSaxMutant extends DealXmlSax {
 	public String mutantType = null;
 	String[] xmlOp = (String[]) singleton.Op.getInstance().getXmlOp().toArray();
 
-	public static void main(String[] args) {
-		run(new DealXmlSaxMutant(), args);
-	}
-
-	public static void main2(String[] args) {
-		run(new DealXmlSaxMutant(),
-				new String[] { "F:/muAndroid/activity-lifecycle/src/activity_a.xml" });
-	}
 
 	public DealXmlSaxMutant() {
 	}
@@ -48,7 +40,7 @@ public class DealXmlSaxMutant extends DealXmlSax {
 		System.out.println(args);
 		String s1 = args.substring(0, args.indexOf("src")) + mutantName;// 添加build/output
 		String s2 = args.substring(args.indexOf("src") + 3);// 去掉src
-		String s3 = s2.substring(0, s2.length() - 4) + "/" + originalName;// /main/java/com/example/administrator/dataconnect/X99/original
+		String s3 = s2.substring(0, s2.length() - 4) + "/" + originalName;//
 		String s4 = s2.substring(s2.lastIndexOf("/"));// /X99.java
 		args = s1 + s3 + s4;
 		System.out.println("args21 " + args);
@@ -70,7 +62,7 @@ public class DealXmlSaxMutant extends DealXmlSax {
 		args = args.replace('\\', '/');
 		String s1 = args.substring(0, args.indexOf("src")) + mutantName;// 添加build/output
 		String s2 = args.substring(args.indexOf("src") + 3);// 去掉src
-		String s3 = s2.substring(0, s2.length() - 4) + "/" + mutantType;// /main/java/com/example/administrator/dataconnect/X99/original
+		String s3 = s2.substring(0, s2.length() - 4) + "/" + mutantType;// 
 		System.out.println(s1 + s3);
 		mutantPath = s1 + s3;
 		System.out.println("mutantpath" + mutantPath);

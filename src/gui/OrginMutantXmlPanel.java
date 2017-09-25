@@ -109,12 +109,12 @@ public class OrginMutantXmlPanel extends JPanel implements ActionListener,
 		JPanel filePanel = new JPanel();
 		fileAndcomboxPanel.add(filePanel);
 		filePanel.setBorder(new TitledBorder("choose the file"));
-		filePanel.setPreferredSize(new Dimension(150, 540));
+		filePanel.setPreferredSize(new Dimension(300, 540));
 
 		filePanel.setLayout(new BoxLayout(filePanel, BoxLayout.LINE_AXIS));
 		filePanel.add(fileSP);
 		fileSP.getViewport().add(fList, null);
-		fileSP.setPreferredSize(new Dimension(100, 540));
+		fileSP.setPreferredSize(new Dimension(300, 540));
 		fList.addListSelectionListener(this);
 		// fileSP.setPreferredSize(new Dimension(100,filePanel.getHeight()));
 		JPanel comboxPanel = new JPanel();
@@ -132,13 +132,6 @@ public class OrginMutantXmlPanel extends JPanel implements ActionListener,
 		opTypeCB.setEditable(false);
 		opTypeCB.setPreferredSize(new Dimension(100, 25));
 		opTypeCB.addActionListener(this);
-		// comboxPanel.add(selectMethodPanel);
-		// selectMethodPanel.setLayout(new FlowLayout());
-		// JLabel selectMethodLabel = new JLabel("   Select the Method : ");
-		// selectMethodPanel.add(selectMethodLabel);
-		// selectMethodPanel.add(methodCB);
-		// methodCB.setEditable(false);
-		// methodCB.setPreferredSize(new Dimension(100, 25));
 		comboxPanel.add(selectOpPanel);
 		selectOpPanel.setLayout(new FlowLayout());
 		selectOpPanel.setPreferredSize(new Dimension(120, 60));
@@ -181,12 +174,12 @@ public class OrginMutantXmlPanel extends JPanel implements ActionListener,
 		changeTFPanel.setLayout(new BoxLayout(changeTFPanel,
 				BoxLayout.LINE_AXIS));
 		changeTFPanel.add(changeTF);
-
+		changeTFPanel.setPreferredSize(new Dimension(550, 50));
 		rightContentPanel.add(changeTFPanel);
 
 		// show the source code of the original file and the mutant
-		originalSP.setPreferredSize(new Dimension(550, 245));
-		mutantSP.setPreferredSize(new Dimension(550, 245));
+		originalSP.setPreferredSize(new Dimension(550, 845));
+		mutantSP.setPreferredSize(new Dimension(550, 845));
 		originalSP.setBorder(new TitledBorder("Original"));
 		mutantSP.setBorder(new TitledBorder("Mutant"));
 		mutantSP.getViewport().add(mutantTP, null);

@@ -94,7 +94,7 @@ public class EstablishFrame extends JFrame implements ActionListener,
 
 		jbArray = new JButton[] { new JButton("Start a Android project"),
 				new JButton("Start a Eclispe project"),
-				new JButton("Configue"), new JButton("Docs and How-Tos"), };
+				new JButton("Config"), new JButton("Docs and How-Tos"), };
 		jp.setLayout(null);
 		jp.setBackground(Color.LIGHT_GRAY);
 		jp.add(welcome);
@@ -141,26 +141,34 @@ public class EstablishFrame extends JFrame implements ActionListener,
 					LoadingFrame.getInstance().setVisible(true);
 					LoadingFrame.getInstance().requestFocus();
 					LoadingFrame.getInstance().setAlwaysOnTop(true);
+					SwingUtilities.invokeLater(new Runnable() {
 
-					Project.getInstance().setSelectProject(
-							str1[((JList) e.getSource()).getSelectedIndex()]);
-					Project.getInstance().setReadProject(true);
+						@Override
+						public void run() {
+							// TODO Auto-generated method stub
+							Project.getInstance().setSelectProject(
+									str1[((JList) e.getSource()).getSelectedIndex()]);
+							Project.getInstance().setReadProject(true);
 
-					ToXml tx = new ConfigToXml();
-					try {
-						tx.run(new String[] { Project.getInstance()
-								.getConfigDir() });
-					} catch (Exception e2) {
-						// TODO Auto-generated catch block
-						e2.printStackTrace();
-					}
-					System.out.println("opening...."
-							+ str1[((JList) e.getSource()).getSelectedIndex()]);
+							ToXml tx = new ConfigToXml();
+							try {
+								tx.run(new String[] { Project.getInstance()
+										.getConfigDir() });
+							} catch (Exception e2) {
+								// TODO Auto-generated catch block
+								e2.printStackTrace();
+							}
+							System.out.println("opening...."
+									+ str1[((JList) e.getSource()).getSelectedIndex()]);
 
-					MainFrame.getInstance().setVisible(false);
-					MainFrame.getInstance().reload();
+							MainFrame.getInstance().setVisible(false);
+							MainFrame.getInstance().reload();
+							
+							MainFrame.getInstance().reload2();
+						}
 					
-					MainFrame.getInstance().reload2();
+					});
+					
 					// When double click JList
 				}
 			}

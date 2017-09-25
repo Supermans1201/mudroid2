@@ -1,18 +1,12 @@
 package gui;
 
 import java.awt.Color;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
-import singleton.Project;
 import util.GetFiles;
-
 
 public class MutantRunJPanel extends JPanel {
 
@@ -35,7 +29,7 @@ public class MutantRunJPanel extends JPanel {
 
 	void init() {
 		GetFiles.getMutFiles();
-		
+
 		this.add(jtp);
 		this.setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
 
@@ -45,33 +39,12 @@ public class MutantRunJPanel extends JPanel {
 		OrginMutantXmlPanel xoamjp = new OrginMutantXmlPanel();
 		// functionPanel.add(cmjp);
 
-		jtp.addTab("show java mutants", oamjp);
-		jtp.addTab("show xml mutants", xoamjp);
-		jtp.addTab("choose java mutants", cmjp);
-		jtp.addTab("choose xml mutants", xcmjp);
+		jtp.addTab("显示Java变异体", oamjp);
+		jtp.addTab("显示Xml 变异体", xoamjp);
+		jtp.addTab("选择Java变异体", cmjp);
+		jtp.addTab("选择 Xml 变异体", xcmjp);
 
 		this.setBorder(BorderFactory.createLineBorder(Color.black));
-	}
-	public static void main(String[] args)
-	{
-		Project.getInstance().setSelectProject("F:/EspressoExamples-master/EspressoExamples-master");
-		GetFiles.getMutFiles();
-		JFrame jf=new JFrame();
-		MutantRunJPanel fjp=new MutantRunJPanel();
-		jf.add(fjp);
-		fjp.setBorder(BorderFactory.createLineBorder(Color.GRAY));
-		jf.setBounds(100,100,1300,600);
-		jf.setVisible(true);	
-		jf.addWindowListener(new WindowAdapter(){
-
-			
-			@Override
-			public void windowClosing(WindowEvent e) {
-				// TODO Auto-generated method stub
-				System.exit(0);
-			}
-			
-		});
 	}
 
 }
