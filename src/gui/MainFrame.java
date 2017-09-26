@@ -226,6 +226,16 @@ public class MainFrame extends JFrame implements ActionListener,
 		// TODO Auto-generated method stub
 		if (e.getSource() == toolBarButton[0]) {
 			messageJLabel.setText("打开命令行");
+			try {
+//				Desktop.getDesktop().open(new File(Project.getInstance().getConfigDir()+"/open.bat"));
+				System.out.println("cmd.exe /k start "+ Project.getInstance().getEmuExePath()+"/emulator.exe  @" + Project.getInstance().getEmuAvdName());
+				Runtime.getRuntime().exec("cmd.exe /c start "+ Project.getInstance().getEmuExePath()+"/emulator.exe  @" + Project.getInstance().getEmuAvdName());
+				
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			//E:/Users/Supermans1201/AppData/Local/Android/sdk/tools/emulator.exe @Nexus_5X_API_24
 		}
 		if (e.getSource() == toolBarButton[1]) {
 			messageJLabel.setText("打开项目目录");

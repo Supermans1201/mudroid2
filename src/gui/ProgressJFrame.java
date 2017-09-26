@@ -96,7 +96,6 @@ public class ProgressJFrame extends JFrame implements ActionListener {
 					jpb2.setValue(0);
 					if (javafile_list != null)
 						for (int i = 0; i < javafile_list.size(); i++) {
-							// System.out.println("javafile£º"
 							// + javafile_list.get(i));
 							args[0] = javafile_list.get(i);
 

@@ -108,6 +108,16 @@ public class ConfigToXml extends ToXml {
 					+ "\">");
 			writer.println("\t</projectlist>");
 		}
+		if(Project.getInstance().getsdkPath()==null)
+		{writer.println("<SDK path=\"\"  >");
+		writer.println("</SDK>");}
+		else
+		{writer.println("<SDK path="+Project.getInstance().getsdkPath()+">");
+		writer.println("</SDK>");
+		}
+		
+		writer.println("<emulator exePath=\""+Project.getInstance().getEmuExePath()+"\"  avdPath=\""+Project.getInstance().getEmuAvdPath()+"\" avdName=\""+Project.getInstance().getEmuAvdName()+"\">");
+		writer.println("</emulator>");
 
 	}
 

@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Date:2017-09-25 22:07:01 -->
+<!-- Date:2017-09-26 11:38:25 -->
 <!-- Created by Supermans1201 -->
 
 <!-- rootPath:F:/workspace/testgetdir -->
 <config path="F:\workspace\testgetdir">
-	<selectProject name="F:/mudroid3/Android_APP"/>
+	<selectProject name="F:/EspressoExamples-master/EspressoExamples-master"/>
 	<projectlist readproject="true">
 		<project name="F:/EspressoExamples-master/EspressoExamples-master"/>
 		<project name="F:/mudroid3/Android_APP"/>
 	</projectlist>
+<SDK path="E:/Users/Supermans1201/AppData/Local/Android/sdk">
+</SDK>
+<emulator exePath="E:/Users/Supermans1201/AppData/Local/Android/sdk/tools"  avdPath="E:/Users/Supermans1201/.android/avd" avdName="Nexus_5X_API_24">
+</emulator>
 </config>

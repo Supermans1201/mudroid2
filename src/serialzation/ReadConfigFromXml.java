@@ -17,6 +17,10 @@ public class ReadConfigFromXml extends DealXmlSax {
 	Boolean readProject = false;
 	String selectProject = "";
 	List<Element> elements = new ArrayList<Element>();
+	String sdkPath;
+	String emuExePath;
+	String avdPath;
+	String avdName;
 
 	public ReadConfigFromXml() {
 	}
@@ -46,6 +50,15 @@ public class ReadConfigFromXml extends DealXmlSax {
 					selectProject = e.attributeValue("name");
 					// System.out.println("file:"+selectProject);
 				}
+				
+				if (e.getName().equals("SDK")) {
+					sdkPath=e.attributeValue("path");
+				}
+				if (e.getName().equals("emulator")) {
+					emuExePath=e.attributeValue("exePath");
+					avdPath=e.attributeValue("avdPath");
+					avdName=e.attributeValue("avdName");
+				}
 
 			}
 
@@ -61,5 +74,9 @@ public class ReadConfigFromXml extends DealXmlSax {
 		Project.getInstance().setReadProject(readProject);
 		Project.getInstance().setProjectlist(projectList);
 		Project.getInstance().setSelectProject(selectProject);
+		Project.getInstance().setSdkPath(sdkPath);
+		Project.getInstance().setEmuAvdPath(avdPath);
+		Project.getInstance().setEmuExePath(emuExePath);
+		Project.getInstance().setEmuAvdName(avdName);
 	}
 }

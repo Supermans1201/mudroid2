@@ -217,7 +217,6 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 		
 		Vector<String> f = new Vector<String>();
 		for (String value : nameSet) {
-			System.out.println(value);
 			Iterator<?> entries = name_opMap.entrySet().iterator();
 			Set<String> oT = new HashSet<String>();
 			new HashSet<String>();
@@ -237,12 +236,10 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 			}
 
 			if (oT.size() > 1) {
-				System.out.println(oT.size());
 				f.add(value);
 			}
 		}
-		for (String value : f) {
-			System.out.println(" : " + value);
+		for (@SuppressWarnings("unused") String value : f) {
 		}
 		fList.setListData(f);
 		fList.setSelectedIndex(0);
@@ -269,18 +266,12 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 		// TODO Auto-generated method stub
 		if (e.getSource() == this.runTest) {
 			System.out.println("runTest");
-			System.out.println("runTest");
 			String tempfilename;
-			// String tempfilename2 =
-			// "F:/muandroid3/AndroidApp-master/app/temp.java";
-			String ofilename;
 			List<String> javaList = new ArrayList<String>();
 			javaList = FileList.getInstance().getJavaMList();
 			String filename = javaList.get((Integer) (this.mList
 					.getSelectedIndex()));
 
-			System.out.println("file name £º" + filename);
-			System.out.println(opTypeCB.getSelectedItem().toString());
 			tempfilename = filename.replace("\\", "/");
 			if (filename.indexOf(opTypeCB.getSelectedItem().toString()) >= 0)
 				tempfilename = tempfilename
@@ -288,9 +279,6 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 								.getSelectedItem().toString()) - 1);
 
 			tempfilename = tempfilename + ".java";
-			System.out.println(tempfilename);
-			ofilename = tempfilename.replace("/mutant/", "/src/");
-			System.out.println(ofilename);
 			try {
 				System.out.println("run test java Op>>>>>>>");
 				// Process p = null;
@@ -307,7 +295,6 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 				// stdout = new BufferedReader(new InputStreamReader(
 				// p.getInputStream()));
 				// while ((line = stdout.readLine()) != null) {
-				// System.out.println(line);
 				// bw.write(line);
 				// bw.newLine();
 				// ;
@@ -325,7 +312,6 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 		}
 
 		// if(opTypeCB.getSelectedItem()!=null)
-		// System.out.println(">>"+opTypeCB.getSelectedItem());
 		//
 		if (e.getSource().equals(opTypeCB)) {
 			Iterator<?> entries = name_opMap.entrySet().iterator();
@@ -346,12 +332,9 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 						o.add(op);
 				}
 			}
-			// System.out.println("1");
 			opCB.removeActionListener(this);
 			opCB.removeAllItems();
-			// System.out.println("2");
 			for (String value : o) {
-				// System.out.println(value);
 
 				opCB.addItem(value);
 			}
@@ -359,10 +342,6 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 			opCB.setSelectedIndex(0);
 		}
 		if (e.getSource().equals(opCB)) {
-			String s = fList.getSelectedValue().toString()
-					+ opTypeCB.getSelectedItem() + opCB.getSelectedItem();
-			System.out.println("flist +" + s);
-
 			String[] args = new String[] { this.filterFile,
 					fList.getSelectedValue().toString(), "all",
 					opTypeCB.getSelectedItem().toString(),
@@ -382,7 +361,6 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 			for (int i = 0; i < javaList.size(); i++) {
 				String temps = javaList.get(i);
 
-				System.out.println(temps);
 				temps = temps.substring(0, temps.lastIndexOf("\\"));
 				temps = temps.substring(temps.lastIndexOf("\\") + 1);
 				mjList.add(temps);
@@ -402,7 +380,6 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 		// TODO Auto-generated method stub
 
 		if (e.getSource().equals(fList)) {
-			System.out.println(((JList<?>) e.getSource()).getSelectedValue());
 			Iterator<?> entries = name_opMap.entrySet().iterator();
 
 			Set<String> oT = new HashSet<String>();
@@ -422,12 +399,9 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 
 				}
 			}
-			// System.out.println("1");
 			opTypeCB.removeActionListener(this);
 			opTypeCB.removeAllItems();
-			// System.out.println("2");
 			for (String value : oT) {
-				// System.out.println(value);
 				if (!value.equals("original"))
 					opTypeCB.addItem(value);
 			}
@@ -442,8 +416,6 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 			String filename = javaList.get((Integer) ((JList<?>) e.getSource())
 					.getSelectedIndex());
 
-			System.out.println("file name £º" + filename);
-			System.out.println(opTypeCB.getSelectedItem().toString());
 			String tempfilename = filename.replace("\\", "/");
 			if (filename.indexOf(opTypeCB.getSelectedItem().toString()) >= 0)
 				tempfilename = tempfilename
@@ -461,7 +433,6 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 			showOriginal(ofilename);
 			
 			showMutant(filename, mutantlog);
-			System.out.println(((JList<?>) e.getSource()).getSelectedValue());
 		}
 	}
 
@@ -530,13 +501,9 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 	 *            line number of mutated code against original program
 	 */
 	public void showMutant(String filename, String mutant_log) {
-		System.out.println("MutantsViewerPanel.showMutant (with mutant_log)");
 		try {
-			System.out.println(mutant_log);
 			int changed_line = getMutatedLineNum(mutant_log);
-			System.out.println(changed_line);
 			String changed_content = getMutatedContent(mutant_log);
-			System.out.println(changed_content);
 			changeTF.setText(" (line " + changed_line + ") " + changed_content);
 			changeTF.repaint();
 
@@ -547,7 +514,6 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 			int caret_pos = 0;
 			String strLine;
 			File myFile = new File(filename);
-			// System.out.println("showMutant: myFile =" +
 			// myFile.getAbsolutePath());
 
 			String blank_str;
@@ -598,7 +564,6 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 			LineNumberReader lReader = new LineNumberReader(new FileReader(
 					myFile));
 			while ((strLine = lReader.readLine()) != null) {
-				// System.out.println(">>" +strLine);
 				if (strLine.indexOf(mutant_name) == 0) {
 					return strLine;
 				}
@@ -632,7 +597,6 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 		String log_str = str;
 		log_str = log_str.substring(start_index + 1);
 		int end_index = start_index + 1 + log_str.indexOf(":");
-		System.out.println(str.substring(end_index + 1));
 		return str.substring(end_index + 1);
 
 	}

@@ -23,6 +23,45 @@ public class Project {
 	
 	String mutDir="/app/mutant";
 	
+	String sdkPath;
+	String emuExePath;
+	String emuAvdPath;
+	String emuAvdName;
+	public void setSdkPath(String sdkPath)
+	{
+		this.sdkPath=sdkPath;
+	}
+	public void setEmuExePath(String emuExePath )
+	{
+		this.emuExePath=emuExePath;
+	}
+	public void setEmuAvdPath(String emuAvdPath)
+	{
+		this.emuAvdPath=emuAvdPath;
+	}
+	public void setEmuAvdName(String emuAvdName)
+	{
+		this.emuAvdName=emuAvdName;
+	}
+	
+	public String getsdkPath()
+	{
+		return this.sdkPath;
+	}
+	public String getEmuExePath()
+	{
+		return this.emuExePath;
+	}
+	public String getEmuAvdPath()
+	{
+		return this.emuAvdPath;
+	}
+	public String getEmuAvdName()
+	{
+		return this.emuAvdName;
+	}
+	
+	
 	public String getMutDir()
 	{
 		return Project.getInstance().getSelectProject()+mutDir;

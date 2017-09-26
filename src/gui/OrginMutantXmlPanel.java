@@ -217,7 +217,6 @@ public class OrginMutantXmlPanel extends JPanel implements ActionListener,
 		Vector<String> f = new Vector<String>();
 
 		for (String value : nameSet) {
-			System.out.println(value);
 			Iterator<?> entries = name_opMap.entrySet().iterator();
 
 			Set<String> oT = new HashSet<String>();
@@ -237,12 +236,10 @@ public class OrginMutantXmlPanel extends JPanel implements ActionListener,
 				}
 			}
 			if (oT.size() > 1) {
-				System.out.println(oT.size());
 				f.add(value);
 			}
 		}
-		for (String value : f) {
-			System.out.println(" : " + value);
+		for (@SuppressWarnings("unused") String value : f) {
 		}
 		fList.setListData(f);
 		;
@@ -289,12 +286,9 @@ public class OrginMutantXmlPanel extends JPanel implements ActionListener,
 						o.add(op);
 				}
 			}
-			// System.out.println("1");
 			opCB.removeActionListener(this);
 			opCB.removeAllItems();
-			// System.out.println("2");
 			for (String value : o) {
-				// System.out.println(value);
 
 				opCB.addItem(value);
 			}
@@ -302,10 +296,6 @@ public class OrginMutantXmlPanel extends JPanel implements ActionListener,
 			opCB.setSelectedIndex(0);
 		}
 		if (e.getSource().equals(opCB)) {
-			String s = fList.getSelectedValue().toString()
-					+ opTypeCB.getSelectedItem() + opCB.getSelectedItem();
-			System.out.println("flist +" + s);
-
 			String[] args = new String[] { this.filterFile,
 					fList.getSelectedValue().toString(), "all",
 					opTypeCB.getSelectedItem().toString(),
@@ -326,7 +316,6 @@ public class OrginMutantXmlPanel extends JPanel implements ActionListener,
 			for (int i = 0; i < javaList.size(); i++) {
 				String temps = javaList.get(i);
 
-				System.out.println(temps);
 				temps = temps.substring(0, temps.lastIndexOf("\\"));
 				temps = temps.substring(temps.lastIndexOf("\\") + 1);
 				mjList.add(temps);
@@ -346,7 +335,6 @@ public class OrginMutantXmlPanel extends JPanel implements ActionListener,
 		// TODO Auto-generated method stub
 
 		if (e.getSource().equals(fList)) {
-			System.out.println(((JList<?>) e.getSource()).getSelectedValue());
 			Iterator<?> entries = name_opMap.entrySet().iterator();
 
 			Set<String> oT = new HashSet<String>();
@@ -366,11 +354,8 @@ public class OrginMutantXmlPanel extends JPanel implements ActionListener,
 
 				}
 			}
-			// System.out.println("1");
 			opTypeCB.removeActionListener(this);
 			opTypeCB.removeAllItems();
-			// System.out.println("2");
-			System.out.println(oT.size());
 			for (String value : oT) {
 				if (!value.equals("original"))
 					opTypeCB.addItem(value);
@@ -386,8 +371,6 @@ public class OrginMutantXmlPanel extends JPanel implements ActionListener,
 			String filename = javaList.get((Integer) ((JList<?>) e.getSource())
 					.getSelectedIndex());
 			// showMutant(filename);
-			System.out.println("file name £º" + filename);
-			System.out.println(opTypeCB.getSelectedItem().toString());
 			String tempfilename = filename.replace("\\", "/");
 			if (filename.indexOf(opTypeCB.getSelectedItem().toString()) >= 0)
 				tempfilename = tempfilename
@@ -405,7 +388,6 @@ public class OrginMutantXmlPanel extends JPanel implements ActionListener,
 			showOriginal(ofilename);
 			//
 			showMutant(filename, mutantlog);
-			System.out.println(((JList<?>) e.getSource()).getSelectedValue());
 		}
 	}
 
@@ -474,7 +456,6 @@ public class OrginMutantXmlPanel extends JPanel implements ActionListener,
 	 *            line number of mutated code against original program
 	 */
 	public void showMutant(String filename, String mutant_log) {
-		System.out.println("MutantsViewerPanel.showMutant (with mutant_log)");
 		try {
 			changeTF.setText(mutant_log);
 			changeTF.repaint();
@@ -495,12 +476,10 @@ public class OrginMutantXmlPanel extends JPanel implements ActionListener,
 	String getMutant(String logname, String mutant_name) {
 		try {
 			File myFile = new File(logname);
-			System.out.println(">>" + logname);
 			String strLine;
 			LineNumberReader lReader = new LineNumberReader(new FileReader(
 					myFile));
 			while ((strLine = lReader.readLine()) != null) {
-				// System.out.println(">>" +strLine);
 				if (strLine.indexOf(mutant_name) == 0) {
 					return strLine;
 				}
@@ -522,7 +501,6 @@ public class OrginMutantXmlPanel extends JPanel implements ActionListener,
 		String temp = str.substring(start_index + 1, end_index);
 
 		temp = temp.replace(" ", "");
-		System.out.println(temp);
 		return ((new Integer(temp)).intValue());
 	}
 
@@ -533,7 +511,6 @@ public class OrginMutantXmlPanel extends JPanel implements ActionListener,
 		log_str = log_str.substring(start_index + 1);
 		int end_index = start_index + 1 + log_str.indexOf(":");
 
-		System.out.println(str.substring(end_index + 1));
 		return str.substring(end_index + 1);
 
 	}
