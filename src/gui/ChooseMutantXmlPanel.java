@@ -77,7 +77,8 @@ public class ChooseMutantXmlPanel extends JPanel implements ActionListener,
 
 	JButton showSummary = new JButton("show the summary");
 	JButton showChoosedMutant = new JButton("show choosed mutant");
-	JButton runTest = new JButton("runTest");
+	JButton runTest = new JButton("÷¥––±‰“Ï≤‚ ‘");
+	JPanel runTestPanel =new JPanel();
 	JToggleButton maxShow = new JToggleButton("Max the ShowPanel");
 	SummaryMutPanel summaryp = new SummaryMutPanel(Project.getInstance()
 			.getJavaMutFilterLoc());
@@ -91,6 +92,7 @@ public class ChooseMutantXmlPanel extends JPanel implements ActionListener,
 		this.setLayout(new BoxLayout(this, BoxLayout.LINE_AXIS));
 		functionPanel.add(listPanel);
 		functionPanel.add(strategyPanel);
+		functionPanel.add(opListPanel);
 		functionPanel.setBorder(BorderFactory.createEtchedBorder());
 		this.add(functionPanel);
 		listPanel.setBorder(new TitledBorder("list Panel"));
@@ -108,8 +110,9 @@ public class ChooseMutantXmlPanel extends JPanel implements ActionListener,
 		jFsp.setMaximumSize(new Dimension(300, 1200));
 		jFsp.setMinimumSize(new Dimension(300, 600));
 
-		opListPanel.setPreferredSize(new Dimension(110, 1200));
-		opListPanel.setMinimumSize(new Dimension(110, 600));
+		opListPanel.setPreferredSize(new Dimension(90, 1200));
+		opListPanel.setMinimumSize(new Dimension(90, 600));
+		opListPanel.setMaximumSize(new Dimension(90, 1200));
 		opListPanel.setLayout(new BoxLayout(opListPanel, BoxLayout.PAGE_AXIS));
 
 		FILETableModel cmopTableModel = new FILETableModel(getNewTragetcmOps(),
@@ -163,7 +166,7 @@ public class ChooseMutantXmlPanel extends JPanel implements ActionListener,
 			opListPanel.add(jamOpsp);
 		if (xmb.isEnabled())
 			opListPanel.add(jxmOpsp);
-		listPanel.add(opListPanel);
+//		listPanel.add(opListPanel);
 		// JPanel j=new JPanel();
 		// listPanel.add(j);
 		strategyPanel.setBorder(new TitledBorder("strategy Panel"));
@@ -275,7 +278,12 @@ public class ChooseMutantXmlPanel extends JPanel implements ActionListener,
 		useagePanel.add(maxShow);
 		useagePanel.add(showSummary);
 		useagePanel.add(showChoosedMutant);
-		useagePanel.add(runTest);
+		
+		runTestPanel.add(runTest);
+		runTestPanel.setBorder(new TitledBorder("Run Test"));
+		runTestPanel.setPreferredSize(new Dimension(220, 70));
+		runTestPanel.setMinimumSize(new Dimension(220, 70));
+		strategyPanel.add(runTestPanel);
 		this.add(runPanel);
 		runPanel.add(jsp);
 		jsp.setWheelScrollingEnabled(true);
@@ -455,20 +463,27 @@ public class ChooseMutantXmlPanel extends JPanel implements ActionListener,
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if (e.getSource() == this.runTest) {
-			// out.println("runTest");
-			// ProgressJFrame2 pjf2=ProgressJFrame2.getInstance();
-			// pjf2.setVisible(true);
-			// pjf2.setSome(cmb.isSelected(), tmb.isSelected(),
-			// emb.isSelected(), amb.isSelected(), xmb.isSelected());
-			// FILETableModel jftM=(FILETableModel)jF.getModel();
-			// FILETableModel jcmOptM=(FILETableModel)jcmOp.getModel();
-			// FILETableModel jtmOptM=(FILETableModel)jtmOp.getModel();
-			// FILETableModel jemOptM=(FILETableModel)jemOp.getModel();
-			// FILETableModel jamOptM=(FILETableModel)jamOp.getModel();
-			// FILETableModel jxmOptM=(FILETableModel)jxmOp.getModel();
-			// pjf2.setSome2(jftM, jcmOptM, jtmOptM, jemOptM, jamOptM, jxmOptM);
-			//
-			// pjf2.strat();
+			System.out.println("runTest");
+			ProgressJFrame2 pjf2=ProgressJFrame2.getInstance();
+			pjf2.clear();
+			pjf2.setVisible(true);
+			pjf2.setSome(cmb.isSelected(), tmb.isSelected(), emb.isSelected(), amb.isSelected(), xmb.isSelected());
+			FILETableModel jftM=(FILETableModel)jF.getModel();
+			
+			FILETableModel jcmOptM=(FILETableModel)jcmOp.getModel();
+			FILETableModel jtmOptM=(FILETableModel)jtmOp.getModel();
+			FILETableModel jemOptM=(FILETableModel)jemOp.getModel();
+			FILETableModel jamOptM=(FILETableModel)jamOp.getModel();
+			FILETableModel jxmOptM=(FILETableModel)jxmOp.getModel();
+			
+			String[] fileList=jftM.getSelectedFiles();
+			String[] cmop=jcmOptM.getSelectedFiles();
+			String[] tmop=jtmOptM.getSelectedFiles();
+			String[] amop=jemOptM.getSelectedFiles();
+			String[] emop=jamOptM.getSelectedFiles();
+			String[] xmop=jxmOptM.getSelectedFiles();
+			pjf2.setSome2( fileList,cmop,tmop,amop,emop,xmop);		
+			pjf2.start();
 		}
 		if (e.getSource() == all) {
 			if (cmb.isEnabled())

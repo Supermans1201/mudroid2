@@ -74,7 +74,7 @@ public class LoadingFrame extends JFrame {
 		showAuthor.setForeground(Color.WHITE);
 		showAuthor.setBounds(300, 240, 600, 20);
 		jp.add(showVersion);
-		showVersion.setText("version: 1.0.0.1");
+		showVersion.setText("version: 2.3.0");
 		showVersion.setForeground(Color.WHITE);
 		showVersion.setBounds(300, 260, 600, 20);
 

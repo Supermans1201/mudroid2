@@ -23,7 +23,6 @@ import java.util.Map.Entry;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
-import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JList;
@@ -66,8 +65,6 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 	JPanel selectOpTypePanel = new JPanel();
 	JPanel selectMethodPanel = new JPanel();
 	JPanel selectOpPanel = new JPanel();
-	JPanel runtestPanel = new JPanel();
-	JButton runTest = new JButton("runTest");
 	JComboBox<String> opTypeCB = new JComboBox<String>();
 	JComboBox<String> methodCB = new JComboBox<String>();
 	JComboBox<String> opCB = new JComboBox<String>();
@@ -109,12 +106,12 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 		JPanel filePanel = new JPanel();
 		fileAndcomboxPanel.add(filePanel);
 		filePanel.setBorder(new TitledBorder("choose the file"));
-		filePanel.setPreferredSize(new Dimension(300, 540));
+		filePanel.setPreferredSize(new Dimension(230, 440));
 
 		filePanel.setLayout(new BoxLayout(filePanel, BoxLayout.LINE_AXIS));
 		filePanel.add(fileSP);
 		fileSP.getViewport().add(fList, null);
-		fileSP.setPreferredSize(new Dimension(300, 540));
+		fileSP.setPreferredSize(new Dimension(230, 440));
 		fList.addListSelectionListener(this);
 		// fileSP.setPreferredSize(new Dimension(100,filePanel.getHeight()));
 		JPanel comboxPanel = new JPanel();
@@ -122,7 +119,7 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 		fileAndcomboxPanel.add(comboxPanel);
 		comboxPanel.setLayout(new BoxLayout(comboxPanel, BoxLayout.PAGE_AXIS));
 
-		comboxPanel.setPreferredSize(new Dimension(150, 300));
+		comboxPanel.setPreferredSize(new Dimension(120, 200));
 		comboxPanel.add(selectOpTypePanel);
 		selectOpTypePanel.setLayout(new FlowLayout());
 		JLabel selectOpTypeLabel = new JLabel("   Select the OpType : ");
@@ -141,11 +138,6 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 		opCB.setEditable(false);
 		opCB.setPreferredSize(new Dimension(100, 25));
 
-		comboxPanel.add(this.runtestPanel);
-		runtestPanel.add(this.runTest);
-		runTest.addActionListener(this);
-		runTest.setPreferredSize(new Dimension(120, 25));
-		runTest.setBackground(Color.CYAN);
 		this.add(chooseMutantPanel);
 		chooseMutantPanel.setBorder(new EtchedBorder());
 		chooseMutantPanel.setLayout(new BoxLayout(chooseMutantPanel,
@@ -159,7 +151,7 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 		leftContentSP.getViewport().add(mList, null);
 		leftContentSP.setPreferredSize(new Dimension(100, 540));
 		leftContentSP.setBorder(new TitledBorder("mutants list"));
-		;
+		contentPanel.add(leftContentSP);
 		JPanel rightContentPanel = new JPanel();
 		rightContentPanel.setLayout(new BoxLayout(rightContentPanel,
 				BoxLayout.PAGE_AXIS));
@@ -213,8 +205,6 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 		nameMap = gsm.nameMap;
 		opType_opMap = gsm.opType_opMap;
 
-		
-		
 		Vector<String> f = new Vector<String>();
 		for (String value : nameSet) {
 			Iterator<?> entries = name_opMap.entrySet().iterator();
@@ -239,7 +229,8 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 				f.add(value);
 			}
 		}
-		for (@SuppressWarnings("unused") String value : f) {
+		for (@SuppressWarnings("unused")
+		String value : f) {
 		}
 		fList.setListData(f);
 		fList.setSelectedIndex(0);
@@ -259,60 +250,9 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 		changeTF.setText("");
 	}
 
-	
-
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if (e.getSource() == this.runTest) {
-			System.out.println("runTest");
-			String tempfilename;
-			List<String> javaList = new ArrayList<String>();
-			javaList = FileList.getInstance().getJavaMList();
-			String filename = javaList.get((Integer) (this.mList
-					.getSelectedIndex()));
-
-			tempfilename = filename.replace("\\", "/");
-			if (filename.indexOf(opTypeCB.getSelectedItem().toString()) >= 0)
-				tempfilename = tempfilename
-						.substring(0, filename.indexOf(opTypeCB
-								.getSelectedItem().toString()) - 1);
-
-			tempfilename = tempfilename + ".java";
-			try {
-				System.out.println("run test java Op>>>>>>>");
-				// Process p = null;
-				// String line = null;
-				// BufferedReader stdout = null;
-				// BufferedWriter bw = null;
-				// bw = new BufferedWriter(new FileWriter(ofilename + ".log"));
-				// list the files and directorys under C:\
-				// p = Runtime
-				// .getRuntime()
-				// .exec("F:/muandroid3/AndroidApp-master/gradlew.bat connectAndroidTest",
-				// null,
-				// new File("F:/muandroid3/AndroidApp-master"));
-				// stdout = new BufferedReader(new InputStreamReader(
-				// p.getInputStream()));
-				// while ((line = stdout.readLine()) != null) {
-				// bw.write(line);
-				// bw.newLine();
-				// ;
-				// bw.flush();
-				// // Thread.sleep( 10 );
-				// }
-				// bw.flush();
-
-				// stdout.close();
-				// p.destroy();
-
-			} catch (Exception e1) {
-				e1.printStackTrace();
-			}
-		}
-
-		// if(opTypeCB.getSelectedItem()!=null)
-		//
 		if (e.getSource().equals(opTypeCB)) {
 			Iterator<?> entries = name_opMap.entrySet().iterator();
 			new HashSet<String>();
@@ -431,7 +371,7 @@ public class OrginMutantJavaPanel extends JPanel implements ActionListener,
 			String mutant_name = mList.getSelectedValue().toString();
 			mutantlog = getMutant(logname, mutant_name);
 			showOriginal(ofilename);
-			
+
 			showMutant(filename, mutantlog);
 		}
 	}
