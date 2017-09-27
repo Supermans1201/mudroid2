@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -14,6 +15,7 @@ import javax.swing.JProgressBar;
 import javax.swing.border.TitledBorder;
 
 import singleton.Project;
+import util.CopyFiles;
 import util.MutantRunTemplate;
 
 public class ProgressJFrame2 extends JFrame implements ActionListener {
@@ -114,7 +116,7 @@ public class ProgressJFrame2 extends JFrame implements ActionListener {
 
 		this.setResizable(false);
 		this.setBounds(startLocationX, startLocationY, width, height);
-
+		
 	}
 
 	public void start() {
@@ -270,7 +272,12 @@ public class ProgressJFrame2 extends JFrame implements ActionListener {
 			instance.setVisible(false);
 		}
 		if (e.getSource() == bt2) {
-
+			
+			File fromDir= new File(Project.getInstance().getSelectProject()+"/app/src");
+			File toDir=new File(Project.getInstance().getSelectProject()+"/copyofsrc");
+			CopyFiles.copyDir(toDir, fromDir, true);
+			System.out.println("¸´ÖÆÍê±Ï£¡");
+			
 			{
 				t.stop();
 				b = true;

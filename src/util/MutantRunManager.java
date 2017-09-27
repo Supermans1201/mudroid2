@@ -14,6 +14,7 @@ public class MutantRunManager {
 	public void start() {
 		// TODO Auto-generated method stub
 
+		Project.getInstance().setRunTestLogPath();
 		File fromDir= new File(Project.getInstance().getSelectProject()+"/app/src");
 		File toDir=new File(Project.getInstance().getSelectProject()+"/copyofsrc");
 		CopyFiles.copyDir(fromDir, toDir, true);
@@ -67,6 +68,10 @@ public class MutantRunManager {
 
 	public void close() {
 		// TODO Auto-generated method stub
+		File fromDir= new File(Project.getInstance().getSelectProject()+"/app/src");
+		File toDir=new File(Project.getInstance().getSelectProject()+"/copyofsrc");
+		CopyFiles.copyDir(toDir, fromDir, true);
+		System.out.println("¸´ÖÆÍê±Ï£¡");
 		
 	}
 

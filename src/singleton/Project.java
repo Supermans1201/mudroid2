@@ -1,6 +1,8 @@
 package singleton;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class Project {
@@ -23,10 +25,23 @@ public class Project {
 	
 	String mutDir="/app/mutant";
 	
+	String runTestPath="/.log/runTest"+".log";
 	String sdkPath;
 	String emuExePath;
 	String emuAvdPath;
 	String emuAvdName;
+	
+	public void setRunTestLogPath()
+	{
+		SimpleDateFormat df = new SimpleDateFormat("yyMMddHHmmss");// 设置日期格式
+		this.runTestPath="/.log/runTest"+df.format(new Date())+".log";
+	}
+	
+	public String getRunTestLogPath()
+	{
+		return Project.getInstance().getSelectProject()+this.runTestPath;
+	}
+	
 	public void setSdkPath(String sdkPath)
 	{
 		this.sdkPath=sdkPath;

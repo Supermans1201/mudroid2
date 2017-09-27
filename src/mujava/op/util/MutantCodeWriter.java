@@ -542,7 +542,7 @@ public class MutantCodeWriter extends ParseTreeVisitor
 		  line_num++;
           out.println( "// created by supermans1201" );
 		  line_num++;
-		  SimpleDateFormat df = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");//设置日期格式
+		  SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd HH:mm:ss");//设置日期格式
 			
 		  out.println( "// date:"+df.format(new Date()));
 		  out.println();

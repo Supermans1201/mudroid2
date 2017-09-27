@@ -11,31 +11,32 @@ import singleton.Project;
 
 public class MutantRunTemplate {
 	private MutantRunManager transactionManager;
-    String filterLoc=Project.getInstance().getJavaMutFilterLoc(); 
-    
-    String type=null;
+	String filterLoc = Project.getInstance().getJavaMutFilterLoc();
+
+	String type = null;
 	private String[] fileList;
 	private String[] opList;
+
 	public MutantRunTemplate(String filterLoc) {
 		transactionManager = new MutantRunManager();
-		this.filterLoc=filterLoc;
+		this.filterLoc = filterLoc;
 	}
-	int dojobnum=0;
+
+	int dojobnum = 0;
+
 	public void doJobInTransaction() {
 		try {
 			transactionManager.start();
-			dojobnum=0;
-			for(String file:fileList)
-			{
-				for (String op :opList)
-				{
-					doJob(file,op);
+			dojobnum = 0;
+			for (String file : fileList) {
+				for (String op : opList) {
+					doJob(file, op);
 					dojobnum++;
 				}
-				
+
 			}
-			transactionManager.commit(this.type,(float) 1.0);
-			
+			transactionManager.commit(this.type, (float) 1.0);
+
 		} catch (Exception e) {
 			transactionManager.rollback();
 		} finally {
@@ -43,43 +44,37 @@ public class MutantRunTemplate {
 		}
 	}
 
-	protected void doJob(String arg1,String arg4) throws Exception {
-		if(arg1==null)
+	protected void doJob(String arg1, String arg4) throws Exception {
+		if (arg1 == null)
 			return;
-		if(arg4==null)
+		if (arg4 == null)
 			return;
-		
-		if(this.type=="c")
-		{
+
+		if (this.type == "c") {
 			ProgressJFrame2.getInstance().javacmjl.setText(arg1);
 			ProgressJFrame2.getInstance().javacmopjl.setText(arg4);
 		}
-		if(this.type=="t")
-		{
+		if (this.type == "t") {
 			ProgressJFrame2.getInstance().javatmjl.setText(arg1);
 			ProgressJFrame2.getInstance().javatmopjl.setText(arg4);
 		}
-		if(this.type=="e")
-		{
+		if (this.type == "e") {
 			ProgressJFrame2.getInstance().javaemjl.setText(arg1);
 			ProgressJFrame2.getInstance().javaemopjl.setText(arg4);
 		}
-		if(this.type=="a")
-		{
+		if (this.type == "a") {
 			ProgressJFrame2.getInstance().javaamjl.setText(arg1);
 			ProgressJFrame2.getInstance().javaamopjl.setText(arg4);
 		}
-		if(this.type=="x")
-		{
+		if (this.type == "x") {
 			ProgressJFrame2.getInstance().xmljl.setText(arg1);
 			ProgressJFrame2.getInstance().xmlopjl.setText(arg4);
 		}
-		
-		String[] args = new String[] {
-				filterLoc,arg1, "all", "all", arg4 };
+
+		String[] args = new String[] { filterLoc, arg1, "all", "all", arg4 };
 		ReadMutantfromXml rmx = new ReadMutantfromXml();
 		rmx.run(args);
-//		FileList.getInstance().readMFlist();
+		// FileList.getInstance().readMFlist();
 		List<String> f_l = FileList.getInstance().getMFlist();
 		for (int k = 0; k < f_l.size(); k++) {
 			String tempfilename = ((String) f_l.get(k)).replace("\\", "/");
@@ -110,36 +105,44 @@ public class MutantRunTemplate {
 			}
 
 			String ofilename = tempfilename.replace("/mutant/", "/src/");
-//			System.out.println(new File(f_l.get(k)).getAbsolutePath());
-//	s		System.out.println(new File(ofilename).getAbsolutePath());
+			// System.out.println(new File(f_l.get(k)).getAbsolutePath());
+			// s System.out.println(new File(ofilename).getAbsolutePath());
 			CopyFiles.copyFile(new File(f_l.get(k)), new File(ofilename), true);
 
-			
 			System.out.println("do job");
+			Thread.sleep(3000);
 			
-			
+			String[] args2 = new String[] { arg1, arg4, f_l.get(k) };
+			MutantTest.run(args2);
+		
+			Thread.sleep(3000);
+		// runTest();
+
 			String sfilename = new File(ofilename).getAbsolutePath();
 			sfilename = sfilename.replace("\\", "/").replace(
 					Project.getInstance().getSelectProject() + "/app/src",
 					Project.getInstance().getSelectProject() + "/copyofsrc");
-//			System.out.println(new File(sfilename).getAbsolutePath());
-//			System.out.println(new File(ofilename).getAbsolutePath());
+			// System.out.println(new File(sfilename).getAbsolutePath());
+			// System.out.println(new File(ofilename).getAbsolutePath());
 			CopyFiles.copyFile(new File(sfilename), new File(ofilename), true);
-			
-			transactionManager.commit(this.type,(float)(this.dojobnum)/this.fileList.length/this.opList.length+(float)(k+1)/this.fileList.length/this.opList.length/f_l.size());
-			
+
+			transactionManager.commit(this.type, (float) (this.dojobnum)
+					/ this.fileList.length / this.opList.length
+					+ (float) (k + 1) / this.fileList.length
+					/ this.opList.length / f_l.size());
+
 		}
 	};
 
 	public void setType(String string) {
 		// TODO Auto-generated method stub
-		this.type=string;
-		
+		this.type = string;
+
 	}
 
 	public void setDate(String[] fileList, String[] op) {
 		// TODO Auto-generated method stub
-		this.fileList=fileList;
-		this.opList=op;
+		this.fileList = fileList;
+		this.opList = op;
 	}
 }

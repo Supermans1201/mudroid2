@@ -27,6 +27,10 @@ public class CopyFiles {
 		if (!fromFile.canRead()) {
 			return;
 		}
+		if(fromFile.getAbsolutePath().equals(toFile.getAbsolutePath()))
+		{
+			return;
+		}
 		if (!toFile.getParentFile().exists()) {
 			toFile.getParentFile().mkdirs();
 		}
@@ -52,6 +56,7 @@ public class CopyFiles {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 	}
 	public static void copyDir(File fromDir,File toDir,Boolean rewrite)
 	{

@@ -147,7 +147,7 @@ public class LoadingFrame extends JFrame {
 				}
 			}
 		});
-
+		
 		NativeInterface.runEventPump();
 	}
 

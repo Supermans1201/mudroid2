@@ -1,6 +1,7 @@
 package util;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.URL;
@@ -13,6 +14,7 @@ import java.util.jar.JarFile;
 
 import singleton.FileList;
 import singleton.InheritanceRelation;
+import singleton.Project;
 import mujava.util.InheritanceINFO;
 
 public class GetInheritanceRelation {
@@ -111,10 +113,7 @@ public class GetInheritanceRelation {
 		list = FileList.getInstance().getJarList();
 		classes = getAllClassNamesInJARSlist(classes, list);
 
-		for (int i = 0; i < list.size(); i++) {
-			// System.err.println("MMMMMM"+list.get(i));
-			addURL(list.get(i));
-		}
+	
 		// addURL("F:/muandroid3/AndroidApp-master/app/build/intermediates/exploded-aar/com.android.support");
 		if (classes == null) {
 			System.err.println("[ERROR] There are no classes to mutate.");
@@ -127,6 +126,7 @@ public class GetInheritanceRelation {
 		classInfo = new InheritanceINFO[classes.length];
 		// System.out.println(""+classInfo.length);
 		boolean[] bad = new boolean[classes.length];
+		
 		addURL(this.class_Debug);
 		System.err.println(class_Debug);
 		for (int i = 0; i < classes.length; i++) {
@@ -212,39 +212,58 @@ public class GetInheritanceRelation {
 			for (int k = 0; k < classF.length; k++) {
 				temp = classF[k];
 				System.out.println("temp : " + temp);
-
-				JarFile jarFile = new JarFile(temp);
-				Enumeration<JarEntry> entrys = jarFile.entries();
-				int length = 0;
-				//System.out.print("start:" + length+"   ");
-				while (entrys.hasMoreElements()) {
-					JarEntry jarEntry = entrys.nextElement();
-					String temp2 = jarEntry.getName();
-					if (temp2.indexOf(".class") > 0) {
-						length++;
-					} else {
-						// System.err.println("qqq"+temp2);
+				
+				String newcopyjar=Project.getInstance().getSelectProject()+"/jar/"+new File(temp).getName();
+				
+				try
+				{
+					CopyFiles.copyFile(new File(temp), new File(newcopyjar), true);
+					try {
+						addURL(newcopyjar);
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
 					}
-				}
-				//System.out.println("end:" + length);
-				classes = new String[length];
-				entrys = jarFile.entries();
-				while (entrys.hasMoreElements()) {
-
-					JarEntry jarEntry = entrys.nextElement();
-					String temp2 = jarEntry.getName();
-					// System.out.println(""+temp2.indexOf(".class"));
-					if (temp2.indexOf(".class") > 0) {
-						length--;
-						classes[length] = temp2.substring(0,
-								temp2.indexOf(".class"));
-						classes[length] = classes[length].replace('\\', '.');
-						classes[length] = classes[length].replace('/', '.');
-						// classes[length]=classes[length].substring(classes[length].indexOf("."));
+					JarFile jarFile = new JarFile(newcopyjar);
+					Enumeration<JarEntry> entrys = jarFile.entries();
+					int length = 0;
+					//System.out.print("start:" + length+"   ");
+					while (entrys.hasMoreElements()) {
+						JarEntry jarEntry = entrys.nextElement();
+						String temp2 = jarEntry.getName();
+						if (temp2.indexOf(".class") > 0) {
+							length++;
+						} else {
+							// System.err.println("qqq"+temp2);
+						}
 					}
+					//System.out.println("end:" + length);
+					classes = new String[length];
+					entrys = jarFile.entries();
+					while (entrys.hasMoreElements()) {
+
+						JarEntry jarEntry = entrys.nextElement();
+						String temp2 = jarEntry.getName();
+						// System.out.println(""+temp2.indexOf(".class"));
+						if (temp2.indexOf(".class") > 0) {
+							length--;
+							classes[length] = temp2.substring(0,
+									temp2.indexOf(".class"));
+							classes[length] = classes[length].replace('\\', '.');
+							classes[length] = classes[length].replace('/', '.');
+							// classes[length]=classes[length].substring(classes[length].indexOf("."));
+						}
+					}
+					result = addClassNames(result, classes);
+					jarFile.close();
 				}
-				result = addClassNames(result, classes);
-				jarFile.close();
+				catch(FileNotFoundException e)
+				{
+					
+				}
+				
+				
+			
 			}
 		}
 		return result;
