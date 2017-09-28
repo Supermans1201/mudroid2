@@ -23,6 +23,10 @@
 	<classpathentry kind="lib" path="lib/androidjar/support-core-utils-24.2.0.jar"/>
 	<classpathentry kind="lib" path="lib/androidjar/android-support-v4.jar"/>
 	<classpathentry kind="lib" path="lib/androidjar/support-compat-24.2.0.jar"/>
+	<classpathentry kind="lib" path="lib/muban/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/muban/commons.collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/muban/jstl.jar"/>
+	<classpathentry kind="lib" path="lib/muban/velocity-1.7.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

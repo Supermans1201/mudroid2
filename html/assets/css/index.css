@@ -1,0 +1,6 @@
+.doc-icon-custom {
+  &:before {
+    .am-icon-font;
+    content: @fa-var-choosed;
+  }
+}

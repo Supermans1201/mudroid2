@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>MuDroid</title>
+		<link rel="stylesheet" href="assets/css/amazeui.css" />
+		<link rel="stylesheet" href="assets/css/core.css" />
+		<link rel="stylesheet" href="assets/css/menu.css" />
+		<link rel="stylesheet" href="assets/css/index.css" />
+		<link rel="stylesheet" href="assets/css/admin.css" />
+		<link rel="stylesheet" href="assets/css/page/typography.css" />
+		<link rel="stylesheet" href="assets/css/page/form.css" />
+		<link rel="stylesheet" href="assets/css/component.css" />
+	</head>
+	<body>
+		<!-- Begin page -->
+		<header class="am-topbar am-topbar-fixed-top">		
+			<div class="am-topbar-left am-hide-sm-only">
+                <a href="index.html" class="logo"><span>MuDroid<span></span></span><i class="zmdi zmdi-layers"></i></a>
+            </div>
+	
+			<div class="contain">
+				<ul class="am-nav am-navbar-nav am-navbar-left">
+
+					<li><h4 class="page-title">变异测试结果展示</h4></li>
+				</ul>
+				
+				
+			</div>
+		</header>
+		<!-- end page -->
+		
+		
+		<div class="admin">
+			<!--<div class="am-g">-->
+		<!-- ========== Left Sidebar Start ========== -->
+		<!--<div class="left side-menu am-hide-sm-only am-u-md-1 am-padding-0">
+			<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 548px;">
+				<div class="sidebar-inner slimscrollleft" style="overflow: hidden; width: auto; height: 548px;">-->
+                  <!-- sidebar start -->
+				  <div class="admin-sidebar am-offcanvas  am-padding-0" id="admin-offcanvas">
+				    <div class="am-offcanvas-bar admin-offcanvas-bar">
+				    	<!-- User -->
+						<div class="user-box am-hide-sm-only">
+	                        <div class="user-img">
+	                            <img src="assets/img/mudroid.png" alt="user-img" title="MuDroid" class="img-circle img-thumbnail img-responsive">
+	                            <div class="user-status offline"><i class="am-icon-dot-circle-o" aria-hidden="true"></i></div>
+	                        </div>
+	                        <h5><a href="#">Android变异测试系统</a> </h5>
+	                        <ul class="list-inline">
+	                            <li>
+	                                <a href="#">
+	                                    <i class="fa fa-cog" aria-hidden="true"></i>
+	                                </a>
+	                            </li>
+	
+	                            <li>
+	                                <a href="#" class="text-custom">
+	                                    <i class="fa fa-cog" aria-hidden="true"></i>
+	                                </a>
+	                            </li>
+	                        </ul>
+	                    </div>
+	                    <!-- End User -->
+	            
+						 <ul class="am-list admin-sidebar-list">
+						   
+						    <li class="admin-parent">
+						      <a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}"><span class="am-icon-table"></span> 变异测试结果 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+						      <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav1">
+						        <li><a href="index.html" class="am-cf"> 总览信息</span></a></li>
+						        <li><a href="index2.html">详细信息</a></li>
+						      </ul>
+						    </li>
+						   <li class="admin-parent">
+						      <a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}"><span class="am-icon-table"></span> 变异测试日志 <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+						      <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav1">
+								 <li><a href="runTest.log" class="am-cf"> 日志原文</span></a></li>
+								<li><a href="log.txt" class="am-cf"> 测试报告</span></a></li>
+						      </ul>
+						    </li>
+						  </ul>
+				</div>
+				  </div>
+				  <!-- sidebar end -->
+    
+				<!--</div>
+			</div>
+		</div>-->
+		<!-- ========== Left Sidebar end ========== -->
+		
+		
+		
+	<!--	<div class="am-g">-->
+		<!-- ============================================================== -->
+		<!-- Start right Content here -->
+		<div class="content-page">
+			<!-- Start content -->
+			<div class="content">
+				<div class="content-page">
+			<!-- Start content -->
+			<div class="content">
+				
+					<!-- Row start -->
+					<div class="am-g">
+						
+				        
+						<div class="am-u-sm-12 am-u-md-3">
+				          <div class="am-input-group am-input-group-sm">
+				           
+				          </div>
+				        </div>
+				      </div>
+					  <!-- Row end -->
+					  
+					  <!-- Row start -->
+					  	<div class="am-g">
+						<div class="am-panel-group" id="accordion">
+ 
+
+						
+						<h3>#RecyclerBooksAdapter.java IPR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\adapter\RecyclerBooksAdapter\androidOp\IPR_1\RecyclerBooksAdapter.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.RecyclerViewTest > testClickAtPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Clean Code"' doesn't match the selected view.
+	Expected: with text: is "Clean Code"
+
+
+com.vgrec.espressoexamples.RecyclerViewTest > testClickOnViewInRow[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Clean Code"' doesn't match the selected view.
+	Expected: with text: is "Clean Code"
+
+
+BUILD FAILED
+时间：31.04secs 
+</div>
+
+<h3>#RecyclerBooksAdapter.java IPR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\adapter\RecyclerBooksAdapter\androidOp\IPR_2\RecyclerBooksAdapter.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.RecyclerViewTest > testClickAtPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Clean Code"' doesn't match the selected view.
+	Expected: with text: is "Clean Code"
+
+
+com.vgrec.espressoexamples.RecyclerViewTest > testClickOnViewInRow[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Clean Code"' doesn't match the selected view.
+	Expected: with text: is "Clean Code"
+
+
+BUILD FAILED
+时间：28.967secs 
+</div>
+
+<h3>#CustomListActivity.java IPR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\CustomListActivity\androidOp\IPR_1\CustomListActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.CustomListTest > testClickOnBookByPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Java Concurrency in Practice"' doesn't match the selected view.
+	Expected: with text: is "Java Concurrency in Practice"
+
+
+com.vgrec.espressoexamples.CustomListTest > testOpenBookById[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Java Concurrency in Practice"' doesn't match the selected view.
+	Expected: with text: is "Java Concurrency in Practice"
+
+
+com.vgrec.espressoexamples.CustomListTest > testOpenBookByTitleAndAuthor[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Java Concurrency in Practice"' doesn't match the selected view.
+	Expected: with text: is "Java Concurrency in Practice"
+
+
+BUILD FAILED
+时间：31.172secs 
+</div>
+
+<h3>#CustomListActivity.java IPR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\CustomListActivity\androidOp\IPR_2\CustomListActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.CustomListTest > testClickOnBookByPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Brian Goetz"' doesn't match the selected view.
+	Expected: with text: is "Brian Goetz"
+
+
+com.vgrec.espressoexamples.CustomListTest > testOpenBookById[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Brian Goetz"' doesn't match the selected view.
+	Expected: with text: is "Brian Goetz"
+
+
+com.vgrec.espressoexamples.CustomListTest > testOpenBookByTitleAndAuthor[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Brian Goetz"' doesn't match the selected view.
+	Expected: with text: is "Brian Goetz"
+
+
+BUILD FAILED
+时间：29.224secs 
+</div>
+
+<h3>#DateTimePickerActivity.java ECR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DateTimePickerActivity\androidOp\ECR_1\DateTimePickerActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.DateTimePickerTest > testSetTime[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with class name: "android.widget.TimePicker"
+	If the target view is not part of the view hierarchy, you may need to use Espresso.onData to load it from one of the following AdapterViews:android.widget.YearPickerView{ef867ae GFED.VC.. ......I. 0,0-0,0 #102035a android:id/date_picker_year_picker}
+
+
+BUILD FAILED
+时间：30.416secs 
+</div>
+
+<h3>#DateTimePickerActivity.java ECR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DateTimePickerActivity\androidOp\ECR_2\DateTimePickerActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.DateTimePickerTest > testSetDate[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with class name: "android.widget.DatePicker"
+	
+
+
+BUILD FAILED
+时间：27.494secs 
+</div>
+
+<h3>#DialogExampleActivity.java ECR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DialogExampleActivity\androidOp\ECR_1\DialogExampleActivity.java</h3>时间：1.433secs 
+</div>
+
+<h3>#DialogExampleActivity.java ECR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DialogExampleActivity\androidOp\ECR_2\DialogExampleActivity.java</h3>时间：1.465secs 
+</div>
+
+<h3>#DialogExampleActivity.java ECR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DialogExampleActivity\androidOp\ECR_3\DialogExampleActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.DialogTests > testClickOkButton[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with string from resource id: <2131165221>' doesn't match the selected view.
+	Expected: with string from resource id: <2131165221>[ok] value: OK
+
+
+BUILD FAILED
+时间：31.016secs 
+</div>
+
+<h3>#DialogExampleActivity.java ECR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DialogExampleActivity\androidOp\ECR_4\DialogExampleActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.DialogTests > testClickCancelButton[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with string from resource id: <2131165207>' doesn't match the selected view.
+	Expected: with string from resource id: <2131165207>[cancel] value: Cancel
+
+
+BUILD FAILED
+时间：29.528secs 
+</div>
+
+<h3>#DialogExampleActivity.java ECR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DialogExampleActivity\androidOp\ECR_5\DialogExampleActivity.java</h3>时间：1.412secs 
+</div>
+
+<h3>#DialogExampleActivity.java ECR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DialogExampleActivity\androidOp\ECR_6\DialogExampleActivity.java</h3>时间：1.485secs 
+</div>
+
+<h3>#SearchViewActivity.java ITR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\SearchViewActivity\androidOp\ITR_1\SearchViewActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.SearchViewTest > testClickOnSearchSuggestion[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@c59739e[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@d848e7f, window-token=android.view.ViewRootImpl$W@d848e7f, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemNotFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testSearchSuggestionDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@7234320[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@33784d9, window-token=android.view.ViewRootImpl$W@33784d9, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+BUILD FAILED
+时间：27.3secs 
+</div>
+
+<h3>#SearchViewActivity.java ITR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\SearchViewActivity\androidOp\ITR_10\SearchViewActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.SearchViewTest > testClickOnSearchSuggestion[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@a124dd9[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@c59739e, window-token=android.view.ViewRootImpl$W@c59739e, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemNotFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testSearchSuggestionDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@e1f8223[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@7234320, window-token=android.view.ViewRootImpl$W@7234320, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+BUILD FAILED
+时间：26.171secs 
+</div>
+
+<h3>#SearchViewActivity.java ITR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\SearchViewActivity\androidOp\ITR_11\SearchViewActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.SearchViewTest > testClickOnSearchSuggestion[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@2652baa[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@7dd939b, window-token=android.view.ViewRootImpl$W@7dd939b, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemNotFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testSearchSuggestionDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@c9714c[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@3129595, window-token=android.view.ViewRootImpl$W@3129595, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+BUILD FAILED
+时间：27.373secs 
+</div>
+
+<h3>#SearchViewActivity.java ITR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\SearchViewActivity\androidOp\ITR_12\SearchViewActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.SearchViewTest > testClickOnSearchSuggestion[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@a124dd9[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@c59739e, window-token=android.view.ViewRootImpl$W@c59739e, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemNotFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testSearchSuggestionDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@e1f8223[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@7234320, window-token=android.view.ViewRootImpl$W@7234320, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+BUILD FAILED
+时间：26.895secs 
+</div>
+
+<h3>#SearchViewActivity.java ITR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\SearchViewActivity\androidOp\ITR_2\SearchViewActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.SearchViewTest > testClickOnSearchSuggestion[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@a158e4c[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@750ee95, window-token=android.view.ViewRootImpl$W@750ee95, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemNotFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testSearchSuggestionDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@1f3de9e[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@ede1d7f, window-token=android.view.ViewRootImpl$W@ede1d7f, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+BUILD FAILED
+时间：27.371secs 
+</div>
+
+<h3>#SearchViewActivity.java ITR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\SearchViewActivity\androidOp\ITR_3\SearchViewActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.SearchViewTest > testClickOnSearchSuggestion[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@2652baa[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@7dd939b, window-token=android.view.ViewRootImpl$W@7dd939b, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemNotFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testSearchSuggestionDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@c9714c[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@3129595, window-token=android.view.ViewRootImpl$W@3129595, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+BUILD FAILED
+时间：25.974secs 
+</div>
+
+<h3>#SearchViewActivity.java ITR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\SearchViewActivity\androidOp\ITR_4\SearchViewActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.SearchViewTest > testClickOnSearchSuggestion[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@c59739e[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@d848e7f, window-token=android.view.ViewRootImpl$W@d848e7f, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemNotFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testSearchSuggestionDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@7234320[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@33784d9, window-token=android.view.ViewRootImpl$W@33784d9, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+BUILD FAILED
+时间：27.381secs 
+</div>
+
+<h3>#SearchViewActivity.java ITR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\SearchViewActivity\androidOp\ITR_5\SearchViewActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.SearchViewTest > testClickOnSearchSuggestion[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@a158e4c[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@750ee95, window-token=android.view.ViewRootImpl$W@750ee95, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemNotFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testSearchSuggestionDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@1f3de9e[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@ede1d7f, window-token=android.view.ViewRootImpl$W@ede1d7f, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+BUILD FAILED
+时间：26.749secs 
+</div>
+
+<h3>#SearchViewActivity.java ITR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\SearchViewActivity\androidOp\ITR_6\SearchViewActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.SearchViewTest > testClickOnSearchSuggestion[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@d848e7f[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@a158e4c, window-token=android.view.ViewRootImpl$W@a158e4c, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemNotFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testSearchSuggestionDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@33784d9[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@1f3de9e, window-token=android.view.ViewRootImpl$W@1f3de9e, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+BUILD FAILED
+时间：27.648secs 
+</div>
+
+<h3>#SearchViewActivity.java ITR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\SearchViewActivity\androidOp\ITR_7\SearchViewActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.SearchViewTest > testClickOnSearchSuggestion[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@a158e4c[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@750ee95, window-token=android.view.ViewRootImpl$W@750ee95, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemNotFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testSearchSuggestionDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@1f3de9e[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@ede1d7f, window-token=android.view.ViewRootImpl$W@ede1d7f, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+BUILD FAILED
+时间：26.261secs 
+</div>
+
+<h3>#SearchViewActivity.java ITR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\SearchViewActivity\androidOp\ITR_8\SearchViewActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.SearchViewTest > testClickOnSearchSuggestion[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@7dd939b[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@1334338, window-token=android.view.ViewRootImpl$W@1334338, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemNotFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testSearchSuggestionDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@3129595[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@ebb46aa, window-token=android.view.ViewRootImpl$W@ebb46aa, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+BUILD FAILED
+时间：27.215secs 
+</div>
+
+<h3>#SearchViewActivity.java ITR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\SearchViewActivity\androidOp\ITR_9\SearchViewActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.SearchViewTest > testClickOnSearchSuggestion[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@d848e7f[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@a158e4c, window-token=android.view.ViewRootImpl$W@a158e4c, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemNotFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/empty_view
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testSearchSuggestionDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingRootException: Matcher 'with decor view not is <DecorView@33784d9[SearchViewActivity]>' did not match any of the following roots: [Root{application-window-token=android.view.ViewRootImpl$W@1f3de9e, window-token=android.view.ViewRootImpl$W@1f3de9e, has-window-focus=true, layout-params-type=1, layout-params-string=WM.LayoutParams{(0,0)(fillxfill) ty=1 fl=#81810100 wanim=0x1030465 needsMenuKey=2}, decor-view-string=DecorView{id=-1, visibility=VISIBLE, width=1080, height=1920, has-focus=true, has-focusable=true, has-window-focus=true, is-clickable=false, is-enabled=true, is-focused=false, is-focusable=false, is-layout-requested=false, is-selected=false, root-is-layout-requested=false, has-input-connection=false, x=0.0, y=0.0, child-count=3}}]
+	at dalvik.system.VMStack.getThreadStackTrace(Native Method)
+
+
+BUILD FAILED
+时间：27.043secs 
+</div>
+
+<h3>#EnterNameActivity.java IPR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\EnterNameActivity\androidOp\IPR_1\EnterNameActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.EnterNameTest > testGreetingMessageWithNameDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Hello John!"' doesn't match the selected view.
+	Expected: with text: is "Hello John!"
+
+
+BUILD FAILED
+时间：31.355secs 
+</div>
+
+<h3>#RecyclerBooksAdapter.java IPR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\adapter\RecyclerBooksAdapter\androidOp\IPR_1\RecyclerBooksAdapter.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.RecyclerViewTest > testClickAtPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Clean Code"' doesn't match the selected view.
+	Expected: with text: is "Clean Code"
+
+
+<h3>#RecyclerBooksAdapter.java IPR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\adapter\RecyclerBooksAdapter\androidOp\IPR_1\RecyclerBooksAdapter.java</h3>#RecyclerBooksAdapter.java IPR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\adapter\RecyclerBooksAdapter\androidOp\IPR_1\RecyclerBooksAdapter.java
+
+Incremental java compilation is an incubating feature.
+Full recompilation is required because 'EnterNameActivity.java' was changed. Analysis took 0.005 secs.
+<div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.RecyclerViewTest > testClickAtPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Clean Code"' doesn't match the selected view.
+	Expected: with text: is "Clean Code"
+BUILD FAILED
+<h3>#BookDetailsActivity.java JSD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\BookDetailsActivity\classOp\JSD_1\BookDetailsActivity.java</h3>时间：1.526secs 
+</div>
+
+<h3>#BookDetailsActivity.java JSD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\BookDetailsActivity\classOp\JSD_2\BookDetailsActivity.java</h3>时间：1.508secs 
+</div>
+
+<h3>#BookDetailsActivity.java IOD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\BookDetailsActivity\classOp\IOD_1\BookDetailsActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.CustomListTest > testClickOnBookByPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/book_title
+	
+
+
+com.vgrec.espressoexamples.CustomListTest > testOpenBookById[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/book_title
+	
+
+
+com.vgrec.espressoexamples.CustomListTest > testOpenBookByTitleAndAuthor[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/book_title
+	
+
+
+com.vgrec.espressoexamples.RecyclerViewTest > testClickAtPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/book_title
+	
+
+
+com.vgrec.espressoexamples.RecyclerViewTest > testClickOnViewInRow[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/book_title
+	
+
+
+com.vgrec.espressoexamples.ViewPagerTest > testClickOnBookFromNewTab[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/book_title
+	
+
+
+BUILD FAILED
+时间：29.226secs 
+</div>
+
+<h3>#RecyclerBooksAdapter.java IPC F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\adapter\RecyclerBooksAdapter\classOp\IPC_1\RecyclerBooksAdapter.java</h3>时间：1.49secs 
+</div>
+
+<h3>#MainActivity.java IOD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\MainActivity\classOp\IOD_1\MainActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+BUILD SUCCESSFUL
+时间：30.198secs 
+</div>
+
+<h3>#CustomListActivity.java IOD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\CustomListActivity\classOp\IOD_1\CustomListActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.CustomListTest > testClickOnBookByPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: is assignable from class: class android.widget.AdapterView
+	
+
+
+com.vgrec.espressoexamples.CustomListTest > testOpenBookById[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: is assignable from class: class android.widget.AdapterView
+	
+
+
+com.vgrec.espressoexamples.CustomListTest > testOpenBookByTitleAndAuthor[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: is assignable from class: class android.widget.AdapterView
+	
+
+
+BUILD FAILED
+时间：27.397secs 
+</div>
+
+<h3>#DateTimePickerActivity.java IOD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DateTimePickerActivity\classOp\IOD_1\DateTimePickerActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.DateTimePickerTest > testSetDate[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/date_picker_button
+	
+
+
+com.vgrec.espressoexamples.DateTimePickerTest > testSetTime[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/time_picker_button
+	
+
+
+BUILD FAILED
+时间：28.751secs 
+</div>
+
+<h3>#DialogExampleActivity.java IOD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DialogExampleActivity\classOp\IOD_1\DialogExampleActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.DialogTests > testCheckDialogDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/confirm_dialog_button
+	
+
+
+com.vgrec.espressoexamples.DialogTests > testClickCancelButton[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/confirm_dialog_button
+	
+
+
+com.vgrec.espressoexamples.DialogTests > testClickOkButton[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/confirm_dialog_button
+	
+
+
+BUILD FAILED
+时间：28.192secs 
+</div>
+
+<h3>#Book.java PRV F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\models\Book\classOp\PRV_1\Book.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.CustomListTest > testClickOnBookByPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Java Concurrency in Practice"' doesn't match the selected view.
+	Expected: with text: is "Java Concurrency in Practice"
+
+
+com.vgrec.espressoexamples.CustomListTest > testOpenBookById[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Java Concurrency in Practice"' doesn't match the selected view.
+	Expected: with text: is "Java Concurrency in Practice"
+
+
+com.vgrec.espressoexamples.CustomListTest > testOpenBookByTitleAndAuthor[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.PerformException: Error performing 'load adapter data' on view 'is assignable from class: class android.widget.AdapterView'.
+	at android.support.test.espresso.PerformException$Builder.build(PerformException.java:83)
+
+
+com.vgrec.espressoexamples.RecyclerViewTest > testClickAtPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Clean Code"' doesn't match the selected view.
+	Expected: with text: is "Clean Code"
+
+
+com.vgrec.espressoexamples.RecyclerViewTest > testClickOnViewInRow[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.PerformException: Error performing 'performing ViewAction: single click on item matching: holder with view: has descendant: with text: is "Clean Code"' on view 'with id: com.vgrec.espressoexamples:id/recyclerView'.
+	at android.support.test.espresso.PerformException$Builder.build(PerformException.java:83)
+
+
+com.vgrec.espressoexamples.ViewPagerTest > testClickOnBookFromNewTab[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.PerformException: Error performing 'load adapter data' on view '(is assignable from class: class android.widget.AdapterView and is displayed on the screen to the user)'.
+	at android.support.test.espresso.PerformException$Builder.build(PerformException.java:83)
+
+
+BUILD FAILED
+时间：29.759secs 
+</div>
+
+<h3>#Book.java PRV F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\models\Book\classOp\PRV_2\Book.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.CustomListTest > testClickOnBookByPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Brian Goetz"' doesn't match the selected view.
+	Expected: with text: is "Brian Goetz"
+
+
+com.vgrec.espressoexamples.CustomListTest > testOpenBookById[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Brian Goetz"' doesn't match the selected view.
+	Expected: with text: is "Brian Goetz"
+
+
+com.vgrec.espressoexamples.CustomListTest > testOpenBookByTitleAndAuthor[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.PerformException: Error performing 'load adapter data' on view 'is assignable from class: class android.widget.AdapterView'.
+	at android.support.test.espresso.PerformException$Builder.build(PerformException.java:83)
+
+
+com.vgrec.espressoexamples.RecyclerViewTest > testClickAtPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Robert C. Martin"' doesn't match the selected view.
+	Expected: with text: is "Robert C. Martin"
+
+
+com.vgrec.espressoexamples.ViewPagerTest > testClickOnBookFromNewTab[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.PerformException: Error performing 'load adapter data' on view '(is assignable from class: class android.widget.AdapterView and is displayed on the screen to the user)'.
+	at android.support.test.espresso.PerformException$Builder.build(PerformException.java:83)
+
+
+BUILD FAILED
+时间：28.062secs 
+</div>
+
+<h3>#SearchViewActivity.java IOD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\SearchViewActivity\classOp\IOD_1\SearchViewActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+BUILD SUCCESSFUL
+时间：30.793secs 
+</div>
+
+<h3>#SearchViewActivity.java IOD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\SearchViewActivity\classOp\IOD_2\SearchViewActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.SearchViewTest > testClickOnSearchSuggestion[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/action_search
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/action_search
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testItemNotFound[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/action_search
+	
+
+
+com.vgrec.espressoexamples.SearchViewTest > testSearchSuggestionDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/action_search
+	
+
+
+BUILD FAILED
+时间：22.116secs 
+</div>
+
+<h3>#DisplayNameActivity.java IOD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DisplayNameActivity\classOp\IOD_1\DisplayNameActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.EnterNameTest > testGreetingMessageWithNameDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/greeting_message
+	
+
+
+BUILD FAILED
+时间：30.805secs 
+</div>
+
+<h3>#RecyclerViewActivity.java IOD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\RecyclerViewActivity\classOp\IOD_1\RecyclerViewActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.RecyclerViewTest > testClickAtPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/recyclerView
+	
+
+
+com.vgrec.espressoexamples.RecyclerViewTest > testClickOnViewInRow[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/recyclerView
+	
+
+
+BUILD FAILED
+时间：27.962secs 
+</div>
+
+<h3>#EnterNameActivity.java JSD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\EnterNameActivity\classOp\JSD_1\EnterNameActivity.java</h3>时间：1.445secs 
+</div>
+
+<h3>#EnterNameActivity.java IOD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\EnterNameActivity\classOp\IOD_1\EnterNameActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.EnterNameTest > testErrorMessageDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/error_text
+	
+
+
+com.vgrec.espressoexamples.EnterNameTest > testGreetingMessageWithNameDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/name_edittext
+	
+
+
+com.vgrec.espressoexamples.EnterNameTest > testHintDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/name_edittext
+	
+
+
+BUILD FAILED
+时间：29.607secs 
+</div>
+
+<h3>#AppRecentSearchesProvider.java JDC F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\provider\AppRecentSearchesProvider\classOp\JDC_1\AppRecentSearchesProvider.java</h3><div>Starting 0 tests on Nexus_5X_API_24(AVD) - 7.0
+Tests on Nexus_5X_API_24(AVD) - 7.0 failed: Instrumentation run failed due to 'Process crashed.'
+
+com.android.builder.testing.ConnectedDevice > No tests found.[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+No tests found. This usually means that your test classes are not in the form that your test runner expects (e.g. don't inherit from TestCase or lack @Test annotations).
+
+BUILD FAILED
+时间：4.53secs 
+</div>
+
+<h3>#activity_main.xml TWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_main\xmlOp\TWD_1\activity_main.xml</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+BUILD SUCCESSFUL
+时间：31.005secs 
+</div>
+
+<h3>#activity_main.xml BWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_main\xmlOp\BWD_1\activity_main.xml</h3>时间：1.887secs 
+</div>
+
+<h3>#activity_main.xml BWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_main\xmlOp\BWD_2\activity_main.xml</h3>时间：1.823secs 
+</div>
+
+<h3>#activity_main.xml BWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_main\xmlOp\BWD_3\activity_main.xml</h3>时间：1.852secs 
+</div>
+
+<h3>#activity_main.xml BWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_main\xmlOp\BWD_4\activity_main.xml</h3>时间：1.844secs 
+</div>
+
+<h3>#activity_main.xml BWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_main\xmlOp\BWD_5\activity_main.xml</h3>时间：1.813secs 
+</div>
+
+<h3>#activity_main.xml BWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_main\xmlOp\BWD_6\activity_main.xml</h3>时间：1.843secs 
+</div>
+
+<h3>#activity_main.xml BWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_main\xmlOp\BWD_7\activity_main.xml</h3>时间：1.817secs 
+</div>
+
+<h3>#activity_main.xml BWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_main\xmlOp\BWD_8\activity_main.xml</h3>时间：1.856secs 
+</div>
+
+<h3>#activity_main.xml BWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_main\xmlOp\BWD_9\activity_main.xml</h3>时间：1.867secs 
+</div>
+
+<h3>#activity_search_view.xml TWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_search_view\xmlOp\TWD_1\activity_search_view.xml</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+BUILD SUCCESSFUL
+时间：30.704secs 
+</div>
+
+<h3>#activity_action_bar_example.xml TWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_action_bar_example\xmlOp\TWD_1\activity_action_bar_example.xml</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.ActionBarExampleTest > testClickOnMenuItem[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.PerformException: Error performing 'single click' on view 'with id: com.vgrec.espressoexamples:id/action_settings'.
+	at android.support.test.espresso.PerformException$Builder.build(PerformException.java:83)
+
+
+BUILD FAILED
+时间：29.818secs 
+</div>
+
+<h3>#activity_action_bar_example.xml BWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_action_bar_example\xmlOp\BWD_1\activity_action_bar_example.xml</h3>时间：1.91secs 
+</div>
+
+<h3>#activity_enter_name.xml TWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_enter_name\xmlOp\TWD_1\activity_enter_name.xml</h3>时间：1.763secs 
+</div>
+
+<h3>#activity_enter_name.xml BWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_enter_name\xmlOp\BWD_1\activity_enter_name.xml</h3>时间：1.8secs 
+</div>
+
+<h3>#activity_searchable.xml TWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_searchable\xmlOp\TWD_1\activity_searchable.xml</h3>时间：1.87secs 
+</div>
+
+<h3>#activity_book_details.xml TWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_book_details\xmlOp\TWD_1\activity_book_details.xml</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.CustomListTest > testClickOnBookByPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	java.lang.NullPointerException: Attempt to invoke virtual method 'void android.widget.TextView.setText(java.lang.CharSequence)' on a null object reference
+	at com.vgrec.espressoexamples.activities.BookDetailsActivity.onCreate(BookDetailsActivity.java:23)
+
+
+com.vgrec.espressoexamples.CustomListTest > testClickOnBookByPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.PerformException: Error performing 'single click' on view ' displaying data matching: ANYTHING within adapter view matching: is assignable from class: class android.widget.AdapterView'.
+	at android.support.test.espresso.PerformException$Builder.build(PerformException.java:83)
+
+
+com.vgrec.espressoexamples.CustomListTest > testOpenBookById[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	java.lang.RuntimeException: Could not launch intent Intent { act=android.intent.action.MAIN flg=0x10000000 cmp=com.vgrec.espressoexamples/.activities.CustomListActivity } within 45 seconds. Perhaps the main thread has not gone idle within a reasonable amount of time? There could be an animation or something constantly repainting the screen. Or the activity is doing network calls on creation? See the threaddump logs. For your reference the last time the event queue was idle before your activity launch request was 1506513790936 and now the last time the queue went idle was: 1506513799327. If these numbers are the same your activity might be hogging the event queue.
+	at android.support.test.runner.MonitoringInstrumentation.startActivitySync(MonitoringInstrumentation.java:274)
+
+
+com.vgrec.espressoexamples.CustomListTest > testOpenBookByTitleAndAuthor[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	java.lang.RuntimeException: Could not launch intent Intent { act=android.intent.action.MAIN flg=0x10000000 cmp=com.vgrec.espressoexamples/.activities.CustomListActivity } within 45 seconds. Perhaps the main thread has not gone idle within a reasonable amount of time? There could be an animation or something constantly repainting the screen. Or the activity is doing network calls on creation? See the threaddump logs. For your reference the last time the event queue was idle before your activity launch request was 1506513835968 and now the last time the queue went idle was: 1506513835968. If these numbers are the same your activity might be hogging the event queue.
+	at android.support.test.runner.MonitoringInstrumentation.startActivitySync(MonitoringInstrumentation.java:274)
+
+
+com.vgrec.espressoexamples.DateTimePickerTest > testSetDate[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.PerformException: Error performing 'single click' on view 'with id: com.vgrec.espressoexamples:id/date_picker_button'.
+	at android.support.test.espresso.PerformException$Builder.build(PerformException.java:83)
+
+
+com.vgrec.espressoexamples.RecyclerViewTest > testClickAtPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	java.lang.NullPointerException: Attempt to invoke virtual method 'void android.widget.TextView.setText(java.lang.CharSequence)' on a null object reference
+	at com.vgrec.espressoexamples.activities.BookDetailsActivity.onCreate(BookDetailsActivity.java:23)
+
+
+com.vgrec.espressoexamples.RecyclerViewTest > testClickAtPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.PerformException: Error performing 'single click' on view 'with id: com.vgrec.espressoexamples:id/recyclerView'.
+	at android.support.test.espresso.PerformException$Builder.build(PerformException.java:83)
+
+
+com.vgrec.espressoexamples.RecyclerViewTest > testClickOnViewInRow[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	java.lang.RuntimeException: Could not launch intent Intent { act=android.intent.action.MAIN flg=0x10000000 cmp=com.vgrec.espressoexamples/.activities.RecyclerViewActivity } within 45 seconds. Perhaps the main thread has not gone idle within a reasonable amount of time? There could be an animation or something constantly repainting the screen. Or the activity is doing network calls on creation? See the threaddump logs. For your reference the last time the event queue was idle before your activity launch request was 1506513889735 and now the last time the queue went idle was: 1506513894637. If these numbers are the same your activity might be hogging the event queue.
+	at android.support.test.runner.MonitoringInstrumentation.startActivitySync(MonitoringInstrumentation.java:274)
+
+
+com.vgrec.espressoexamples.SearchViewTest > testClickOnSearchSuggestion[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.PerformException: Error performing 'single click' on view 'is assignable from class: class android.widget.EditText'.
+	at android.support.test.espresso.PerformException$Builder.build(PerformException.java:83)
+
+
+com.vgrec.espressoexamples.ViewPagerTest > testClickOnBookFromNewTab[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	java.lang.NullPointerException: Attempt to invoke virtual method 'void android.widget.TextView.setText(java.lang.CharSequence)' on a null object reference
+	at com.vgrec.espressoexamples.activities.BookDetailsActivity.onCreate(BookDetailsActivity.java:23)
+
+
+com.vgrec.espressoexamples.ViewPagerTest > testClickOnBookFromNewTab[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.PerformException: Error performing 'single click' on view ' displaying data matching: (with id: Clean Code and with id: Robert C. Martin) within adapter view matching: (is assignable from class: class android.widget.AdapterView and is displayed on the screen to the user)'.
+	at android.support.test.espresso.PerformException$Builder.build(PerformException.java:83)
+
+
+BUILD FAILED
+时间：2 mins 41.54secs 
+</div>
+
+<h3>#activity_book_details.xml TWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_book_details\xmlOp\TWD_2\activity_book_details.xml</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.CustomListTest > testClickOnBookByPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	java.lang.NullPointerException: Attempt to invoke virtual method 'void android.widget.TextView.setText(java.lang.CharSequence)' on a null object reference
+	at com.vgrec.espressoexamples.activities.BookDetailsActivity.onCreate(BookDetailsActivity.java:24)
+
+
+com.vgrec.espressoexamples.CustomListTest > testClickOnBookByPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.PerformException: Error performing 'single click' on view ' displaying data matching: ANYTHING within adapter view matching: is assignable from class: class android.widget.AdapterView'.
+	at android.support.test.espresso.PerformException$Builder.build(PerformException.java:83)
+
+
+com.vgrec.espressoexamples.CustomListTest > testOpenBookById[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	java.lang.RuntimeException: Could not launch intent Intent { act=android.intent.action.MAIN flg=0x10000000 cmp=com.vgrec.espressoexamples/.activities.CustomListActivity } within 45 seconds. Perhaps the main thread has not gone idle within a reasonable amount of time? There could be an animation or something constantly repainting the screen. Or the activity is doing network calls on creation? See the threaddump logs. For your reference the last time the event queue was idle before your activity launch request was 1506513958389 and now the last time the queue went idle was: 1506513966893. If these numbers are the same your activity might be hogging the event queue.
+	at android.support.test.runner.MonitoringInstrumentation.startActivitySync(MonitoringInstrumentation.java:274)
+
+
+com.vgrec.espressoexamples.CustomListTest > testOpenBookByTitleAndAuthor[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	java.lang.RuntimeException: Could not launch intent Intent { act=android.intent.action.MAIN flg=0x10000000 cmp=com.vgrec.espressoexamples/.activities.CustomListActivity } within 45 seconds. Perhaps the main thread has not gone idle within a reasonable amount of time? There could be an animation or something constantly repainting the screen. Or the activity is doing network calls on creation? See the threaddump logs. For your reference the last time the event queue was idle before your activity launch request was 1506514003408 and now the last time the queue went idle was: 1506514003408. If these numbers are the same your activity might be hogging the event queue.
+	at android.support.test.runner.MonitoringInstrumentation.startActivitySync(MonitoringInstrumentation.java:274)
+
+
+com.vgrec.espressoexamples.DateTimePickerTest > testSetDate[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.PerformException: Error performing 'single click' on view 'with id: com.vgrec.espressoexamples:id/date_picker_button'.
+	at android.support.test.espresso.PerformException$Builder.build(PerformException.java:83)
+
+
+com.vgrec.espressoexamples.RecyclerViewTest > testClickAtPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	java.lang.NullPointerException: Attempt to invoke virtual method 'void android.widget.TextView.setText(java.lang.CharSequence)' on a null object reference
+	at com.vgrec.espressoexamples.activities.BookDetailsActivity.onCreate(BookDetailsActivity.java:24)
+
+
+com.vgrec.espressoexamples.RecyclerViewTest > testClickAtPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.PerformException: Error performing 'single click' on view 'with id: com.vgrec.espressoexamples:id/recyclerView'.
+	at android.support.test.espresso.PerformException$Builder.build(PerformException.java:83)
+
+
+com.vgrec.espressoexamples.RecyclerViewTest > testClickOnViewInRow[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	java.lang.RuntimeException: Could not launch intent Intent { act=android.intent.action.MAIN flg=0x10000000 cmp=com.vgrec.espressoexamples/.activities.RecyclerViewActivity } within 45 seconds. Perhaps the main thread has not gone idle within a reasonable amount of time? There could be an animation or something constantly repainting the screen. Or the activity is doing network calls on creation? See the threaddump logs. For your reference the last time the event queue was idle before your activity launch request was 1506514056683 and now the last time the queue went idle was: 1506514061653. If these numbers are the same your activity might be hogging the event queue.
+	at android.support.test.runner.MonitoringInstrumentation.startActivitySync(MonitoringInstrumentation.java:274)
+
+
+com.vgrec.espressoexamples.SearchViewTest > testClickOnSearchSuggestion[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.PerformException: Error performing 'single click' on view 'is assignable from class: class android.widget.EditText'.
+	at android.support.test.espresso.PerformException$Builder.build(PerformException.java:83)
+
+
+com.vgrec.espressoexamples.ViewPagerTest > testClickOnBookFromNewTab[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	java.lang.NullPointerException: Attempt to invoke virtual method 'void android.widget.TextView.setText(java.lang.CharSequence)' on a null object reference
+	at com.vgrec.espressoexamples.activities.BookDetailsActivity.onCreate(BookDetailsActivity.java:24)
+
+
+com.vgrec.espressoexamples.ViewPagerTest > testClickOnBookFromNewTab[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.PerformException: Error performing 'single click' on view ' displaying data matching: (with id: Clean Code and with id: Robert C. Martin) within adapter view matching: (is assignable from class: class android.widget.AdapterView and is displayed on the screen to the user)'.
+	at android.support.test.espresso.PerformException$Builder.build(PerformException.java:83)
+
+
+BUILD FAILED
+时间：2 mins 41.57secs 
+</div>
+
+<h3>#activity_spinner_selection.xml TWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_spinner_selection\xmlOp\TWD_1\activity_spinner_selection.xml</h3>时间：1.866secs 
+</div>
+
+<h3>#item_book.xml TWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\item_book\xmlOp\TWD_1\item_book.xml</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.CustomListTest > testClickOnBookByPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	java.lang.NullPointerException: Attempt to invoke virtual method 'void android.widget.TextView.setText(java.lang.CharSequence)' on a null object reference
+	at com.vgrec.espressoexamples.adapter.BooksAdapter.getView(BooksAdapter.java:50)
+
+Tests on Nexus_5X_API_24(AVD) - 7.0 failed: Instrumentation run failed due to 'Process crashed.'
+
+BUILD FAILED
+时间：6.445secs 
+</div>
+
+<h3>#item_book.xml TWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\item_book\xmlOp\TWD_2\item_book.xml</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.CustomListTest > testClickOnBookByPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	java.lang.NullPointerException: Attempt to invoke virtual method 'void android.widget.TextView.setText(java.lang.CharSequence)' on a null object reference
+	at com.vgrec.espressoexamples.adapter.BooksAdapter.getView(BooksAdapter.java:53)
+
+Tests on Nexus_5X_API_24(AVD) - 7.0 failed: Instrumentation run failed due to 'Process crashed.'
+
+BUILD FAILED
+时间：5.723secs 
+</div>
+
+<h3>#activity_display_name.xml TWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_display_name\xmlOp\TWD_1\activity_display_name.xml</h3>时间：1.831secs 
+</div>
+
+<h3>#fragment_books.xml TWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\fragment_books\xmlOp\TWD_1\fragment_books.xml</h3>时间：1.809secs 
+</div>
+
+<h3>#activity_dialog_example.xml TWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_dialog_example\xmlOp\TWD_1\activity_dialog_example.xml</h3>时间：1.769secs 
+</div>
+
+<h3>#activity_dialog_example.xml BWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_dialog_example\xmlOp\BWD_1\activity_dialog_example.xml</h3>时间：1.754secs 
+</div>
+
+<h3>#activity_date_time_picker.xml TWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_date_time_picker\xmlOp\TWD_1\activity_date_time_picker.xml</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.DateTimePickerTest > testSetDate[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.PerformException: Error performing 'single click' on view 'with id: android:id/button1'.
+	at android.support.test.espresso.PerformException$Builder.build(PerformException.java:83)
+
+
+com.vgrec.espressoexamples.DateTimePickerTest > testSetTime[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.PerformException: Error performing 'single click' on view 'with id: android:id/button1'.
+	at android.support.test.espresso.PerformException$Builder.build(PerformException.java:83)
+
+
+BUILD FAILED
+时间：30.806secs 
+</div>
+
+<h3>#activity_date_time_picker.xml BWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_date_time_picker\xmlOp\BWD_1\activity_date_time_picker.xml</h3>时间：1.537secs 
+</div>
+
+<h3>#activity_date_time_picker.xml BWD F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\res\layout\activity_date_time_picker\xmlOp\BWD_2\activity_date_time_picker.xml</h3>时间：1.742secs 
+</div>
+
+<h3>#DateTimePickerActivity.java CDL F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DateTimePickerActivity\traditionalOp\void_onDateSet(android.widget.DatePicker,int,int,int)\CDL_2\DateTimePickerActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.DateTimePickerTest > testSetDate[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "2020/11/15"' doesn't match the selected view.
+	Expected: with text: is "2020/11/15"
+
+
+BUILD FAILED
+时间：29.888secs 
+</div>
+
+<h3>#DateTimePickerActivity.java CDL F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DateTimePickerActivity\traditionalOp\void_onDateSet(android.widget.DatePicker,int,int,int)\CDL_3\DateTimePickerActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.DateTimePickerTest > testSetDate[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "2020/11/15"' doesn't match the selected view.
+	Expected: with text: is "2020/11/15"
+
+
+BUILD FAILED
+时间：30.946secs 
+</div>
+
+<h3>#DateTimePickerActivity.java CDL F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DateTimePickerActivity\traditionalOp\void_onTimeSet(android.widget.TimePicker,int,int)\CDL_1\DateTimePickerActivity.java</h3>时间：1.383secs 
+</div>
+
+<h3>#DateTimePickerActivity.java VDL F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DateTimePickerActivity\traditionalOp\void_onDateSet(android.widget.DatePicker,int,int,int)\VDL_3\DateTimePickerActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.DateTimePickerTest > testSetDate[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "2020/11/15"' doesn't match the selected view.
+	Expected: with text: is "2020/11/15"
+
+
+BUILD FAILED
+时间：29.175secs 
+</div>
+
+<h3>#DateTimePickerActivity.java VDL F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DateTimePickerActivity\traditionalOp\void_onDateSet(android.widget.DatePicker,int,int,int)\VDL_4\DateTimePickerActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.DateTimePickerTest > testSetDate[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "2020/11/15"' doesn't match the selected view.
+	Expected: with text: is "2020/11/15"
+
+
+BUILD FAILED
+时间：29.346secs 
+</div>
+
+<h3>#DateTimePickerActivity.java VDL F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DateTimePickerActivity\traditionalOp\void_onDateSet(android.widget.DatePicker,int,int,int)\VDL_5\DateTimePickerActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.DateTimePickerTest > testSetDate[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "2020/11/15"' doesn't match the selected view.
+	Expected: with text: is "2020/11/15"
+
+
+BUILD FAILED
+时间：30.735secs 
+</div>
+
+<h3>#DateTimePickerActivity.java VDL F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DateTimePickerActivity\traditionalOp\void_onTimeSet(android.widget.TimePicker,int,int)\VDL_1\DateTimePickerActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.DateTimePickerTest > testSetTime[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "10:59"' doesn't match the selected view.
+	Expected: with text: is "10:59"
+
+
+BUILD FAILED
+时间：28.948secs 
+</div>
+
+<h3>#DateTimePickerActivity.java VDL F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DateTimePickerActivity\traditionalOp\void_onTimeSet(android.widget.TimePicker,int,int)\VDL_2\DateTimePickerActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.DateTimePickerTest > testSetTime[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "10:59"' doesn't match the selected view.
+	Expected: with text: is "10:59"
+
+
+BUILD FAILED
+时间：29.968secs 
+</div>
+
+<h3>#DisplayNameActivity.java CDL F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DisplayNameActivity\traditionalOp\void_onCreate(android.os.Bundle)\CDL_1\DisplayNameActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.EnterNameTest > testGreetingMessageWithNameDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Hello John!"' doesn't match the selected view.
+	Expected: with text: is "Hello John!"
+
+
+BUILD FAILED
+时间：28.609secs 
+</div>
+
+<h3>#DisplayNameActivity.java CDL F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DisplayNameActivity\traditionalOp\void_onCreate(android.os.Bundle)\CDL_2\DisplayNameActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.EnterNameTest > testGreetingMessageWithNameDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Hello John!"' doesn't match the selected view.
+	Expected: with text: is "Hello John!"
+
+
+BUILD FAILED
+时间：30.818secs 
+</div>
+
+<h3>#DisplayNameActivity.java VDL F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\DisplayNameActivity\traditionalOp\void_onCreate(android.os.Bundle)\VDL_1\DisplayNameActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.EnterNameTest > testGreetingMessageWithNameDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.base.DefaultFailureHandler$AssertionFailedWithCauseError: 'with text: is "Hello John!"' doesn't match the selected view.
+	Expected: with text: is "Hello John!"
+
+
+BUILD FAILED
+时间：29.085secs 
+</div>
+
+<h3>#BooksAdapter.java ROR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\adapter\BooksAdapter\traditionalOp\android.view.View_getView(int,android.view.View,android.view.ViewGroup)\ROR_1\BooksAdapter.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.CustomListTest > testClickOnBookByPosition[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	java.lang.NullPointerException: Attempt to invoke virtual method 'android.view.View android.view.View.findViewById(int)' on a null object reference
+	at com.vgrec.espressoexamples.adapter.BooksAdapter.getView(BooksAdapter.java:52)
+
+Tests on Nexus_5X_API_24(AVD) - 7.0 failed: Instrumentation run failed due to 'Process crashed.'
+
+BUILD FAILED
+时间：5.789secs 
+</div>
+
+<h3>#BooksAdapter.java CDL F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\adapter\BooksAdapter\traditionalOp\android.view.View_getView(int,android.view.View,android.view.ViewGroup)\CDL_1\BooksAdapter.java</h3>时间：1.374secs 
+</div>
+
+<h3>#BooksAdapter.java CDL F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\adapter\BooksAdapter\traditionalOp\android.view.View_getView(int,android.view.View,android.view.ViewGroup)\CDL_2\BooksAdapter.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+BUILD SUCCESSFUL
+时间：30.772secs 
+</div>
+
+<h3>#BooksAdapter.java VDL F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\adapter\BooksAdapter\traditionalOp\android.view.View_getView(int,android.view.View,android.view.ViewGroup)\VDL_1\BooksAdapter.java</h3>时间：1.38secs 
+</div>
+
+<h3>#EnterNameActivity.java ROR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\EnterNameActivity\traditionalOp\void_onClick(android.view.View)\ROR_1\EnterNameActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.EnterNameTest > testErrorMessageDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/error_text
+	
+
+
+BUILD FAILED
+时间：29.046secs 
+</div>
+
+<h3>#EnterNameActivity.java ROR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\EnterNameActivity\traditionalOp\void_onClick(android.view.View)\ROR_2\EnterNameActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.EnterNameTest > testGreetingMessageWithNameDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/greeting_message
+	
+
+
+BUILD FAILED
+时间：30.43secs 
+</div>
+
+<h3>#EnterNameActivity.java ROR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\EnterNameActivity\traditionalOp\void_onClick(android.view.View)\ROR_3\EnterNameActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.EnterNameTest > testErrorMessageDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/error_text
+	
+
+
+com.vgrec.espressoexamples.EnterNameTest > testGreetingMessageWithNameDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/greeting_message
+	
+
+
+BUILD FAILED
+时间：28.979secs 
+</div>
+
+<h3>#EnterNameActivity.java ROR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\EnterNameActivity\traditionalOp\void_onClick(android.view.View)\ROR_4\EnterNameActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.EnterNameTest > testErrorMessageDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/error_text
+	
+
+
+com.vgrec.espressoexamples.EnterNameTest > testGreetingMessageWithNameDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/greeting_message
+	
+
+
+BUILD FAILED
+时间：31.276secs 
+</div>
+
+<h3>#EnterNameActivity.java ROR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\EnterNameActivity\traditionalOp\void_onClick(android.view.View)\ROR_5\EnterNameActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+BUILD SUCCESSFUL
+时间：29.228secs 
+</div>
+
+<h3>#EnterNameActivity.java ROR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\EnterNameActivity\traditionalOp\void_onClick(android.view.View)\ROR_6\EnterNameActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.EnterNameTest > testErrorMessageDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/error_text
+	
+
+
+BUILD FAILED
+时间：31.019secs 
+</div>
+
+<h3>#EnterNameActivity.java ROR F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\EnterNameActivity\traditionalOp\void_onClick(android.view.View)\ROR_7\EnterNameActivity.java</h3><div>Starting 23 tests on Nexus_5X_API_24(AVD) - 7.0
+
+com.vgrec.espressoexamples.EnterNameTest > testGreetingMessageWithNameDisplayed[Nexus_5X_API_24(AVD) - 7.0] [31mFAILED [0m
+	android.support.test.espresso.NoMatchingViewException: No views in hierarchy found matching: with id: com.vgrec.espressoexamples:id/greeting_message
+	
+
+
+BUILD FAILED
+时间：28.944secs 
+</div>
+
+<h3>#EnterNameActivity.java CDL F:\EspressoExamples-master\EspressoExamples-master\app\mutant\main\java\com\vgrec\espressoexamples\activities\EnterNameActivity\traditionalOp\void_onClick(android.view.View)\CDL_1\EnterNameActivity.java</h3>时间：1.43secs 
+</div>
+
+
+						
+						
+       
+
+						</div>
+					  <!-- Row end -->
+					  
+					</div>
+			
+			</div>
+		</div>
+				
+			
+					
+					
+						
+						
+			
+				
+			</div>
+		</div>
+		<!-- end right Content here -->
+		<!--</div>-->
+		</div>
+		</div>
+		
+		<!-- navbar -->
+		<a href="admin-offcanvas" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"><!--<i class="fa fa-bars" aria-hidden="true"></i>--></a>
+		
+		<script type="text/javascript" src="assets/js/jquery-2.1.0.js" ></script>
+		<script type="text/javascript" src="assets/js/amazeui.min.js"></script>
+		<script type="text/javascript" src="assets/js/app.js" ></script>
+		<script type="text/javascript" src="assets/js/blockUI.js" ></script>
+		<script type="text/javascript" src="assets/js/charts/echarts.min.js" ></script>
+		<script type="text/javascript" src="assets/js/charts/indexChart.js" ></script>
+
+	</body>
+	
+</html>
